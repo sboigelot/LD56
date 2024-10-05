@@ -15,14 +15,20 @@ run/main_scene="res://scenes/main_menu/main_menu.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout="res://audio/default_audio_bus_layout.tres"
+
 [autoload]
 
 SceneManager="*res://addons/scene_manager/autoload/scene_manager.tscn"
 SceneTransitionManager="*res://autoload/scene_transition_manager/scene_transition_manager.tscn"
+EventAudio="*res://addons/event_audio/scenes/event_audio_autoload.tscn"
+Game="*res://autoload/game.gd"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/jamcountdown/plugin.cfg", "res://addons/kanban_tasks/plugin.cfg", "res://addons/scene_manager/plugin.cfg")
+enabled=PackedStringArray("res://addons/event_audio/plugin.cfg", "res://addons/jamcountdown/plugin.cfg", "res://addons/kanban_tasks/plugin.cfg", "res://addons/scene_manager/plugin.cfg")
 
 [rendering]
 

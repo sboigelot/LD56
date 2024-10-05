@@ -1,0 +1,12 @@
+[gd_scene load_steps=4 format=3 uid="uid://uamyj06upmfq"]
+
+[ext_resource type="Script" path="res://autoload/game.gd" id="1_ibox3"]
+[ext_resource type="Script" path="res://addons/event_audio/src/ea_event_bank_mounter.gd" id="1_kyadg"]
+[ext_resource type="Resource" uid="uid://0muk3ck0spd5" path="res://audio/ld56_audio_bank.tres" id="2_oflj0"]
+
+[node name="Game" type="Node"]
+script = ExtResource("1_ibox3")
+
+[node name="AudioBankMounter" type="Node" parent="."]
+script = ExtResource("1_kyadg")
+_audio_bank_resource = ExtResource("2_oflj0")
