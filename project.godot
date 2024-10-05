@@ -25,10 +25,11 @@ SceneManager="*res://addons/scene_manager/autoload/scene_manager.tscn"
 SceneTransitionManager="*res://autoload/scene_transition_manager/scene_transition_manager.tscn"
 EventAudio="*res://addons/event_audio/scenes/event_audio_autoload.tscn"
 Game="*res://autoload/game.gd"
+MusicManager="*res://addons/MusicManager/music_manager.tscn"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/event_audio/plugin.cfg", "res://addons/jamcountdown/plugin.cfg", "res://addons/kanban_tasks/plugin.cfg", "res://addons/scene_manager/plugin.cfg")
+enabled=PackedStringArray("res://addons/MusicManager/plugin.cfg", "res://addons/event_audio/plugin.cfg", "res://addons/jamcountdown/plugin.cfg", "res://addons/kanban_tasks/plugin.cfg", "res://addons/scene_manager/plugin.cfg")
 
 [rendering]
 
