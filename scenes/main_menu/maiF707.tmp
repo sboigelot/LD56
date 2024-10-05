@@ -1,8 +1,8 @@
 [gd_scene load_steps=11 format=3 uid="uid://dgofrtm4r3eug"]
 
 [ext_resource type="Script" path="res://scenes/main_menu/main_menu.gd" id="1_jeenq"]
+[ext_resource type="Texture2D" uid="uid://dna1h04ckrcly" path="res://dialogic_data/characters/fry/fry_potato_smile.png" id="2_x3tgt"]
 [ext_resource type="Script" path="res://scenes/main_menu/time_hit_mini_game.gd" id="3_kxy1m"]
-[ext_resource type="PackedScene" uid="uid://bi7328nybm04r" path="res://components/world_portrait_2d.tscn" id="3_pd6f5"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_op3ay"]
 bg_color = Color(0, 0, 0, 1)
@@ -51,6 +51,11 @@ text = "show bubble"
 layout_mode = 2
 text = "mini game 1"
 
+[node name="FrySprite" type="Sprite2D" parent="."]
+position = Vector2(262, 317)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("2_x3tgt")
+
 [node name="TimeHitMiniGame" type="Control" parent="."]
 anchors_preset = 0
 offset_left = 516.0
@@ -90,9 +95,6 @@ theme_override_styles/slider = SubResource("StyleBoxEmpty_mffx3")
 theme_override_styles/grabber_area = SubResource("StyleBoxEmpty_jrufy")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxEmpty_7vreu")
 step = 0.001
-
-[node name="WorldPortrait2D" parent="." instance=ExtResource("3_pd6f5")]
-position = Vector2(345, 396)
 
 [connection signal="pressed" from="HBoxContainer/NewGameButton" to="." method="_on_new_game_button_pressed"]
 [connection signal="pressed" from="HBoxContainer/PlayDialogic" to="." method="_on_play_dialogic_pressed"]

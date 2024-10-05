@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://bi7328nybm04r"]
+
+[ext_resource type="Script" path="res://components/world_portrait_2d.gd" id="1_gekyw"]
+[ext_resource type="Texture2D" uid="uid://dna1h04ckrcly" path="res://dialogic_data/characters/fry/fry_potato_smile.png" id="2_ogq4u"]
+
+[node name="WorldPortrait2D" type="Node2D"]
+scale = Vector2(0.15, 0.15)
+script = ExtResource("1_gekyw")
+texture = ExtResource("2_ogq4u")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
