@@ -11,12 +11,18 @@ config_version=5
 [application]
 
 config/name="LD56"
+run/main_scene="res://scenes/main_menu/main_menu.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+SceneManager="*res://addons/scene_manager/autoload/scene_manager.tscn"
+SceneTransitionManager="*res://autoload/scene_transition_manager/scene_transition_manager.tscn"
+
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/jamcountdown/plugin.cfg", "res://addons/kanban_tasks/plugin.cfg")
+enabled=PackedStringArray("res://addons/jamcountdown/plugin.cfg", "res://addons/kanban_tasks/plugin.cfg", "res://addons/scene_manager/plugin.cfg")
 
 [rendering]
 

@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://dgofrtm4r3eug"]
+
+[ext_resource type="Script" path="res://scenes/main_menu/main_menu.gd" id="1_jeenq"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jeenq")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="NewGameButton" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "start game"
+
+[connection signal="pressed" from="HBoxContainer/NewGameButton" to="." method="_on_new_game_button_pressed"]

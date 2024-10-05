@@ -30,6 +30,13 @@
 			"description": "",
 			"category": "a3f67074-b629-41fa-9956-5314db669c8f",
 			"steps": []
+		},
+		{
+			"uuid": "8b834a92-d130-412f-81c7-e8c506475866",
+			"title": "New task",
+			"description": "",
+			"category": "a3f67074-b629-41fa-9956-5314db669c8f",
+			"steps": []
 		}
 	],
 	"layout": {
