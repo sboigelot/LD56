@@ -1,0 +1,11 @@
+[style name="full_screen_style"]
+join fry_potato (smile) center [animation="Bounce In"]
+fry_potato (smile): It's a me, Fry!
+update fry_potato left [move_time="0.2"]
+fry_potato (uwu): Welcome to my adventure![pause=1.5] what should we do next?
+- Stop talking
+- Keep talking fullscreen
+	fry_potato (smile): Awesome, today my grandpatate told me to become a Belgian Fries
+- Show me a text bubble
+	[signal arg="{"action":"start_timeline","timeline":"bubble_test_timeline"}"]
+[end_timeline]
