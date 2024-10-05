@@ -20,6 +20,16 @@ func register_bubble_characters(layout):
 			bubble_chararcter_node.get_bubble_marker_2d()
 		)
 
+func hide_world_character():
+	for bubble_chararcter in bubble_chararcters:
+		var bubble_chararcter_node = get_node(bubble_chararcter)
+		bubble_chararcter_node.visible = false
+
+func show_world_character():
+	for bubble_chararcter in bubble_chararcters:
+		var bubble_chararcter_node = get_node(bubble_chararcter)
+		bubble_chararcter_node.visible = true
+	
 func _on_dialogic_signal(args:Variant):
 	if args is Dictionary:
 		if "dialogic_command" in args:
