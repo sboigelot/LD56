@@ -31,13 +31,15 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 [dialogic]
 
 directories/dch_directory={
-"fry_potato": "res://dialogic_data/characters/fry/fry_potato.dch"
+"fry_potato": "res://dialogic_data/characters/fry/fry_potato.dch",
+"gran_potato": "res://dialogic_data/characters/gran_potato/gran_potato.dch"
 }
 directories/dtl_directory={
 "act1a_farm_timeline": "res://dialogic_data/timelines/act1a_farm_timeline.dtl",
 "bubble_test_timeline": "res://dialogic_data/timelines/bubble_test_timeline.dtl",
 "mini_win_timeline": "res://dialogic_data/timelines/mini_win_timeline.dtl",
-"test_timeline": "res://dialogic_data/timelines/test_timeline.dtl"
+"test_timeline": "res://dialogic_data/timelines/test_timeline.dtl",
+"two_dialog_full_timeline": "res://dialogic_data/timelines/two_dialog_full_timeline.dtl"
 }
 layout/style_list=["res://dialogic_data/styles/full_screen_style.tres", "res://dialogic_data/styles/text_bubble_style.tres"]
 layout/default_style="res://dialogic_data/styles/text_bubble_style.tres"

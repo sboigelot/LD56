@@ -17,7 +17,7 @@ func _on_play_dialogic_pressed() -> void:
 		return
 	
 	hide_world_character()
-	var layout = Dialogic.start('test_timeline')
+	var layout = Dialogic.start('two_dialog_full_timeline')
 
 func hide_world_character():
 	$WorldPortrait2D.visible = false

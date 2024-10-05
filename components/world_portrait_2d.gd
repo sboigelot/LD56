@@ -4,6 +4,7 @@ extends Node2D
 class_name WorldPortrait2D
 
 @export var dialogic_character_name: String = "fry_potato"
+@export_file("*.dch") var dialogic_character_path: String = "res://dialogic_data/characters/fry/fry_potato.dch"
 @export var texture:Texture2D 
 @export var flip_h:bool 
 
@@ -43,3 +44,6 @@ func _on_dialogic_event_handled(resource:DialogicEvent) -> void:
 			#sprite_2d.texture = load(image)
 									# "res://dialogic_data/characters/fry/fry_potato_uwu.png"
 			#sprite_2d.texture = load("res://dialogic_data/characters/fry/fry_potato_uwu.png")
+
+func get_bubble_marker_2d()->Node:
+	return $BubbleMarker2D

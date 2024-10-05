@@ -9,3 +9,7 @@ script = ExtResource("1_gekyw")
 texture = ExtResource("2_ogq4u")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_ogq4u")
+
+[node name="BubbleMarker2D" type="Marker2D" parent="."]
+position = Vector2(180, -180)

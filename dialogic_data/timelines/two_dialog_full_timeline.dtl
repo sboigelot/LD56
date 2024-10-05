@@ -1,0 +1,7 @@
+[style name="full_screen_style"]
+join fry_potato left
+fry_potato (pain): Gran Potato!!!!!
+update fry_potato leftmost
+join gran_potato rightmost [mirrored="true"]
+gran_potato: Yes my Sprout
+fry_potato: I want potatoes

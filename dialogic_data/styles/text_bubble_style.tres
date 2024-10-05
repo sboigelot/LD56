@@ -22,4 +22,4 @@ name = "text_bubble_style"
 base_scene = ExtResource("1_kab75")
 base_overrides = {}
 layers = Array[ExtResource("2_dhvmj")]([SubResource("Resource_xq1s7"), SubResource("Resource_agni0")])
-metadata/_latest_layer = 1
+metadata/_latest_layer = -1

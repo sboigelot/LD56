@@ -1,11 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://du7n5epg5pyx"]
+[gd_scene load_steps=5 format=3 uid="uid://du7n5epg5pyx"]
 
 [ext_resource type="Script" path="res://scenes/act1_farm/act_1a_farm.gd" id="1_8swu5"]
 [ext_resource type="PackedScene" uid="uid://cb40qf1q6r5oe" path="res://components/StoryCamera2D.tscn" id="2_4r4cx"]
 [ext_resource type="PackedScene" uid="uid://bi7328nybm04r" path="res://components/world_portrait_2d.tscn" id="2_al0o1"]
+[ext_resource type="Texture2D" uid="uid://dua0o42yskmwx" path="res://dialogic_data/characters/gran_potato/granpatato_smile.png" id="4_walip"]
 
-[node name="Act1aFarm" type="Node2D"]
+[node name="Act1aFarm" type="Node"]
 script = ExtResource("1_8swu5")
+bubble_chararcters = Array[NodePath]([NodePath("FryWorldPortrait2D"), NodePath("GranpaWorldPortrait2D")])
 
 [node name="StoryCamera2D" parent="." instance=ExtResource("2_4r4cx")]
 
@@ -14,4 +16,7 @@ position = Vector2(-181, 3)
 
 [node name="GranpaWorldPortrait2D" parent="." instance=ExtResource("2_al0o1")]
 position = Vector2(150, -1)
+dialogic_character_name = "gran_potato"
+dialogic_character_path = "res://dialogic_data/characters/gran_potato/gran_potato.dch"
+texture = ExtResource("4_walip")
 flip_h = true

@@ -4,3 +4,7 @@ Only one true hero can become the ultimate Belgian Fries
 His name?[pause=1.0][signal=zoom_fry] Fry!
 [style name="text_bubble_style"]
 fry_potato: Hello!
+[style name="full_screen_style"]
+[signal=zoom_reset] And the story begins...
+[style name="text_bubble_style"]
+gran_potato: Good my litle Sprout!

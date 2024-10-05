@@ -69,6 +69,7 @@ func load_style(style_name := "", parent: Node = null, is_base_style := true, st
 
 	# if this is another style:
 	var new_layout := create_layout(style, parent)
+	signal_info["new_layout"] = new_layout
 	if state_reload:
 		new_layout.ready.connect(reload_current_info_into_new_style)
 
