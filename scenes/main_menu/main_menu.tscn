@@ -1,25 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://dgofrtm4r3eug"]
+[gd_scene load_steps=3 format=3 uid="uid://dgofrtm4r3eug"]
 
 [ext_resource type="Script" path="res://scenes/main_menu/main_menu.gd" id="1_jeenq"]
-[ext_resource type="Script" path="res://scenes/main_menu/time_hit_mini_game.gd" id="3_kxy1m"]
-[ext_resource type="PackedScene" uid="uid://bi7328nybm04r" path="res://components/world_portrait_2d.tscn" id="3_pd6f5"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_op3ay"]
-bg_color = Color(0, 0, 0, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4s3ss"]
-bg_color = Color(0, 0.7, 0.221667, 1)
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2jtrb"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cplrg"]
-bg_color = Color(0, 0, 0, 1)
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mffx3"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jrufy"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7vreu"]
+[ext_resource type="PackedScene" uid="uid://b3iav6cm8purx" path="res://minigames/time_hit/time_hit_mini_game.tscn" id="2_1w65f"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -30,72 +12,29 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_jeenq")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 414.0
+offset_bottom = 136.0
 
-[node name="NewGameButton" type="Button" parent="HBoxContainer"]
+[node name="NewGameButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 text = "start game"
 
-[node name="PlayDialogic" type="Button" parent="HBoxContainer"]
+[node name="StarMiniGame1" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-text = "show dialog"
+text = "Timed Hit Mini Game
+"
 
-[node name="PlayDialogic2" type="Button" parent="HBoxContainer"]
-layout_mode = 2
-text = "show bubble"
+[node name="TimeHitMiniGame" parent="." instance=ExtResource("2_1w65f")]
+process_mode = 4
+visible = false
+offset_left = 294.0
+offset_top = 188.0
+offset_right = 334.0
+offset_bottom = 228.0
+accept_hit_delay_on_start = null
 
-[node name="StarMiniGame1" type="Button" parent="HBoxContainer"]
-layout_mode = 2
-text = "mini game 1"
-
-[node name="TimeHitMiniGame" type="Control" parent="."]
-anchors_preset = 0
-offset_left = 516.0
-offset_top = 292.0
-offset_right = 556.0
-offset_bottom = 332.0
-script = ExtResource("3_kxy1m")
-
-[node name="MarginContainer" type="MarginContainer" parent="TimeHitMiniGame"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="BackProgressBar" type="ProgressBar" parent="TimeHitMiniGame/MarginContainer"]
-custom_minimum_size = Vector2(200, 0)
-layout_mode = 2
-size_flags_vertical = 1
-theme_override_styles/background = SubResource("StyleBoxFlat_op3ay")
-theme_override_styles/fill = SubResource("StyleBoxFlat_4s3ss")
-value = 75.0
-show_percentage = false
-
-[node name="FrontProgressBar" type="ProgressBar" parent="TimeHitMiniGame/MarginContainer"]
-custom_minimum_size = Vector2(200, 0)
-layout_mode = 2
-size_flags_vertical = 1
-theme_override_styles/background = SubResource("StyleBoxEmpty_2jtrb")
-theme_override_styles/fill = SubResource("StyleBoxFlat_cplrg")
-value = 50.0
-show_percentage = false
-
-[node name="HSlider" type="HSlider" parent="TimeHitMiniGame/MarginContainer"]
-modulate = Color(1, 0, 0, 1)
-layout_mode = 2
-size_flags_vertical = 1
-theme_override_styles/slider = SubResource("StyleBoxEmpty_mffx3")
-theme_override_styles/grabber_area = SubResource("StyleBoxEmpty_jrufy")
-theme_override_styles/grabber_area_highlight = SubResource("StyleBoxEmpty_7vreu")
-step = 0.001
-
-[node name="WorldPortrait2D" parent="." instance=ExtResource("3_pd6f5")]
-position = Vector2(345, 396)
-
-[connection signal="pressed" from="HBoxContainer/NewGameButton" to="." method="_on_new_game_button_pressed"]
-[connection signal="pressed" from="HBoxContainer/PlayDialogic" to="." method="_on_play_dialogic_pressed"]
-[connection signal="pressed" from="HBoxContainer/PlayDialogic2" to="." method="_on_play_dialogic_2_pressed"]
-[connection signal="pressed" from="HBoxContainer/StarMiniGame1" to="." method="_on_star_mini_game_1_pressed"]
+[connection signal="pressed" from="VBoxContainer/NewGameButton" to="." method="_on_new_game_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/StarMiniGame1" to="." method="_on_star_mini_game_1_pressed"]
 [connection signal="win" from="TimeHitMiniGame" to="." method="_on_time_hit_mini_game_win"]

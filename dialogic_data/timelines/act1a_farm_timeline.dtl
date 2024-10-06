@@ -1,10 +1,20 @@
 [style name="full_screen_style"]
-In a wolrd full of starch!
-Only one true hero can become the ultimate Belgian Fries
-His name?[pause=1.0][signal=zoom_fry] Fry!
+Potatoes. Potatoes. Potatoes\
+Wheather you eat them mashed, jacked, baked or as chips. Let’s admit it\: we all love potatoes. 
+But this is no ordinary tale.\
+This is a mighty tale of Fry, who isn’t Fry yet.
 [style name="text_bubble_style"]
-fry_potato: Hello!
+gran_potato: … Wake up! … Little sprout, wake uuuup!
+[start_mini_game minigame_name="time_hit_mini_game" difficulty="easy"]
+[start_anim character="fry_potato" anim_name="Wiggle" hide_text="null"]
+gran_potato: Where is NAMECROW when you need him?
 [style name="full_screen_style"]
-[signal=zoom_reset] And the story begins...
-[style name="text_bubble_style"]
-gran_potato: Good my litle Sprout!
+[start_mini_game minigame_name="time_hit_mini_game" difficulty="normal"]
+[start_anim character="fry_potato" anim_name="Wiggle" hide_text="null"]
+[wait time="1.5"]
+[start_mini_game minigame_name="time_hit_mini_game" difficulty="hard"]
+[start_anim character="fry_potato" anim_name="Wiggle" hide_text="null"]
+join gran_potato leftmost
+join fry_potato (pain) rightmost [mirrored="true"]
+gran_potato: Finally! Wiggle for your life.  WIGGLE little sprout!\
+They’ve already eaten your brothers and sisters.

@@ -3,23 +3,6 @@
 [ext_resource type="Script" path="res://components/world_portrait_2d.gd" id="1_gekyw"]
 [ext_resource type="Texture2D" uid="uid://dna1h04ckrcly" path="res://dialogic_data/characters/fry/fry_potato_smile.png" id="2_ogq4u"]
 
-[sub_resource type="Animation" id="Animation_yj8q8"]
-resource_name = "Wiggle"
-length = 1.2
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3, 0.6, 0.9, 1.2),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [0.0, -0.174533, 0.0, 0.174533, 0.0]
-}
-
 [sub_resource type="Animation" id="Animation_bbs35"]
 length = 0.001
 tracks/0/type = "value"
@@ -33,6 +16,22 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_yj8q8"]
+resource_name = "Wiggle"
+length = 1.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.9, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.174533, 0.0, 0.174533, 0.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_begbo"]

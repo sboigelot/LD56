@@ -1,0 +1,148 @@
+[gd_scene load_steps=4 format=3 uid="uid://b3iav6cm8purx"]
+
+[ext_resource type="Script" path="res://minigames/time_hit/time_hit_mini_game.gd" id="1_b07np"]
+[ext_resource type="Script" path="res://addons/tattomoosa.spinner/spinner.gd" id="2_v4k25"]
+[ext_resource type="Texture2D" uid="uid://d0bfvcxip20dc" path="res://input_icons/mouse/left.png" id="3_qcdys"]
+
+[node name="TimeHitMiniGame" type="Control"]
+process_mode = 4
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(2, 2)
+script = ExtResource("1_b07np")
+accepted_keys = Array[int]([32])
+accepted_button_indexes = Array[int]([1])
+accept_hit_delay_on_start = null
+spin_revolution_per_second = 0.75
+input_prompt_texture = ExtResource("3_qcdys")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="GreenZoneSpinner" type="Range" parent="MarginContainer"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 2
+auto_translate_mode = 0
+editor_description = ""
+visible = true
+modulate = Color(1, 1, 1, 1)
+self_modulate = Color(1, 1, 1, 1)
+show_behind_parent = false
+top_level = false
+clip_children = 0
+light_mask = 1
+visibility_layer = 1
+z_index = 0
+z_as_relative = true
+y_sort_enabled = false
+texture_filter = 0
+texture_repeat = 0
+material = null
+use_parent_material = false
+clip_contents = true
+custom_minimum_size = Vector2(16, 16)
+layout_direction = 0
+layout_mode = 2
+size_flags_horizontal = 1
+size_flags_vertical = 1
+size_flags_stretch_ratio = 1.0
+localize_numeral_system = true
+tooltip_text = ""
+focus_neighbor_left = NodePath("")
+focus_neighbor_top = NodePath("")
+focus_neighbor_right = NodePath("")
+focus_neighbor_bottom = NodePath("")
+focus_next = NodePath("")
+focus_previous = NodePath("")
+focus_mode = 0
+mouse_filter = 0
+mouse_force_pass_scroll_events = true
+mouse_default_cursor_shape = 0
+theme = null
+theme_type_variation = &""
+min_value = 0.0
+max_value = 100.0
+step = 0.001
+value = 20.0
+exp_edit = false
+rounded = false
+allow_greater = false
+allow_lesser = false
+script = ExtResource("2_v4k25")
+status = 2
+color_progress = Color(0.45098, 0.94902, 0.498039, 1)
+reset_radial_initial_angle_on_process = false
+
+[node name="InputPrompt" type="TextureRect" parent="MarginContainer"]
+layout_mode = 2
+texture = ExtResource("3_qcdys")
+expand_mode = 3
+stretch_mode = 3
+
+[node name="Spinner" type="Range" parent="MarginContainer"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 2
+auto_translate_mode = 0
+editor_description = ""
+visible = true
+modulate = Color(1, 1, 1, 1)
+self_modulate = Color(1, 1, 1, 1)
+show_behind_parent = false
+top_level = false
+clip_children = 0
+light_mask = 1
+visibility_layer = 1
+z_index = 0
+z_as_relative = true
+y_sort_enabled = false
+texture_filter = 0
+texture_repeat = 0
+material = null
+use_parent_material = false
+clip_contents = true
+custom_minimum_size = Vector2(16, 16)
+layout_direction = 0
+layout_mode = 2
+size_flags_horizontal = 1
+size_flags_vertical = 1
+size_flags_stretch_ratio = 1.0
+localize_numeral_system = true
+tooltip_text = ""
+focus_neighbor_left = NodePath("")
+focus_neighbor_top = NodePath("")
+focus_neighbor_right = NodePath("")
+focus_neighbor_bottom = NodePath("")
+focus_next = NodePath("")
+focus_previous = NodePath("")
+focus_mode = 0
+mouse_filter = 0
+mouse_force_pass_scroll_events = true
+mouse_default_cursor_shape = 0
+theme = null
+theme_type_variation = &""
+min_value = 0.0
+max_value = 100.0
+step = 0.001
+value = 10.0
+exp_edit = false
+rounded = false
+allow_greater = false
+allow_lesser = false
+script = ExtResource("2_v4k25")
+spin_fill_percent = 0.1
+color_background = Color(0, 0, 0, 0)

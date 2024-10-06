@@ -1,5 +1,7 @@
 extends Node
 
+signal signal_to_dialogic
+
 func _init():
 	EventAudio.log_lookups = true
 	EventAudio.log_registrations = true

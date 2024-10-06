@@ -4,10 +4,13 @@ class_name  StoryScene
 @export var bubble_chararcters: Array[NodePath]
 
 func _ready() -> void:
+	SceneTransitionManager.transition_scene_in(self)
+	
 	Dialogic.signal_event.connect(_on_dialogic_signal)
 	Dialogic.text_signal.connect(_on_dialogic_text_signal)
 	Dialogic.event_handled.connect(_on_dialogic_event_handled)
 	Dialogic.Styles.style_changed.connect(_on_dialogic_style_changed)
+	Dialogic.timeline_ended.connect(_on_dialogic_timeline_ended)
 	
 	var layout = Dialogic.start("act1a_farm_timeline")
 	register_bubble_characters(layout)
@@ -41,7 +44,7 @@ func _on_dialogic_signal(args:Variant):
 
 func _on_dialogic_text_signal(text_signal_param:Variant) -> void:
 	if text_signal_param == "zoom_fry":
-		var zoom = 5.0
+		var zoom = 3.0
 		$StoryCamera2D.tween_to_rect($FryWorldPortrait2D.position, zoom, 2.0)
 	if text_signal_param == "zoom_reset":
 		var zoom = 5.0
@@ -54,3 +57,6 @@ func _on_dialogic_style_changed(signal_info:Dictionary):
 	if signal_info["style"] == "text_bubble_style":
 		var layout = signal_info["new_layout"]
 		register_bubble_characters(layout)
+
+func _on_dialogic_timeline_ended():
+	show_world_character()

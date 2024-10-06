@@ -64,10 +64,19 @@ choices/reveal_by_input=false
 save/autosave_delay=60.0
 save/encryption_on_exports_only=true
 text/autopauses={}
+event_default_overrides={
+"Music": {
+"audio_bus": "Music"
+},
+"Sound": {
+"audio_bus": "SFX",
+"loop": false
+}
+}
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/MusicManager/plugin.cfg", "res://addons/dialogic/plugin.cfg", "res://addons/event_audio/plugin.cfg", "res://addons/jamcountdown/plugin.cfg", "res://addons/kanban_tasks/plugin.cfg", "res://addons/scene_manager/plugin.cfg")
+enabled=PackedStringArray("res://addons/MusicManager/plugin.cfg", "res://addons/dialogic/plugin.cfg", "res://addons/event_audio/plugin.cfg", "res://addons/jamcountdown/plugin.cfg", "res://addons/kanban_tasks/plugin.cfg", "res://addons/scene_manager/plugin.cfg", "res://addons/segmented_bar/plugin.cfg", "res://addons/tattomoosa.spinner/plugin.cfg")
 
 [input]
 
