@@ -15,7 +15,7 @@ var scene_path: String = ""
 ## 						EXECUTE
 ################################################################################
 
-func _execute() -> void:	
+func _execute() -> void:
 	SceneTransitionManager.transition_scene_to_file(
 		scene_path, 
 		SceneTransitionManager.TRANSITIONS.FADE_TO_BLACK,

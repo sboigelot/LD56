@@ -1,7 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://cjc0m57xad887"]
+[gd_scene load_steps=15 format=3 uid="uid://cjc0m57xad887"]
 
 [ext_resource type="Texture2D" uid="uid://oa4enuht0lse" path="res://scenes/FlyScene1/fly_scene.png" id="1_nvpt2"]
 [ext_resource type="Script" path="res://scenes/FlyScene1/FlyScene1.gd" id="1_ya6m8"]
+[ext_resource type="Texture2D" uid="uid://dte4xq84xh78b" path="res://addons/tattomoosa.spinner/icons/StatusError.svg" id="3_oevi1"]
 [ext_resource type="PackedScene" uid="uid://btwimivy2fuqo" path="res://scenes/FlyScene1/Obstacles/obstacle_cloud_1.tscn" id="3_pcd20"]
 [ext_resource type="PackedScene" uid="uid://cb40qf1q6r5oe" path="res://components/StoryCamera2D.tscn" id="3_usohv"]
 [ext_resource type="PackedScene" uid="uid://io1tewnbqos3" path="res://scenes/FlyScene1/Obstacles/obstacle_cloud_2.tscn" id="4_t78i8"]
@@ -54,6 +55,13 @@ script = ExtResource("1_ya6m8")
 
 [node name="Background" type="Sprite2D" parent="."]
 texture = ExtResource("1_nvpt2")
+metadata/_edit_lock_ = true
+
+[node name="FailSplash" type="Sprite2D" parent="."]
+visible = false
+self_modulate = Color(1, 0.470588, 0.419608, 1)
+scale = Vector2(10, 10)
+texture = ExtResource("3_oevi1")
 metadata/_edit_lock_ = true
 
 [node name="StoryCamera2D" parent="." instance=ExtResource("3_usohv")]
@@ -140,3 +148,6 @@ polygon = PackedVector2Array(-17, -244, -17, -242.8, -39.3, -239, -43.4, -239, -
 rotation = 0.84823
 scale = Vector2(0.25, 0.25)
 polygon = PackedVector2Array(34, -232.2, 34, -230.9, 21.9, -230, 13.7, -230, -15.3, -221, -18.6, -221, -41.6, -206, -43.9, -206, -59.9, -189, -61.2, -189, -81.1, -154, -82.4, -154, -111, -71.3, -111, -68.5, -128, -33.5, -128, -31.8, -133, -26.8, -133, -26.2, -175.6, 1, -177.8, 1, -203.8, 26, -205.1, 26, -226.1, 57, -227.5, 57, -232.5, 75, -234.2, 75, -233, 88.2, -233, 92.7, -225, 102.7, -225, 104.4, -209, 110.4, -209, 112.1, -184.9, 111, -183.5, 111, -185, 117.8, -185, 133.5, -181, 140.4, -181, 143, -173, 149, -173, 150.4, -165.3, 153, -152.6, 153, -132.6, 145, -130.8, 145, -120.8, 155, -119.4, 155, -114, 168.4, -114, 170.9, -104, 179.8, -104, 181.4, -97.4, 184, -85.4, 184, -75.5, 178, -72.3, 178, -50.3, 185, -47.6, 185, -53, 204.7, -53, 214.3, -49, 228, -49, 231.8, -40, 240.8, -40, 243.6, -29.9, 241, -26.8, 241, -22.9, 234, -20.5, 234, -25.4, 211, -25, 206.1, -17, 212, -17, 213.5, 2, 219.4, 2, 221, 11.8, 221, 18.8, 214, 21, 214, 21, 202.1, 15, 197, 15, 195.6, 3.8, 191.8, 5.89999, 192, 41, 192, 41, 204.4, 46, 216.3, 46, 219.7, 56, 231.7, 56, 234, 69.9, 234, 77, 225.7, 77, 217.5, 68, 201.5, 68, 196.7, 88, 203.4, 88, 205.3, 104.3, 203, 107, 203, 113, 194.6, 113, 187.1, 105, 180.1, 133.5, 165, 135.8, 165, 159.8, 142, 161.1, 142, 180.1, 111, 181.6, 111, 187.6, 84, 189.2, 84, 186, 44.8, 186, 38.7, 172.6, -14, 171.8, -14, 167.7, -43, 167, -43, 167, -62.6, 172.7, -91, 174, -91, 174, -122.3, 168, -143, 168, -146.5, 156, -168.7, 156, -170.8, 148, -179.8, 148, -181.9, 129, -200, 129, -201.1, 115, -210.2, 115, -211.3, 81, -225.4, 81, -226.8)
+
+[connection signal="animation_finished" from="ObstaclesAnimationPlayer" to="." method="_on_obstacles_animation_player_animation_finished"]
+[connection signal="area_entered" from="CrowAndPotaotes" to="." method="_on_crow_and_potaotes_area_entered"]
