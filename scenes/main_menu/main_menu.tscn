@@ -46,6 +46,7 @@ position = Vector2(457, 25)
 position = Vector2(461, 70)
 
 [node name="SodaCapReavealMiniGame" parent="." instance=ExtResource("4_7e7u0")]
+process_mode = 4
 position = Vector2(357, 150)
 started = false
 

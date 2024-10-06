@@ -13,18 +13,22 @@ var leaf_hps:Dictionary = {
 	"Layer6":5,
 }
 
+func is_leaf_ready_to_be_picked(leaf:Node) -> bool:
+	var index = leaf.get_index()
+	var leaf_parent_count = leaf.get_parent().get_child_count()
+	if ((leaf != layer_0 and index < leaf_parent_count - 1)  or 
+		(leaf == layer_0 and index < leaf_parent_count - 2)):
+			return true
+	return false
+
 func _on_area_2d_input_event(area_2d:Area2D, viewport: Node, event: InputEvent, shape_idx: int) -> void:
 
 	if event.is_released() and event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		viewport.set_input_as_handled()
 		var leaf:Sprite2D = area_2d.get_parent()
-		
 		var leaf_color = leaf.self_modulate
-			
-		var index = leaf.get_index()
-		var leaf_parent_count = leaf.get_parent().get_child_count()
-		if ((leaf != layer_0 and index < leaf_parent_count - 1)  or 
-			(leaf == layer_0 and index < leaf_parent_count - 2)):
+		
+		if is_leaf_ready_to_be_picked(leaf):
 			var duration = 0.1
 			var tween = get_tree().create_tween()
 			tween.set_parallel(false)
@@ -74,3 +78,51 @@ func _on_area_2d_0_input_event(viewport: Node, event: InputEvent, shape_idx: int
 
 func _on_area_2d_1_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	_on_area_2d_input_event($Node2D/Layer1/Area2D1, viewport, event, shape_idx)
+
+func _on_area_2d_mouse_entered(area_2d:Area2D) -> void:
+	var leaf:Sprite2D = area_2d.get_parent()
+	var duration = 0.1
+	var tween = get_tree().create_tween()
+	tween.tween_property(leaf, "scale", Vector2.ONE * 1.1, duration).set_trans(Tween.TRANS_EXPO)
+
+func _on_area_2d_mouse_exited(area_2d:Area2D) -> void:
+	var leaf:Sprite2D = area_2d.get_parent()
+	var duration = 0.1
+	var tween = get_tree().create_tween()
+	tween.tween_property(leaf, "scale", Vector2.ONE, duration).set_trans(Tween.TRANS_EXPO)
+
+func _on_area_2d_1_mouse_entered() -> void:
+	_on_area_2d_mouse_entered($Node2D/Layer1/Area2D1)
+
+func _on_area_2d_1_mouse_exited() -> void:
+	_on_area_2d_mouse_exited($Node2D/Layer1/Area2D1)
+
+func _on_area_2d_0_mouse_entered() -> void:
+	_on_area_2d_mouse_entered($Node2D/Layer0/Area2D0)
+
+func _on_area_2d_0_mouse_exited() -> void:
+	_on_area_2d_mouse_exited($Node2D/Layer0/Area2D0)
+
+func _on_area_2d_3_mouse_entered() -> void:
+	_on_area_2d_mouse_entered($Node2D/Layer3/Area2D3)
+
+func _on_area_2d_3_mouse_exited() -> void:
+	_on_area_2d_mouse_exited($Node2D/Layer3/Area2D3)
+
+func _on_area_2d_4_mouse_entered() -> void:
+	_on_area_2d_mouse_entered($Node2D/Layer4/Area2D4)
+
+func _on_area_2d_4_mouse_exited() -> void:
+	_on_area_2d_mouse_exited($Node2D/Layer4/Area2D4)
+
+func _on_area_2d_5_mouse_entered() -> void:
+	_on_area_2d_mouse_entered($Node2D/Layer5/Area2D5)
+
+func _on_area_2d_5_mouse_exited() -> void:
+	_on_area_2d_mouse_exited($Node2D/Layer5/Area2D5)
+
+func _on_area_2d_6_mouse_entered() -> void:
+	_on_area_2d_mouse_entered($Node2D/Layer6/Area2D6)
+
+func _on_area_2d_6_mouse_exited() -> void:
+	_on_area_2d_mouse_exited($Node2D/Layer6/Area2D6)
