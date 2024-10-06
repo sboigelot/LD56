@@ -11,6 +11,10 @@ signal loose
 @export var inputs_needs_mouse_capture:bool = false
 @export var icon_show_duration:float = 0.6
 
+@export var on_start_auto_self_modulate:Color = Color.WHITE
+@export var on_win_auto_hide:bool = true
+@export var on_win_auto_self_modulate:Color = Color(0.3,0.3,0.3,0.5)
+
 ## Icon to display when status is Status.SUCCESS
 var icon_success : Texture2D = preload("res://addons/tattomoosa.spinner/icons/StatusSuccess.svg"):
 	set(value):
@@ -43,6 +47,7 @@ func start() -> void:
 	started = true
 	visible = true
 	process_mode = PROCESS_MODE_INHERIT
+	self_modulate = on_start_auto_self_modulate
 	await get_tree().create_timer(accept_inputs_delay_on_start).timeout
 	accept_inputs = true
 	
@@ -52,3 +57,11 @@ func stop() -> void:
 	accept_inputs = false
 	process_mode = PROCESS_MODE_DISABLED
 		
+func trigger_win():
+	if on_win_auto_hide:
+		hide()
+	self_modulate = on_win_auto_self_modulate
+	win.emit()
+
+func trigger_loose():
+	loose.emit()

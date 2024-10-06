@@ -67,5 +67,5 @@ func _on_hit(is_hit_left:bool):
 		await get_tree().create_timer(icon_show_duration).timeout
 		potato_texture_rect.texture = default_texture
 		potato_texture_rect.self_modulate = Color.WHITE
-		win.emit()
+		trigger_win()
 		

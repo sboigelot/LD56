@@ -9,6 +9,7 @@ process_mode = 4
 scale = Vector2(2, 2)
 script = ExtResource("1_b07np")
 input_prompt_texture = ExtResource("3_qcdys")
+on_win_auto_self_modulate = Color(100, 100, 100, 1)
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 offset_right = 40.0

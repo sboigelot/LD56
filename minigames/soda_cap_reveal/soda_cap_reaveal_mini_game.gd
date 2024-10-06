@@ -50,7 +50,7 @@ func _on_area_2d_input_event(area_2d:Area2D, viewport: Node, event: InputEvent, 
 			tween.tween_callback(leaf.queue_free)
 			if leaf == layer_0:
 				await get_tree().create_timer(duration).timeout
-				win.emit()
+				trigger_win()
 		else:
 			var duration = 0.1
 			var tween = get_tree().create_tween()
