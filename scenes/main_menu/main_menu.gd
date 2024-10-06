@@ -22,3 +22,9 @@ func _on_star_mini_game_2_pressed() -> void:
 	
 func _on_wiggle_keys_mini_game_win() -> void:
 	$WiggleKeysMiniGame.stop()
+
+func _on_star_mini_game_3_pressed() -> void:
+	$SodaCapReavealMiniGame.start()
+
+func _on_soda_cap_reaveal_mini_game_win() -> void:
+	$SodaCapReavealMiniGame.stop()

@@ -74,6 +74,13 @@ event_default_overrides={
 }
 }
 
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/size/mode=3
+window/stretch/mode="viewport"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/MusicManager/plugin.cfg", "res://addons/dialogic/plugin.cfg", "res://addons/event_audio/plugin.cfg", "res://addons/jamcountdown/plugin.cfg", "res://addons/kanban_tasks/plugin.cfg", "res://addons/scene_manager/plugin.cfg", "res://addons/segmented_bar/plugin.cfg", "res://addons/tattomoosa.spinner/plugin.cfg")

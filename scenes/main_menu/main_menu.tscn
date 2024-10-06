@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dgofrtm4r3eug"]
+[gd_scene load_steps=5 format=3 uid="uid://dgofrtm4r3eug"]
 
 [ext_resource type="Script" path="res://scenes/main_menu/main_menu.gd" id="1_jeenq"]
 [ext_resource type="PackedScene" uid="uid://b3iav6cm8purx" path="res://minigames/time_hit/time_hit_mini_game.tscn" id="2_1w65f"]
 [ext_resource type="PackedScene" uid="uid://wo65ur74hgk5" path="res://minigames/wiggle_keys/wiggle_keys_mini_game.tscn" id="3_hbhyf"]
+[ext_resource type="PackedScene" uid="uid://ddofaqwx8104e" path="res://minigames/soda_cap_reveal/soda_cap_reaveal_mini_game.tscn" id="4_7e7u0"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -11,6 +12,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 script = ExtResource("1_jeenq")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
@@ -32,14 +34,25 @@ layout_mode = 2
 text = "Wiggle Mini Game
 "
 
+[node name="StarMiniGame3" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Soda Cap Mini Game
+"
+
 [node name="TimeHitMiniGame" parent="." instance=ExtResource("2_1w65f")]
 position = Vector2(457, 25)
 
 [node name="WiggleKeysMiniGame" parent="." instance=ExtResource("3_hbhyf")]
 position = Vector2(461, 70)
 
+[node name="SodaCapReavealMiniGame" parent="." instance=ExtResource("4_7e7u0")]
+position = Vector2(357, 150)
+started = false
+
 [connection signal="pressed" from="VBoxContainer/NewGameButton" to="." method="_on_new_game_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/StarMiniGame1" to="." method="_on_star_mini_game_1_pressed"]
 [connection signal="pressed" from="VBoxContainer/StarMiniGame2" to="." method="_on_star_mini_game_2_pressed"]
+[connection signal="pressed" from="VBoxContainer/StarMiniGame3" to="." method="_on_star_mini_game_3_pressed"]
 [connection signal="win" from="TimeHitMiniGame" to="." method="_on_time_hit_mini_game_win"]
 [connection signal="win" from="WiggleKeysMiniGame" to="." method="_on_wiggle_keys_mini_game_win"]
+[connection signal="win" from="SodaCapReavealMiniGame" to="." method="_on_soda_cap_reaveal_mini_game_win"]
