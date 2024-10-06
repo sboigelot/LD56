@@ -16,4 +16,9 @@ func _on_star_mini_game_1_pressed() -> void:
 func _on_time_hit_mini_game_win() -> void:
 	$TimeHitMiniGame.stop()
 
+func _on_star_mini_game_2_pressed() -> void:
+	$VBoxContainer/StarMiniGame2.release_focus()
+	$WiggleKeysMiniGame.start()
 	
+func _on_wiggle_keys_mini_game_win() -> void:
+	$WiggleKeysMiniGame.stop()

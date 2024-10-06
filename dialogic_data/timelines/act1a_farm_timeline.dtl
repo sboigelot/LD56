@@ -5,7 +5,7 @@ But this is no ordinary tale.\
 This is a mighty tale of Fry, who isn’t Fry yet.
 [style name="text_bubble_style"]
 gran_potato: … Wake up! … Little sprout, wake uuuup!
-[start_mini_game minigame_name="time_hit_mini_game" difficulty="easy"]
+[start_mini_game minigame_name="wiggle_keys_mini_game" difficulty="normal"]
 [start_anim character="fry_potato" anim_name="Wiggle" hide_text="null"]
 gran_potato: Where is NAMECROW when you need him?
 [style name="full_screen_style"]

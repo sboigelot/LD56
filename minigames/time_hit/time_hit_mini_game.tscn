@@ -4,23 +4,13 @@
 [ext_resource type="Script" path="res://addons/tattomoosa.spinner/spinner.gd" id="2_v4k25"]
 [ext_resource type="Texture2D" uid="uid://d0bfvcxip20dc" path="res://input_icons/mouse/left.png" id="3_qcdys"]
 
-[node name="TimeHitMiniGame" type="Control"]
+[node name="TimeHitMiniGame" type="Node2D"]
 process_mode = 4
-visible = false
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
 scale = Vector2(2, 2)
 script = ExtResource("1_b07np")
-accepted_keys = Array[int]([32])
-accepted_button_indexes = Array[int]([1])
-accept_hit_delay_on_start = null
-spin_revolution_per_second = 0.75
 input_prompt_texture = ExtResource("3_qcdys")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
-layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 

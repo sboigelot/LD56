@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://ddofaqwx8104e"]
+
+[ext_resource type="Script" path="res://minigames/soda_cap_reveal/soda_cap_reaveal_mini_game.gd" id="1_px2qm"]
+
+[node name="SodaCapReavealMiniGame" type="Node2D"]
+process_mode = 4
+script = ExtResource("1_px2qm")
+next_input_modulate = null
+not_next_input_modulate = null
+target_hit_count = null
+accepted_keys = Array[int]([4194319, 4194321, 65, 81, 69])
+accepted_button_indexes = Array[int]([1, 2])
+started = true
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0

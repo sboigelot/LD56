@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://wo65ur74hgk5"]
+
+[ext_resource type="Script" path="res://minigames/wiggle_keys/wiggle_keys_mini_game.gd" id="1_s7uqq"]
+[ext_resource type="Texture2D" uid="uid://btyg60vnh1m3p" path="res://input_icons/keyboard/left.png" id="2_d0t5h"]
+[ext_resource type="Texture2D" uid="uid://ci7hl8jhywnrm" path="res://input_icons/keyboard/right.png" id="3_qmiad"]
+[ext_resource type="Texture2D" uid="uid://dna1h04ckrcly" path="res://dialogic_data/characters/fry/fry_potato_smile.png" id="3_yebde"]
+
+[node name="WiggleKeysMiniGame" type="Node2D"]
+process_mode = 4
+script = ExtResource("1_s7uqq")
+accepted_keys = Array[int]([4194319, 4194321, 65, 69, 81])
+accepted_button_indexes = Array[int]([1, 2])
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="LeftTextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_d0t5h")
+expand_mode = 3
+
+[node name="PotatoTextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("3_yebde")
+expand_mode = 3
+
+[node name="RightTextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("3_qmiad")
+expand_mode = 3

@@ -19,11 +19,13 @@ class_name WorldPortrait2D
 
 func _ready() -> void:
 	sprite_2d.texture = texture
-	sprite_2d.flip_h = flip_h
 	Dialogic.signal_event.connect(_on_dialogic_signal)
 	Dialogic.text_signal.connect(_on_dialogic_text_signal)
 	Dialogic.event_handled.connect(_on_dialogic_event_handled)
-	
+
+func _process(delta: float) -> void:
+	sprite_2d.flip_h = flip_h
+
 func _on_dialogic_signal(args:Variant):
 	if args is Dictionary:
 		if "character_name" in args:
@@ -52,6 +54,7 @@ func _on_dialogic_event_handled(resource:DialogicEvent) -> void:
 			var portrait_info = text_event.character.get_portrait_info(portrait)
 			var portrait_image = portrait_info["export_overrides"]["image"]
 			sprite_2d.flip_h = flip_h
+#			TODO read flip_h from portrait_info?
 			for valid_texture_path in valid_texture_paths:
 				if valid_texture_path in portrait:
 					sprite_2d.texture = load(valid_texture_path)

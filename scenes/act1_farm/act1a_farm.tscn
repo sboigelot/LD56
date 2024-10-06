@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://du7n5epg5pyx"]
+[gd_scene load_steps=7 format=3 uid="uid://du7n5epg5pyx"]
 
 [ext_resource type="Script" path="res://scenes/act1_farm/act_1a_farm.gd" id="1_8swu5"]
 [ext_resource type="PackedScene" uid="uid://cb40qf1q6r5oe" path="res://components/StoryCamera2D.tscn" id="2_4r4cx"]
 [ext_resource type="PackedScene" uid="uid://bi7328nybm04r" path="res://components/world_portrait_2d.tscn" id="2_al0o1"]
 [ext_resource type="Texture2D" uid="uid://dua0o42yskmwx" path="res://dialogic_data/characters/gran_potato/granpatato_smile.png" id="4_walip"]
+[ext_resource type="PackedScene" uid="uid://wo65ur74hgk5" path="res://minigames/wiggle_keys/wiggle_keys_mini_game.tscn" id="5_7m3oc"]
 [ext_resource type="PackedScene" uid="uid://b3iav6cm8purx" path="res://minigames/time_hit/time_hit_mini_game.tscn" id="5_k2hnp"]
 
 [node name="Act1aFarm" type="Node"]
@@ -15,6 +16,7 @@ bubble_chararcters = Array[NodePath]([NodePath("FryWorldPortrait2D"), NodePath("
 [node name="FryWorldPortrait2D" parent="." instance=ExtResource("2_al0o1")]
 position = Vector2(-30, -41)
 scale = Vector2(0.125, 0.125)
+flip_h = true
 
 [node name="GranpaWorldPortrait2D" parent="." instance=ExtResource("2_al0o1")]
 position = Vector2(150, -1)
@@ -23,16 +25,12 @@ dialogic_character_path = "res://dialogic_data/characters/gran_potato/gran_potat
 texture = ExtResource("4_walip")
 flip_h = true
 
-[node name="TimeHitMiniGame" parent="." instance=ExtResource("5_k2hnp")]
-process_mode = 4
-visible = false
-offset_left = -71.0
-offset_top = -162.0
-offset_right = -31.0
-offset_bottom = -122.0
-accept_hit_delay_on_start = null
-target_revolution_size = 0.3
-spin_revolution_per_second = 0.5
-spinner_revolution_size = 0.1
+[node name="WiggleKeysMiniGame" parent="." instance=ExtResource("5_7m3oc")]
+position = Vector2(-93, -124)
 
+[node name="TimeHitMiniGame" parent="." instance=ExtResource("5_k2hnp")]
+position = Vector2(-71, -162)
+
+[connection signal="flip" from="WiggleKeysMiniGame" to="." method="_on_wiggle_keys_mini_game_flip"]
+[connection signal="win" from="WiggleKeysMiniGame" to="." method="_on_wiggle_keys_mini_game_win"]
 [connection signal="win" from="TimeHitMiniGame" to="." method="_on_time_hit_mini_game_win"]
