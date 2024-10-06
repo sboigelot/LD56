@@ -56,8 +56,9 @@ func _on_dialogic_event_handled(resource:DialogicEvent) -> void:
 			sprite_2d.flip_h = flip_h
 #			TODO read flip_h from portrait_info?
 			for valid_texture_path in valid_texture_paths:
-				if valid_texture_path in portrait:
+				if valid_texture_path in portrait_image:
 					sprite_2d.texture = load(valid_texture_path)
+					#sprite_2d.texture = load(portrait_image) --> Will not work for some strange reason
 					break
 			#if "res://dialogic_data/characters/fry/fry_potato_smile.png" in portrait_image:
 				#sprite_2d.texture = load("res://dialogic_data/characters/fry/fry_potato_smile.png")

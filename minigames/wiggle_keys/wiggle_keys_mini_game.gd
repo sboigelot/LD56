@@ -5,6 +5,7 @@ signal flip(left:bool)
 @export var next_input_modulate: Color = Color.WHITE
 @export var not_next_input_modulate: Color = Color(1.0,1.0,1.0,0.5)
 @export var target_hit_count:int = 15
+@export var show_potato_texture:bool = false
 
 @onready var left_texture_rect: TextureRect = $MarginContainer/HBoxContainer/LeftTextureRect
 @onready var right_texture_rect: TextureRect = $MarginContainer/HBoxContainer/RightTextureRect
@@ -19,6 +20,7 @@ func start():
 	super.start()
 
 func _process(delta: float) -> void:
+	potato_texture_rect.visible = show_potato_texture
 	potato_texture_rect.flip_h = not next_input_left
 	left_texture_rect.modulate = next_input_modulate if next_input_left else not_next_input_modulate
 	right_texture_rect.modulate = next_input_modulate if not next_input_left else not_next_input_modulate

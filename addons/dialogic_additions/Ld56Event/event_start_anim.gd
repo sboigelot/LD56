@@ -11,6 +11,7 @@ extends DialogicEvent
 ## The argument that will be provided with the signal.
 var character: DialogicCharacter = null
 var anim_name: String = ""
+var backwards: bool = false
 
 ## Used to set the character resource from the unique name identifier and vice versa
 var character_identifier: String:
@@ -32,6 +33,7 @@ func _execute() -> void:
 	var dict = {}
 	dict["action"] = "start_anim"
 	dict["anim_name"] = anim_name
+	dict["backwards"] = backwards
 	dict["character_name"] = character_identifier
 	dict.make_read_only()
 	dialogic.emit_signal('signal_event', dict)
@@ -61,6 +63,7 @@ func get_shortcode_parameters() -> Dictionary:
 	return {
 		"character"	: {"property": "character_identifier", "default": ""},
 		"anim_name"	: {"property": "anim_name", "default": ""},
+		"backwards"	: {"property": "anim_name", "default": false},
 		"hide_text" :  {"property": "hide_textbox", "default": true},
 	}
 
@@ -73,14 +76,17 @@ func _enter_visual_editor(editor:DialogicEditor):
 
 
 func build_event_editor() -> void:
-	add_header_label("Start an story animation")
+	add_header_label("Start a story animation")
 	add_header_edit('character_identifier', ValueType.DYNAMIC_OPTIONS,
 			{'file_extension' 	: '.dch',
 			'mode'				: 2,
 			'suggestions_func' 	: get_character_suggestions,
-			'empty_text' 		: '(No one)',
+			'empty_text' 		: '(No one - StoryScene)',
 			'icon' 				: load("res://addons/dialogic/Editor/Images/Resources/character.svg")}, 'do_any_characters_exist()')
-	add_header_edit('anim_name', ValueType.SINGLELINE_TEXT, {})
+	add_header_edit('anim_name', ValueType.SINGLELINE_TEXT, {'left_text':'Anim Name:'})
+	add_body_edit('backwards', ValueType.BOOL, {'left_text':'Play Backwards:'})
+	
+	
 
 func do_any_characters_exist() -> bool:
 	return not DialogicResourceUtil.get_character_directory().is_empty()

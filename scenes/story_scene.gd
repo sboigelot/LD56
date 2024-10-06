@@ -12,7 +12,13 @@ func _ready() -> void:
 	Dialogic.Styles.style_changed.connect(_on_dialogic_style_changed)
 	Dialogic.timeline_ended.connect(_on_dialogic_timeline_ended)
 	
-	var layout = Dialogic.start("act1a_farm_timeline")
+	on_story_scene_ready()
+	
+func on_story_scene_ready():
+	pass
+	
+func start_new_timeline(timeline_name:String):
+	var layout = Dialogic.start(timeline_name)
 	register_bubble_characters(layout)
 
 func register_bubble_characters(layout):
@@ -34,21 +40,33 @@ func show_world_character():
 		bubble_chararcter_node.visible = true
 	
 func _on_dialogic_signal(args:Variant):
-	if args is Dictionary:
-		if "dialogic_command" in args:
-			var dialogic_command = args["dialogic_command"]
-			match  dialogic_command:
-				"register_bubble_characters":
-					var layout = get_node("/root/DialogicLayout_TextBubbleStyle")
-					register_bubble_characters(layout)
+	if not args is Dictionary:
+		return
+			
+	if "dialogic_command" in args:
+		var dialogic_command = args["dialogic_command"]
+		match  dialogic_command:
+			"register_bubble_characters":
+				var layout = get_node("/root/DialogicLayout_TextBubbleStyle")
+				register_bubble_characters(layout)
+		return
+	
+	_handle_timeline_signal(args)
 
+func _handle_timeline_signal(args:Dictionary):
+	pass
+	
 func _on_dialogic_text_signal(text_signal_param:Variant) -> void:
 	if text_signal_param == "zoom_fry":
-		var zoom = 3.0
-		$StoryCamera2D.tween_to_rect($FryWorldPortrait2D.position, zoom, 2.0)
+		var zoom = 2.0
+		$StoryCamera2D.tween_to_rect($FryWorldPortrait2D.position, zoom, 1.5)
 	if text_signal_param == "zoom_reset":
 		var zoom = 5.0
-		$StoryCamera2D.tween_to_origin(2.0)
+		$StoryCamera2D.tween_to_origin(1.5)
+	if text_signal_param == "zoom_gan_hair":
+		var zoom = 5.0
+		$StoryCamera2D.tween_to_rect($GranpaWorldPortrait2D.position, zoom, 1.5)
+		
 
 func _on_dialogic_event_handled(resource: DialogicEvent):
 	pass

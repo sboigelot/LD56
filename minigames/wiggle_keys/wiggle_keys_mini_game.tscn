@@ -24,6 +24,7 @@ texture = ExtResource("2_d0t5h")
 expand_mode = 3
 
 [node name="PotatoTextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer"]
+visible = false
 layout_mode = 2
 texture = ExtResource("3_yebde")
 expand_mode = 3

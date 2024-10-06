@@ -1,0 +1,39 @@
+jump Soda Cap Time
+[style name="full_screen_style"]
+Potatoes. Potatoes. Potatoes\
+Wheather you eat them mashed, jacked, baked or as chips. [pause=0.5]Let’s admit it\: we all love potatoes. 
+But this is no ordinary tale.[signal=zoom_fry][pause=3.0]\
+This is a mighty tale of Fry, who isn’t Fry yet.
+[style name="text_bubble_style"]
+gran_potato: … Wake up![pause=2.0] Little sprout; wake uuuup!
+gran_potato: Where is NAMECROW when you need him?[pause=2.0]
+[start_anim character="fry_potato" anim_name="Wiggle" backwards="Wiggle" hide_text="null"]
+fry_potato (smile): mmmmm....[pause=0.5] 5 more minutes!
+gran_potato: Finally! Wiggle for your life.  Wiggle, little sprout!
+[style name="full_screen_style"]
+Use <- and -> to get yourself out of sleep!
+[start_mini_game minigame_name="wiggle" difficulty="easy"]
+[start_anim character="fry_potato" anim_name="Wiggle" backwards="Wiggle" hide_text="null"]
+[style name="text_bubble_style"]
+gran_potato: You can do it! Wake up and wiggle your way out of this box!
+[start_mini_game minigame_name="wiggle" difficulty="normal"]
+[start_anim character="fry_potato" anim_name="Wiggle" backwards="Wiggle" hide_text="null"]
+[wait time="1.5"]
+[start_mini_game minigame_name="wiggle" difficulty="hard"]
+[start_anim anim_name="FryFallOutOfBoxAnim" backwards="FryFallOutOfBoxAnim" hide_text="null"]
+[wait time="3.0"]
+fry_potato (pain): Ok![signal=zoom_fry] Ok, I am awake Gran Potato...
+[style name="full_screen_style"]
+join gran_potato leftmost [animation="Slide In Left" wait="true"]
+gran_potato: Let me tell you of all my regrets and inspire you to become a golden belgian fry!
+join fry_potato (smile) rightmost [animation="Slide In Right" mirrored="true"]
+fry_potato: Ho this is soo cool! I want to become the best I can ever be now!
+gran_potato: But we need the help of Crow! For that you will need to pay him\
+I have a shiny stufff with me in my hair! [signal=zoom_gan_hair]
+leave --All--
+[style name="text_bubble_style"]
+label Soda Cap Time
+gran_potato: Give me an hair cut and try to get it out
+[start_anim anim_name="FadeToSodaCapMG" backwards="FadeToSodaCapMG" hide_text="null"]
+[start_mini_game minigame_name="SodaCapMG" difficulty="easy"]
+[start_anim anim_name="FadeToSodaCapMG" backwards="FadeToSodaCapMG" hide_text="null"]
