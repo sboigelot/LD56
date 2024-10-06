@@ -2,26 +2,26 @@
 "@path": "res://addons/dialogic/Resources/character.gd",
 "@subpath": NodePath(""),
 "_translation_id": "",
-"color": Color(0.372549, 0.443137, 0.196078, 1),
+"color": Color(0.129412, 0.141176, 0.156863, 1),
 "custom_info": {
 "sound_mood_default": "",
 "sound_moods": {},
 "style": ""
 },
-"default_portrait": "smile",
+"default_portrait": "normal",
 "description": "",
-"display_name": "Gran Patat",
+"display_name": "Crowtato",
 "mirror": false,
 "nicknames": [""],
 "offset": Vector2(0, 0),
 "portraits": {
-"smile": {
+"normal": {
 "export_overrides": {
-"image": "\"res://dialogic_data/characters/gran_potato/granpatato_smile.png\""
+"image": "\"res://dialogic_data/characters/crowtato/crowtato_normal.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
-"scale": 0.85,
+"scale": 1.0,
 "scene": ""
 }
 },

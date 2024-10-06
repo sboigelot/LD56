@@ -5,10 +5,16 @@ extends StoryScene
 @onready var wiggle_keys_mini_game: MiniGame = $WiggleKeysMiniGame
 @onready var soda_cap_reaveal_mini_game: Node2D = $SodaCapReavealMiniGame
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var crow_animation_player: AnimationPlayer = $CrowAnimationPlayer
 
 func on_story_scene_ready() -> void:
 	super.on_story_scene_ready()
+	
 	start_new_timeline("FarmScene1Timeline1")
+	#start_new_timeline("FarmScene1Timeline2")
+	
+	await get_tree().create_timer(3.0).timeout
+	crow_animation_player.play("CrowFlyAround")
 
 func _handle_timeline_signal(args:Dictionary):
 	super._handle_timeline_signal(args)
@@ -24,10 +30,15 @@ func _handle_timeline_signal(args:Dictionary):
 			if "character_name" in args and args["character_name"] != "":
 				return	
 			var anim_name = args["anim_name"]
+			
+			var player = animation_player
+			if "Crow" in anim_name:
+				player = crow_animation_player
+			
 			if not args["backwards"]:
-				animation_player.play(anim_name)
+				player.play(anim_name)
 			else:
-				animation_player.play_backwards(anim_name)
+				player.play_backwards(anim_name)
 			
 func _on_start_mini_game(args:Dictionary):
 	match args["minigame_name"]:

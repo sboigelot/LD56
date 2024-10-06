@@ -55,6 +55,7 @@ position = Vector2(461, 70)
 process_mode = 4
 visible = false
 position = Vector2(357, 150)
+scale = Vector2(0.3, 0.3)
 started = false
 
 [node name="MiniGameChain" type="Node2D" parent="."]

@@ -11,7 +11,7 @@ extends DialogicEvent
 ## The argument that will be provided with the signal.
 var character: DialogicCharacter = null
 var anim_name: String = ""
-var backwards: bool = false
+var backwards: bool
 
 ## Used to set the character resource from the unique name identifier and vice versa
 var character_identifier: String:
@@ -63,7 +63,7 @@ func get_shortcode_parameters() -> Dictionary:
 	return {
 		"character"	: {"property": "character_identifier", "default": ""},
 		"anim_name"	: {"property": "anim_name", "default": ""},
-		"backwards"	: {"property": "anim_name", "default": false},
+		"backwards"	: {"property": "backwards", "default": false},
 		"hide_text" :  {"property": "hide_textbox", "default": true},
 	}
 

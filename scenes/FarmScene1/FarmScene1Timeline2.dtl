@@ -1,0 +1,9 @@
+[style name="full_screen_style"]
+[start_anim anim_name="CrowFlyIn" hide_text="null"]
+[signal=zoom_reset]And so crowtato appered
+[style name="text_bubble_style"]
+crowtato: Oooooow, that's shiny!
+[style name="full_screen_style"]
+join crowtato left
+crowtato: May I have it?
+[change_scene scene_path="res://scenes/FlyScene1/FlyScene1.tscn"]

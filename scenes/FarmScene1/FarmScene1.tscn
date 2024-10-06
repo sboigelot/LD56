@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://du7n5epg5pyx"]
+[gd_scene load_steps=18 format=3 uid="uid://du7n5epg5pyx"]
 
 [ext_resource type="Script" path="res://scenes/FarmScene1/FarmScene1.gd" id="1_8swu5"]
 [ext_resource type="PackedScene" uid="uid://cb40qf1q6r5oe" path="res://components/StoryCamera2D.tscn" id="2_4r4cx"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dua0o42yskmwx" path="res://dialogic_data/characters/gran_potato/granpatato_smile.png" id="4_walip"]
 [ext_resource type="Texture2D" uid="uid://oct5gh5lumns" path="res://dialogic_data/characters/fry/fry_potato_pain.png" id="5_2drll"]
 [ext_resource type="PackedScene" uid="uid://wo65ur74hgk5" path="res://minigames/wiggle_keys/wiggle_keys_mini_game.tscn" id="5_7m3oc"]
+[ext_resource type="Texture2D" uid="uid://1o221ybhna1d" path="res://dialogic_data/characters/crowtato/crowtato_normal.png" id="7_a5f11"]
 [ext_resource type="PackedScene" uid="uid://ddofaqwx8104e" path="res://minigames/soda_cap_reveal/soda_cap_reaveal_mini_game.tscn" id="8_rm760"]
 
 [sub_resource type="Animation" id="Animation_lsr5u"]
@@ -194,9 +195,66 @@ _data = {
 "RESET": SubResource("Animation_qxam2")
 }
 
+[sub_resource type="Animation" id="Animation_x1r1m"]
+resource_name = "CrowFlyAround"
+length = 20.0
+loop_mode = 1
+step = 1.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CrowtatoWorldPortrait2D:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3, 4, 5, 16, 18),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-1100, -350), Vector2(-843, -274), Vector2(-530, -442), Vector2(-375, -346), Vector2(-207, -465), Vector2(-128, -639), Vector2(-128, -639), Vector2(-1071, -682)]
+}
+
+[sub_resource type="Animation" id="Animation_hresn"]
+resource_name = "CrowFlyIn"
+length = 3.0
+step = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CrowtatoWorldPortrait2D:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2, 2.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-1100, -350), Vector2(-950, -223), Vector2(-721, -222), Vector2(-565, -120), Vector2(-378, -143), Vector2(-224, -130), Vector2(-232, -86)]
+}
+
+[sub_resource type="Animation" id="Animation_hv3ba"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CrowtatoWorldPortrait2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1100, -350)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lbs8v"]
+_data = {
+"CrowFlyAround": SubResource("Animation_x1r1m"),
+"CrowFlyIn": SubResource("Animation_hresn"),
+"RESET": SubResource("Animation_hv3ba")
+}
+
 [node name="FarmScene1" type="Node"]
 script = ExtResource("1_8swu5")
-bubble_chararcters = Array[NodePath]([NodePath("FryWorldPortrait2D"), NodePath("GranpaWorldPortrait2D")])
+bubble_chararcters = Array[NodePath]([NodePath("FryWorldPortrait2D"), NodePath("GranpaWorldPortrait2D"), NodePath("CrowtatoWorldPortrait2D")])
 
 [node name="Background" type="Sprite2D" parent="."]
 texture = ExtResource("2_5xgqv")
@@ -215,6 +273,13 @@ dialogic_character_name = "gran_potato"
 dialogic_character_path = "res://dialogic_data/characters/gran_potato/gran_potato.dch"
 texture = ExtResource("4_walip")
 
+[node name="CrowtatoWorldPortrait2D" parent="." instance=ExtResource("2_al0o1")]
+position = Vector2(-1100, -350)
+scale = Vector2(0.2, 0.2)
+dialogic_character_name = "crowtato"
+dialogic_character_path = "res://dialogic_data/characters/crowtato/crowtato.dch"
+texture = ExtResource("7_a5f11")
+
 [node name="WiggleKeysMiniGame" parent="." instance=ExtResource("5_7m3oc")]
 position = Vector2(294, -69)
 accept_inputs_delay_on_start = 0.0
@@ -223,14 +288,19 @@ accept_inputs_delay_on_start = 0.0
 process_mode = 4
 visible = false
 modulate = Color(1, 1, 1, 0)
-position = Vector2(-320, -243)
+position = Vector2(-153, -52)
+scale = Vector2(0.3, 0.3)
 started = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_wcw3y")
 }
-autoplay = "FadeToSodaCapMG"
+
+[node name="CrowAnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_lbs8v")
+}
 
 [connection signal="flip" from="WiggleKeysMiniGame" to="." method="_on_wiggle_keys_mini_game_flip"]
 [connection signal="win" from="WiggleKeysMiniGame" to="." method="_on_wiggle_keys_mini_game_win"]

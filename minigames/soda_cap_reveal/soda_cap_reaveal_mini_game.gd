@@ -3,6 +3,12 @@ extends MiniGame
 
 @onready var layer_0: Sprite2D = $Node2D/Layer0
 
+var mouse_over_leaf:Node2D
+
+var leaf_base_self_modulate: Dictionary = {
+	
+}
+
 var leaf_hps:Dictionary = {
 	"Layer0":3,
 	"Layer1":10,
@@ -24,9 +30,14 @@ func is_leaf_ready_to_be_picked(leaf:Node) -> bool:
 func _on_area_2d_input_event(area_2d:Area2D, viewport: Node, event: InputEvent, shape_idx: int) -> void:
 
 	if event.is_released() and event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
-		viewport.set_input_as_handled()
-		var leaf:Sprite2D = area_2d.get_parent()
-		var leaf_color = leaf.self_modulate
+		#viewport.set_input_as_handled()
+		var leaf:Sprite2D = mouse_over_leaf if mouse_over_leaf != null else area_2d.get_parent()
+		var leaf_color:Color
+		if leaf in leaf_base_self_modulate:
+			leaf_color = leaf_base_self_modulate[leaf]
+		else:
+			leaf_color = leaf.self_modulate
+			leaf_base_self_modulate[leaf] = leaf_color
 		
 		if is_leaf_ready_to_be_picked(leaf):
 			var duration = 0.1
@@ -40,15 +51,23 @@ func _on_area_2d_input_event(area_2d:Area2D, viewport: Node, event: InputEvent, 
 			return
 			
 		leaf_hps[leaf.name] -= 1
-		if leaf_hps[leaf.name] <= 0:
-			var duration = 0.1
-			var tween = get_tree().create_tween()
-			tween.set_parallel(true)
-			tween.tween_property(leaf, "scale", Vector2.ZERO, duration).set_trans(Tween.TRANS_EXPO)
-			tween.tween_property(leaf, "self_modulate", Color.TRANSPARENT, duration).set_trans(Tween.TRANS_QUAD)
-			tween.set_parallel(false)
-			tween.tween_callback(leaf.queue_free)
-			if leaf == layer_0:
+		if leaf_hps[leaf.name] <= 0:			
+			if leaf != layer_0:
+				var duration = 0.1
+				var tween = get_tree().create_tween()
+				tween.set_parallel(true)
+				tween.tween_property(leaf, "scale", Vector2.ZERO, duration).set_trans(Tween.TRANS_EXPO)
+				tween.tween_property(leaf, "self_modulate", Color.TRANSPARENT, duration).set_trans(Tween.TRANS_QUAD)
+				tween.set_parallel(false)
+				tween.tween_callback(leaf.queue_free)
+			else:
+				var duration = 2.5
+				var tween = get_tree().create_tween()
+				tween.set_parallel(true)
+				tween.tween_property(leaf, "scale", Vector2.ONE * 2.0, duration).set_trans(Tween.TRANS_BOUNCE)
+				tween.tween_property(leaf, "self_modulate", Color.WHITE, duration).set_trans(Tween.TRANS_QUAD)
+				tween.set_parallel(false)
+				tween.tween_callback(leaf.queue_free)
 				await get_tree().create_timer(duration).timeout
 				trigger_win()
 		else:
@@ -81,12 +100,18 @@ func _on_area_2d_1_input_event(viewport: Node, event: InputEvent, shape_idx: int
 
 func _on_area_2d_mouse_entered(area_2d:Area2D) -> void:
 	var leaf:Sprite2D = area_2d.get_parent()
+	
+	if mouse_over_leaf != null:
+		_on_area_2d_mouse_exited(mouse_over_leaf.get_child(0))
+	
+	mouse_over_leaf = leaf
 	var duration = 0.1
 	var tween = get_tree().create_tween()
 	tween.tween_property(leaf, "scale", Vector2.ONE * 1.1, duration).set_trans(Tween.TRANS_EXPO)
 
 func _on_area_2d_mouse_exited(area_2d:Area2D) -> void:
 	var leaf:Sprite2D = area_2d.get_parent()
+	mouse_over_leaf = null
 	var duration = 0.1
 	var tween = get_tree().create_tween()
 	tween.tween_property(leaf, "scale", Vector2.ONE, duration).set_trans(Tween.TRANS_EXPO)

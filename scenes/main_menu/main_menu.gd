@@ -5,7 +5,7 @@ func _ready() -> void:
 
 func _on_new_game_button_pressed() -> void:
 	SceneTransitionManager.transition_scene_to_file(
-		"res://scenes/act1_farm/act1a_farm.tscn", 
+		"res://scenes/FarmScene1/FarmScene1.tscn", 
 		SceneTransitionManager.TRANSITIONS.CONICAL_TO_BLACK,
 		SceneTransitionManager.TRANSITIONS.FADE_TO_BLACK)
 

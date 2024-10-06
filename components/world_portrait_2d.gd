@@ -15,6 +15,7 @@ class_name WorldPortrait2D
 	"res://dialogic_data/characters/fry/fry_potato_pain.png",
 	"res://dialogic_data/characters/fry/fry_potato_uwu.png",
 	"res://dialogic_data/characters/gran_potato/granpatato_smile.png",
+	"res://dialogic_data/characters/crowtato/crowtato_normal.png",
 ]
 
 func _ready() -> void:
