@@ -1,5 +1,6 @@
 extends Area2D 
 
+@export var started:bool = false
 @export var custom_gravity:float = 200.0
 @export var speed:float = 350.0
 
@@ -10,6 +11,9 @@ func _ready():
 	screen_size = get_viewport_rect().size
 	
 func _physics_process(delta: float) -> void:
+	if not started:
+		return
+		
 	var velocity = Vector2.ZERO
 	if controllable:
 		if Input.is_action_pressed("move_up"):

@@ -1,0 +1,4 @@
+[style name="full_screen_style"]
+Use [b]space[/b] to make Crowtato Fly!\
+Don't hit trees or clouds!
+[start_anim anim_name="Advance" hide_text="null"]

@@ -359,7 +359,7 @@ texture = ExtResource("4_walip")
 
 [node name="CrowtatoWorldPortrait2D" parent="." instance=ExtResource("2_al0o1")]
 position = Vector2(-1100, -350)
-scale = Vector2(0.2, 0.2)
+scale = Vector2(0.25, 0.25)
 dialogic_character_name = "crowtato"
 dialogic_character_path = "res://dialogic_data/characters/crowtato/crowtato.dch"
 texture = ExtResource("7_a5f11")

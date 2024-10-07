@@ -45,35 +45,45 @@ func _handle_timeline_signal(args:Dictionary):
 	
 func _on_dialogic_text_signal(arg:Variant) -> void:
 	pass
-	
+
+func _update_flip_from_event(evant_flip:bool):
+	flip_h = evant_flip
+	sprite_2d.flip_h = evant_flip
+		
+func _update_image_from_event(portrait_image:String):
+		for valid_texture_path in valid_texture_paths:
+			if valid_texture_path in portrait_image:
+				sprite_2d.texture = load(valid_texture_path)
+				#sprite_2d.texture = load(portrait_image) --> Will not work for some strange reason
+				break
+		#if "res://dialogic_data/characters/fry/fry_potato_smile.png" in portrait_image:
+			#sprite_2d.texture = load("res://dialogic_data/characters/fry/fry_potato_smile.png")
+		#if "fry/fry_potato_pain" in portrait_image:
+			#sprite_2d.texture = load("res://dialogic_data/characters/fry/fry_potato_pain.png")
+		#if "fry/fry_potato_uwu" in portrait_image:
+			#sprite_2d.texture = load("res://dialogic_data/characters/fry/fry_potato_uwu.png")
+		
+		#var texture = ResourceLoader.load(image)
+		#print(image)
+		#print(image == "res://dialogic_data/characters/fry/fry_potato_smile.png")
+		#sprite_2d.texture = load(image)
+								# "res://dialogic_data/characters/fry/fry_potato_uwu.png"
+		#sprite_2d.texture = load("res://dialogic_data/characters/fry/fry_potato_uwu.png")
+
 func _on_dialogic_event_handled(resource:DialogicEvent) -> void:
+	
+	if resource is DialogicCharacterEvent:
+		var character_event:DialogicCharacterEvent = resource
+		if character_event.character_identifier == dialogic_character_name:
+			_update_flip_from_event("mirrored" in character_event and character_event["mirrored"])
+			var portrait_info = character_event.character.get_portrait_info(character_event.portrait)
+			_update_image_from_event(portrait_info["export_overrides"]["image"])
 	
 	if resource is DialogicTextEvent:
 		var text_event:DialogicTextEvent = resource
 		if text_event.character_identifier == dialogic_character_name:
-			var portrait = text_event.portrait
-			var portrait_info = text_event.character.get_portrait_info(portrait)
-			var portrait_image = portrait_info["export_overrides"]["image"]
-			sprite_2d.flip_h = flip_h
-#			TODO read flip_h from portrait_info?
-			for valid_texture_path in valid_texture_paths:
-				if valid_texture_path in portrait_image:
-					sprite_2d.texture = load(valid_texture_path)
-					#sprite_2d.texture = load(portrait_image) --> Will not work for some strange reason
-					break
-			#if "res://dialogic_data/characters/fry/fry_potato_smile.png" in portrait_image:
-				#sprite_2d.texture = load("res://dialogic_data/characters/fry/fry_potato_smile.png")
-			#if "fry/fry_potato_pain" in portrait_image:
-				#sprite_2d.texture = load("res://dialogic_data/characters/fry/fry_potato_pain.png")
-			#if "fry/fry_potato_uwu" in portrait_image:
-				#sprite_2d.texture = load("res://dialogic_data/characters/fry/fry_potato_uwu.png")
-			
-			#var texture = ResourceLoader.load(image)
-			#print(image)
-			#print(image == "res://dialogic_data/characters/fry/fry_potato_smile.png")
-			#sprite_2d.texture = load(image)
-									# "res://dialogic_data/characters/fry/fry_potato_uwu.png"
-			#sprite_2d.texture = load("res://dialogic_data/characters/fry/fry_potato_uwu.png")
+			var portrait_info = text_event.character.get_portrait_info(text_event.portrait)
+			_update_image_from_event(portrait_info["export_overrides"]["image"])
 
 func get_bubble_marker_2d()->Node:
 	return $BubbleMarker2D

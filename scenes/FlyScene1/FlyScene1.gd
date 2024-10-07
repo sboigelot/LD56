@@ -3,9 +3,17 @@ extends StoryScene
 @onready var obstacles_animation_player: AnimationPlayer = $ObstaclesAnimationPlayer
 
 func on_story_scene_ready() -> void:
-	obstacles_animation_player.play("Advance")
 	$FailSplash.visible = false
-
+	$CrowAndPotaotes.started = false
+	Dialogic.start_timeline("FlyScene1Timeline1")
+	
+func _on_start_anim(args:Dictionary):
+	super._on_start_anim(args)
+	if "character_name" in args and args["character_name"] != "":
+		return
+	var anim_name = args["anim_name"]
+	obstacles_animation_player.play(anim_name)
+	
 func _on_crow_and_potaotes_area_entered(area: Area2D) -> void:
 	trigger_loose()
 	

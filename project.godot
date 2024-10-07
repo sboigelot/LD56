@@ -38,6 +38,7 @@ directories/dch_directory={
 }
 directories/dtl_directory={
 "FarmScene1Timeline1": "res://scenes/FarmScene1/FarmScene1Timeline1.dtl",
+"FlyScene1Timeline1": "res://scenes/FlyScene1/FlyScene1Timeline1.dtl",
 "bubble_test_timeline": "res://dialogic_data/timelines/bubble_test_timeline.dtl",
 "mini_win_timeline": "res://dialogic_data/timelines/mini_win_timeline.dtl",
 "test_timeline": "res://dialogic_data/timelines/test_timeline.dtl",

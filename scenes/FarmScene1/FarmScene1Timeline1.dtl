@@ -76,10 +76,10 @@ gran_potato: I've only heard rumors about it. Crowtato told me that some potatoe
 gran_potato: Time fries when you're having fun. But that will be a story for another time. We'll ask Crowtato about it when we see him.
 leave --All--
 [zoom hide_text="false" wait_game_signal="false"]
+[start_anim anim_name="TruckRollsIn" hide_text="null"]
+Hours go by until later that day, a food truck shows up.
 The more Little sprout thinks about becoming a fry, the more it wants to become one.\
 It feels like it wants to become better than all the other potatoes.
-Hours go by until later that day, a food truck shows up.
-[start_anim anim_name="TruckRollsIn" hide_text="null"]
 join gran_potato leftmost [animation="Slide In Left"]
 gran_potato: Ah, the food truck Crowtato pota-told me about.\
 I guess that means that Crowtato will show up soon.
@@ -92,13 +92,14 @@ leave --All-- [animation="Fade Out" wait="true"]
 [start_anim anim_name="CrowFlyIn" hide_text="null"]
 And there was Crowtato, Gran Patat's friend. Just as predicted.
 Gran Patat and Crowtato have only known each other for a few days, as potatoes normally do not grow old. But their friendship is very special.
-[zoom character="gran_potato" zoom_level="2.0" hide_text="false" wait_game_signal="false"]
+[zoom hide_text="false" wait_game_signal="false"]
 join fry_potato (smile) rightmost [animation="Slide In Right" mirrored="true"]
 join gran_potato (smile) right [animation="Slide In Right" mirrored="true"]
 join crowtato leftmost [animation="Slide In Down" wait="true"]
 crowtato (mouse_open): My dear, Gran Patat, how are you faring?
 gran_potato: I'm feeling spud-tacular, let me introduce you to Little sp...
-update crowtato (normal)
+update fry_potato (smile) right [mirrored="true"]
+update gran_potato (smile) rightmost [mirrored="true"]
 fry_potato: You can call me Fry!
 gran_potato: Oh, sure. Are you here to pick the leftovers of the food truck, Crowtato?
 crowtato (mouse_open): Indubitably. Anything less would be quite unsatisfactory.
@@ -108,18 +109,24 @@ fry_potato: Gran Patat told me about it, those are french fries, right?
 crowtato (mouse_open): Oh my, no, I'm conversing about Belgian fries. I've heard that Belgian fries come to be golden once they get dipped.
 fry_potato: A golden fry?
 fry_potato: [wave][b]GRAN PATAT, I WANT TO BECOME A BELGIAN FRY.[b][wave]
+update fry_potato (smile) rightmost [mirrored="true"]
+update gran_potato (smile) right [mirrored="true"]
 gran_potato: I figured as mulch. You are my offspring of course. But you will have to give up hope,\
 I've been trying to get there for weeks.
 gran_potato: I just do not get picked up by the giant creatures. You need to hit the potato jackpot to get over there.
+update fry_potato (smile) right [mirrored="true"]
+update gran_potato (smile) rightmost [mirrored="true"]
 fry_potato: Can't you fly us to the food truck, Crowtato?
 crowtato (normal): Preposterous! Are you truly under the impression that I would provide my services without any form of recompense?
 fry_potato (uwu): I have nothing to offer.[pause=1.0]Pleeeeaaasssse?
 crowtato (mouse_open): Then it appears fortune has not favored you.
+update fry_potato (smile) rightmost [mirrored="true"]
+update gran_potato (smile) right [mirrored="true"]
 gran_potato: Can you spare us a moment, Crowtato?
 crowtato (normal): Undoubtedly.
 leave crowtato [animation="Slide Out Up" wait="true"]
 update fry_potato (smile) rightmost
-update gran_potato leftmost
+update gran_potato leftmost [mirrored="false"]
 gran_potato: My dear Fry, I have always kept your inheritance with me.\
 My grandpotato gave it to me and it has been in this family for generations and now it is yours.
 gran_potato: It is my most prized possession that would eventually fall into your sprouts. Shall we offer this to Crowtato?\
@@ -136,6 +143,7 @@ Give me an hair cut and try to get it out!
 [start_anim anim_name="FadeToSodaCapMG" hide_text="null"]
 [start_mini_game minigame_name="SodaCapMG" difficulty="easy"]
 [start_anim anim_name="FadeToSodaCapMG" backwards="true" hide_text="null"]
+[zoom hide_text="false" wait_game_signal="false"]
 [style name="full_screen_style"]
 Crowtato snatches the shiny object as payment.
 join crowtato center
