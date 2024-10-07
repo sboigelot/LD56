@@ -50,6 +50,8 @@ func _process(delta: float) -> void:
 	spawn_next_note_if_time()
 	
 func spawn_next_note_if_time():
+	if not started or not accept_inputs:
+		return
 	if spawn_index >= ddr_song.notes.size():
 		if live_notes.size() == 0:
 			trigger_win()
@@ -110,10 +112,14 @@ func _on_key_release(keycode:Key):
 		#loose_a_life()
 
 func miss_a_note(note_view:DdrNoteView):
+	if not started or not accept_inputs:
+		return
 	if not note_view.hit_on_time:
 		loose_a_life()
 
 func loose_a_life():
+	if not started or not accept_inputs:
+		return
 	for i in lifes.get_child_count():
 		var last_visible_child_i = lifes.get_child_count() - i -1
 		var last_visible_child = lifes.get_child(last_visible_child_i)

@@ -50,16 +50,8 @@ func _on_start_mini_game(args:Dictionary):
 	match args["minigame_name"]:
 		"DdrMiniGame":
 			ddr_mini_game.start()
-		"exemple":
-			match args["difficulty"]:
-				"easy":
-					pass
-				"normal":
-					pass
-				"hard":
-					pass
-			#mini_game.start()
-			pass
+		"CatLaserPuzle":
+			$CatLaserPuzle.visible = true
 
 
 func _on_ddr_mini_game_note_hit_in_time(note: DdrNote) -> void:
@@ -72,7 +64,6 @@ func _on_ddr_mini_game_note_hit_in_time(note: DdrNote) -> void:
 	$FryWorldPortrait2D.global_position = ddr_position_markers[note.direction].global_position
 	var tween = create_tween()
 	tween.tween_property($FryWorldPortrait2D,"global_position", ddr_position_marker_center.global_position, 0.1)
-
 
 func _on_ddr_mini_game_win() -> void:
 	Game.signal_to_dialogic.emit()

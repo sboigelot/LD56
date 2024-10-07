@@ -10,11 +10,11 @@
 [ext_resource type="Script" path="res://components/laser_chain/laser_source.gd" id="7_ddphw"]
 [ext_resource type="Texture2D" uid="uid://1o221ybhna1d" path="res://dialogic_data/characters/crowtato/crowtato_normal.png" id="8_1854e"]
 [ext_resource type="Texture2D" uid="uid://dhxw2wmui03el" path="res://dialogic_data/characters/purrtato/purrtato_sit.png" id="8_l0rek"]
-[ext_resource type="Texture2D" uid="uid://chr5txs774shh" path="res://icon.svg" id="8_wjlwh"]
-[ext_resource type="Texture2D" uid="uid://dna1h04ckrcly" path="res://dialogic_data/characters/fry/fry_potato_smile.png" id="9_e1oln"]
 [ext_resource type="PackedScene" uid="uid://nqky2vy0doul" path="res://minigames/ddr/ddr_mini_game.tscn" id="9_jfose"]
 [ext_resource type="Script" path="res://components/laser_chain/laser_destinaton.gd" id="9_s13kt"]
 [ext_resource type="Texture2D" uid="uid://cflnr3nqrpxgo" path="res://dialogic_data/characters/pip/pip_normal.png" id="9_yvkxs"]
+[ext_resource type="Texture2D" uid="uid://iri62ylmvqxf" path="res://scenes/TruckScene1/knife.png" id="13_qkbcw"]
+[ext_resource type="Texture2D" uid="uid://dasc6vtpcj1h3" path="res://input_icons/sony/circle.png" id="14_g7k0k"]
 
 [sub_resource type="Animation" id="Animation_wtdqw"]
 resource_name = "CrowtatoLeave"
@@ -235,89 +235,6 @@ libraries = {
 "": SubResource("AnimationLibrary_th41s")
 }
 
-[node name="CatLaserPuzle" type="Node2D" parent="."]
-visible = false
-position = Vector2(1211, -197)
-
-[node name="LaserOrigin" type="Area2D" parent="CatLaserPuzle" node_paths=PackedStringArray("targets")]
-position = Vector2(-2062, 32)
-script = ExtResource("7_ddphw")
-receive_light = true
-targets = [NodePath("../LazerTargetA0"), NodePath("../LaserA"), NodePath("../LaserB")]
-target_index = 1
-
-[node name="Sprite2D" type="Sprite2D" parent="CatLaserPuzle/LaserOrigin"]
-texture = ExtResource("8_wjlwh")
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CatLaserPuzle/LaserOrigin"]
-polygon = PackedVector2Array(59.1, -64, -59, -64, -63.8, -59, -64, 61, -60.3, 64, 59.6, 64, 63.9, 59, 64, -61.1)
-
-[node name="Line2D" type="Line2D" parent="CatLaserPuzle/LaserOrigin"]
-points = PackedVector2Array(0, 0, 100, 100)
-
-[node name="LaserA" type="Area2D" parent="CatLaserPuzle" node_paths=PackedStringArray("targets")]
-position = Vector2(-1941, 453)
-script = ExtResource("7_ddphw")
-targets = [NodePath("../LaserAA"), NodePath("../LaserB")]
-
-[node name="Sprite2D" type="Sprite2D" parent="CatLaserPuzle/LaserA"]
-texture = ExtResource("8_wjlwh")
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CatLaserPuzle/LaserA"]
-polygon = PackedVector2Array(59.1, -64, -59, -64, -63.8, -59, -64, 61, -60.3, 64, 59.6, 64, 63.9, 59, 64, -61.1)
-
-[node name="Line2D" type="Line2D" parent="CatLaserPuzle/LaserA"]
-points = PackedVector2Array(0, 0, 100, 100)
-
-[node name="LaserAA" type="Area2D" parent="CatLaserPuzle" node_paths=PackedStringArray("targets")]
-position = Vector2(-1672, 27)
-script = ExtResource("7_ddphw")
-targets = [NodePath("../LazerTargetAA1"), NodePath("../LazerTargetAA3")]
-
-[node name="Sprite2D" type="Sprite2D" parent="CatLaserPuzle/LaserAA"]
-texture = ExtResource("8_wjlwh")
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CatLaserPuzle/LaserAA"]
-polygon = PackedVector2Array(59.1, -64, -59, -64, -63.8, -59, -64, 61, -60.3, 64, 59.6, 64, 63.9, 59, 64, -61.1)
-
-[node name="Line2D" type="Line2D" parent="CatLaserPuzle/LaserAA"]
-points = PackedVector2Array(0, 0, 100, 100)
-
-[node name="LaserB" type="Area2D" parent="CatLaserPuzle" node_paths=PackedStringArray("targets")]
-position = Vector2(-1489, 378)
-script = ExtResource("7_ddphw")
-targets = [NodePath("../LazerTargetB"), NodePath("../LazerTargetB2"), NodePath("../LaserDestinationB3")]
-
-[node name="Sprite2D" type="Sprite2D" parent="CatLaserPuzle/LaserB"]
-texture = ExtResource("8_wjlwh")
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CatLaserPuzle/LaserB"]
-polygon = PackedVector2Array(59.1, -64, -59, -64, -63.8, -59, -64, 61, -60.3, 64, 59.6, 64, 63.9, 59, 64, -61.1)
-
-[node name="Line2D" type="Line2D" parent="CatLaserPuzle/LaserB"]
-points = PackedVector2Array(0, 0, 100, 100)
-
-[node name="LazerTargetA0" type="Marker2D" parent="CatLaserPuzle"]
-position = Vector2(-1991, -91)
-
-[node name="LazerTargetAA1" type="Marker2D" parent="CatLaserPuzle"]
-position = Vector2(-729, 340)
-
-[node name="LazerTargetAA3" type="Marker2D" parent="CatLaserPuzle"]
-position = Vector2(-1367, -158)
-
-[node name="LazerTargetB" type="Marker2D" parent="CatLaserPuzle"]
-position = Vector2(-1108, -120)
-
-[node name="LazerTargetB2" type="Marker2D" parent="CatLaserPuzle"]
-position = Vector2(-953, 453)
-
-[node name="LaserDestinationB3" type="Sprite2D" parent="CatLaserPuzle"]
-position = Vector2(-641, 605)
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("9_e1oln")
-script = ExtResource("9_s13kt")
-
 [node name="DdrMiniGame" parent="." instance=ExtResource("9_jfose")]
 position = Vector2(24, -30)
 scale = Vector2(0.3, 0.3)
@@ -341,6 +258,94 @@ scale = Vector2(0.25, 0.25)
 [node name="DDR_Right" type="Marker2D" parent="."]
 position = Vector2(-5, 90)
 scale = Vector2(0.25, 0.25)
+
+[node name="CatLaserPuzle" type="Node2D" parent="."]
+visible = false
+position = Vector2(1211, -197)
+
+[node name="LaserOrigin" type="Area2D" parent="CatLaserPuzle" node_paths=PackedStringArray("targets")]
+position = Vector2(-1266, -110)
+scale = Vector2(0.3, 0.3)
+script = ExtResource("7_ddphw")
+receive_light = true
+targets = [NodePath("../LazerTargetA0"), NodePath("../LaserA"), NodePath("../LaserB")]
+target_index = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="CatLaserPuzle/LaserOrigin"]
+texture = ExtResource("13_qkbcw")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CatLaserPuzle/LaserOrigin"]
+polygon = PackedVector2Array(-59, -244.4, -59, -241.8, -60.8, -240, -62.7, -240, -65.7, -222, -66.9, -222, -69.9, -173, -71, -173, -71, 15.9, -76.6, 20, -78.7, 20, -81.8, 42, -83, 42, -83, 102.1, -80, 127.2, -80, 137.2, -72, 180.4, -72, 185.3, -62, 214.4, -62, 217.6, -52, 233.6, -52, 235.9, -41, 244.9, -41, 246.7, -35, 247.7, -35, 249.2, 4.2, 246, 10.3, 246, 27.4, 240, 30.6, 240, 44.6, 230, 47, 230, 62, 211, 63.4, 211, 73.4, 181, 74.8, 181, 79.8, 137, 81, 137, 82, 93, 83, 93, 83, 22.2, 71.8, 11, 69.1, 11, 71, -65, 71, -72.3, 64, -98, 64, -102.4, 50, -138.5, 50, -141.5, 31, -176.7, 31, -178.7, 1, -215.9, 1, -217, -15, -229, -15, -230.3, -30, -237.3, -30, -238.6)
+
+[node name="Line2D" type="Line2D" parent="CatLaserPuzle/LaserOrigin"]
+points = PackedVector2Array(0, 0, 100, 100)
+
+[node name="LaserA" type="Area2D" parent="CatLaserPuzle" node_paths=PackedStringArray("targets")]
+position = Vector2(-2333, 209)
+scale = Vector2(0.3, 0.3)
+script = ExtResource("7_ddphw")
+targets = [NodePath("../LaserAA"), NodePath("../LaserB")]
+
+[node name="Sprite2D" type="Sprite2D" parent="CatLaserPuzle/LaserA"]
+texture = ExtResource("13_qkbcw")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CatLaserPuzle/LaserA"]
+polygon = PackedVector2Array(-59, -244.4, -59, -241.8, -60.8, -240, -62.7, -240, -65.7, -222, -66.9, -222, -69.9, -173, -71, -173, -71, 15.9, -76.6, 20, -78.7, 20, -81.8, 42, -83, 42, -83, 102.1, -80, 127.2, -80, 137.2, -72, 180.4, -72, 185.3, -62, 214.4, -62, 217.6, -52, 233.6, -52, 235.9, -41, 244.9, -41, 246.7, -35, 247.7, -35, 249.2, 4.2, 246, 10.3, 246, 27.4, 240, 30.6, 240, 44.6, 230, 47, 230, 62, 211, 63.4, 211, 73.4, 181, 74.8, 181, 79.8, 137, 81, 137, 82, 93, 83, 93, 83, 22.2, 71.8, 11, 69.1, 11, 71, -65, 71, -72.3, 64, -98, 64, -102.4, 50, -138.5, 50, -141.5, 31, -176.7, 31, -178.7, 1, -215.9, 1, -217, -15, -229, -15, -230.3, -30, -237.3, -30, -238.6)
+
+[node name="Line2D" type="Line2D" parent="CatLaserPuzle/LaserA"]
+points = PackedVector2Array(0, 0, 100, 100)
+
+[node name="LaserAA" type="Area2D" parent="CatLaserPuzle" node_paths=PackedStringArray("targets")]
+position = Vector2(-1438, 365)
+scale = Vector2(0.3, 0.3)
+script = ExtResource("7_ddphw")
+targets = [NodePath("../LazerTargetAA1"), NodePath("../LazerTargetAA3")]
+
+[node name="Sprite2D" type="Sprite2D" parent="CatLaserPuzle/LaserAA"]
+texture = ExtResource("13_qkbcw")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CatLaserPuzle/LaserAA"]
+polygon = PackedVector2Array(-59, -244.4, -59, -241.8, -60.8, -240, -62.7, -240, -65.7, -222, -66.9, -222, -69.9, -173, -71, -173, -71, 15.9, -76.6, 20, -78.7, 20, -81.8, 42, -83, 42, -83, 102.1, -80, 127.2, -80, 137.2, -72, 180.4, -72, 185.3, -62, 214.4, -62, 217.6, -52, 233.6, -52, 235.9, -41, 244.9, -41, 246.7, -35, 247.7, -35, 249.2, 4.2, 246, 10.3, 246, 27.4, 240, 30.6, 240, 44.6, 230, 47, 230, 62, 211, 63.4, 211, 73.4, 181, 74.8, 181, 79.8, 137, 81, 137, 82, 93, 83, 93, 83, 22.2, 71.8, 11, 69.1, 11, 71, -65, 71, -72.3, 64, -98, 64, -102.4, 50, -138.5, 50, -141.5, 31, -176.7, 31, -178.7, 1, -215.9, 1, -217, -15, -229, -15, -230.3, -30, -237.3, -30, -238.6)
+
+[node name="Line2D" type="Line2D" parent="CatLaserPuzle/LaserAA"]
+points = PackedVector2Array(0, 0, 100, 100)
+
+[node name="LaserB" type="Area2D" parent="CatLaserPuzle" node_paths=PackedStringArray("targets")]
+position = Vector2(-425, -96)
+scale = Vector2(0.3, 0.3)
+script = ExtResource("7_ddphw")
+targets = [NodePath("../LazerTargetB"), NodePath("../LazerTargetB2"), NodePath("../LaserDestinationB3")]
+
+[node name="Sprite2D" type="Sprite2D" parent="CatLaserPuzle/LaserB"]
+texture = ExtResource("13_qkbcw")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CatLaserPuzle/LaserB"]
+polygon = PackedVector2Array(-59, -244.4, -59, -241.8, -60.8, -240, -62.7, -240, -65.7, -222, -66.9, -222, -69.9, -173, -71, -173, -71, 15.9, -76.6, 20, -78.7, 20, -81.8, 42, -83, 42, -83, 102.1, -80, 127.2, -80, 137.2, -72, 180.4, -72, 185.3, -62, 214.4, -62, 217.6, -52, 233.6, -52, 235.9, -41, 244.9, -41, 246.7, -35, 247.7, -35, 249.2, 4.2, 246, 10.3, 246, 27.4, 240, 30.6, 240, 44.6, 230, 47, 230, 62, 211, 63.4, 211, 73.4, 181, 74.8, 181, 79.8, 137, 81, 137, 82, 93, 83, 93, 83, 22.2, 71.8, 11, 69.1, 11, 71, -65, 71, -72.3, 64, -98, 64, -102.4, 50, -138.5, 50, -141.5, 31, -176.7, 31, -178.7, 1, -215.9, 1, -217, -15, -229, -15, -230.3, -30, -237.3, -30, -238.6)
+
+[node name="Line2D" type="Line2D" parent="CatLaserPuzle/LaserB"]
+points = PackedVector2Array(0, 0, 100, 100)
+
+[node name="LazerTargetA0" type="Marker2D" parent="CatLaserPuzle"]
+position = Vector2(-1637, -475)
+
+[node name="LazerTargetAA1" type="Marker2D" parent="CatLaserPuzle"]
+position = Vector2(-2637, -62)
+
+[node name="LazerTargetAA3" type="Marker2D" parent="CatLaserPuzle"]
+position = Vector2(-1927, 848)
+
+[node name="LazerTargetB" type="Marker2D" parent="CatLaserPuzle"]
+position = Vector2(-68, 300)
+
+[node name="LazerTargetB2" type="Marker2D" parent="CatLaserPuzle"]
+position = Vector2(-1035, 517)
+
+[node name="LaserDestinationB3" type="Sprite2D" parent="CatLaserPuzle"]
+self_modulate = Color(100, 1, 1, 1)
+position = Vector2(-1657, 449)
+scale = Vector2(3, 3)
+texture = ExtResource("14_g7k0k")
+script = ExtResource("9_s13kt")
 
 [connection signal="note_hit_in_time" from="DdrMiniGame" to="." method="_on_ddr_mini_game_note_hit_in_time"]
 [connection signal="win" from="DdrMiniGame" to="." method="_on_ddr_mini_game_win"]

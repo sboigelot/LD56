@@ -67,6 +67,7 @@ func trigger_win():
 		hide()
 	self_modulate = on_win_auto_self_modulate
 	win.emit()
+	stop()
 
 func trigger_loose():
 	loose.emit()

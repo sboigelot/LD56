@@ -32,6 +32,7 @@ func _rotate_toward_target():
 	
 	var angle_to_target = global_position.angle_to_point(target.global_position)
 	$Sprite2D.rotation = angle_to_target
+	$CollisionPolygon2D.rotation = $Sprite2D.rotation
 	
 func _ready() -> void:
 	input_event.connect(_on_laser_source_input_event)
