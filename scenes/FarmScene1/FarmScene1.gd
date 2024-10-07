@@ -81,7 +81,7 @@ func _on_time_hit_mini_game_win() -> void:
 	Game.signal_to_dialogic.emit()
 
 func _on_wiggle_keys_mini_game_flip(left: bool) -> void:
-	fry_world_portrait_2d.flip_h = left
+	fry_world_portrait_2d.flip_h = not left
 
 func _on_soda_cap_reaveal_mini_game_win() -> void:
 	Game.signal_to_dialogic.emit()

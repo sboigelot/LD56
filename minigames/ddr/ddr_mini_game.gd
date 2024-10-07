@@ -1,5 +1,7 @@
 extends MiniGame
 
+signal note_hit_in_time(note:DdrNote)
+
 @export var ddr_song:DdrSong
 @export var note_preview_time:float = 3.0
 @export var note_preview_distance:float = 440.0
@@ -95,6 +97,7 @@ func _on_key_release(keycode:Key):
 				blink_color = color_success
 				good_timing = true
 				note_view.hit_on_time = true
+				note_hit_in_time.emit(note)
 			_blink(note_view, blink_color)
 			_blink(note_view.get_parent().get_child(0), blink_color)
 			any_note_found = true

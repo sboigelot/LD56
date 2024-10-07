@@ -1,9 +1,10 @@
-[gd_scene load_steps=18 format=3 uid="uid://du7n5epg5pyx"]
+[gd_scene load_steps=20 format=3 uid="uid://du7n5epg5pyx"]
 
 [ext_resource type="Script" path="res://scenes/FarmScene1/FarmScene1.gd" id="1_8swu5"]
 [ext_resource type="PackedScene" uid="uid://cb40qf1q6r5oe" path="res://components/StoryCamera2D.tscn" id="2_4r4cx"]
 [ext_resource type="Texture2D" uid="uid://dt3ub0jr320r4" path="res://scenes/FarmScene1/field_scene.png" id="2_5xgqv"]
 [ext_resource type="PackedScene" uid="uid://bi7328nybm04r" path="res://components/world_portrait_2d.tscn" id="2_al0o1"]
+[ext_resource type="Texture2D" uid="uid://ds7he0p816kjg" path="res://scenes/FarmScene1/food_truck.png" id="3_7733y"]
 [ext_resource type="Texture2D" uid="uid://dua0o42yskmwx" path="res://dialogic_data/characters/gran_potato/granpatato_smile.png" id="4_walip"]
 [ext_resource type="Texture2D" uid="uid://oct5gh5lumns" path="res://dialogic_data/characters/fry/fry_potato_pain.png" id="5_2drll"]
 [ext_resource type="PackedScene" uid="uid://wo65ur74hgk5" path="res://minigames/wiggle_keys/wiggle_keys_mini_game.tscn" id="5_7m3oc"]
@@ -59,6 +60,18 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(0.25, 0.25, 0.25, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CrowtatoWorldPortrait2D:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_nfy0f"]
@@ -187,18 +200,83 @@ tracks/6/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 1)]
 }
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("CrowtatoWorldPortrait2D:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("FoodTruck:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1204, 802)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("FoodTruck:rotation")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-2.17643]
+}
+
+[sub_resource type="Animation" id="Animation_amtmr"]
+resource_name = "TruckRollsIn"
+length = 3.0
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FoodTruck:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1204, 802), Vector2(943, 175), Vector2(826, -77)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FoodTruck:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [-2.17643, -1.76104, -1.86576]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wcw3y"]
 _data = {
 "FadeToSodaCapMG": SubResource("Animation_lsr5u"),
 "FryFallOutOfBoxAnim": SubResource("Animation_nfy0f"),
-"RESET": SubResource("Animation_qxam2")
+"RESET": SubResource("Animation_qxam2"),
+"TruckRollsIn": SubResource("Animation_amtmr")
 }
 
 [sub_resource type="Animation" id="Animation_x1r1m"]
 resource_name = "CrowFlyAround"
 length = 20.0
-loop_mode = 1
 step = 1.0
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -259,6 +337,12 @@ bubble_chararcters = Array[NodePath]([NodePath("FryWorldPortrait2D"), NodePath("
 [node name="Background" type="Sprite2D" parent="."]
 texture = ExtResource("2_5xgqv")
 metadata/_edit_lock_ = true
+
+[node name="FoodTruck" type="Sprite2D" parent="."]
+position = Vector2(1204, 802)
+rotation = -2.17643
+texture = ExtResource("3_7733y")
+flip_v = true
 
 [node name="StoryCamera2D" parent="." instance=ExtResource("2_4r4cx")]
 
