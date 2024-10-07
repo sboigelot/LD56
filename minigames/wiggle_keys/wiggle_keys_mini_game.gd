@@ -20,6 +20,7 @@ func start():
 	super.start()
 
 func _process(delta: float) -> void:
+	super._process(delta)
 	potato_texture_rect.visible = show_potato_texture
 	potato_texture_rect.flip_h = not next_input_left
 	left_texture_rect.modulate = next_input_modulate if next_input_left else not_next_input_modulate

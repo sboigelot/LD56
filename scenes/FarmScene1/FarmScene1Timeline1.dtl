@@ -1,39 +1,65 @@
 jump Debug This
+label Debug This
 [style name="full_screen_style"]
-Potatoes. Potatoes. Potatoes\
-Wheather you eat them mashed, jacked, baked or as chips. [pause=0.5]Let’s admit it\: we all love potatoes. 
+Potatoes. Potatoes. Potatoes.[pause=0.5]\
+Whether you eat them mashed, jacked, baked or as chips.
+Let’s admit it\: we all can't miss our lovely potatoes.\
+Every potato is destined to be eaten and has it's own tale.
 But this is no ordinary tale.[signal=zoom_fry][pause=3.0]\
-This is a mighty tale of Fry, who isn’t Fry yet.
+This is the story about how Belgian fries are made.
 [style name="text_bubble_style"]
 gran_potato: … Wake up![pause=2.0] Little sprout; wake uuuup!
-gran_potato: Where is Crowtato when you need him?[pause=2.0]
+gran_potato: It is time you get out of there.[pause=2.0]
 [start_anim character="fry_potato" anim_name="Wiggle" hide_text="null"]
 fry_potato (smile): mmmmm....[pause=0.5] 5 more minutes!
-gran_potato: Finally! Wiggle for your life.  Wiggle, little sprout!
+gran_potato: Finally, little sprout! I'm your Gran Patat.\
+You need to get out of that potato bucket. You need to wiggle!
 [style name="full_screen_style"]
 Use <- and -> to get yourself out of sleep!
 [start_mini_game minigame_name="wiggle" difficulty="easy"]
 [start_anim character="fry_potato" anim_name="Wiggle" hide_text="null"]
 [style name="text_bubble_style"]
 gran_potato: You can do it! Wake up and wiggle your way out of this box!
-[start_mini_game minigame_name="wiggle" difficulty="normal"]
-[start_anim character="fry_potato" anim_name="Wiggle" hide_text="null"]
-[wait time="1.5"]
 [start_mini_game minigame_name="wiggle" difficulty="hard"]
 [start_anim anim_name="FryFallOutOfBoxAnim" hide_text="null"]
 [wait time="3.0"]
-fry_potato (pain): Ok![signal=zoom_fry] Ok, I am awake Gran Potato...
-label Debug This
+[zoom character="fry_potato" zoom_level="2.0" hide_text="false" wait_game_signal="false"]
+fry_potato (pain): Ok! Ok, I am awake Gran Patat...
 [style name="full_screen_style"]
-join gran_potato leftmost [animation="Slide In Left" wait="true"]
-gran_potato: Let me tell you of all my regrets and inspire you to become a golden belgian fry!
+Little sprout looks around him and looks confused.
 join fry_potato (smile) rightmost [animation="Slide In Right" mirrored="true"]
-fry_potato: Ho this is soo cool! I want to become the best I can ever be now!
-gran_potato: But we need the help of Crow! For that you will need to pay him\
-I have a shiny stufff with me in my hair! [signal=zoom_gan_hair]
+fry_potato: Where am I?
+join gran_potato leftmost [animation="Slide In Left" wait="true"]
+gran_potato: Welcome to the un-peel-ievable potato world, my little potato sprout.
+fry_potato: Pota..toe..?
+gran_potato: Potay-toe or potah-toe, as you wish. We, potatoes, end up as food anyway for the big giant creatures. Some boil 'em, mash 'em or stick 'em in a stew.
+fry_potato (pain): Food..?
+Let's skip a part of this conversation. Because this will take long. you can't blame Little sprout, he is new to this world.
+fry_potato (smile): So we are born to get eaten? And some of us end up jacked, boiled, mashed or eaten raw?
+gran_potato (smile): Yes, most of us don't choose and end up in the bucket, but I want you to choose your own destiny, Little sprout. You can even become a fry if you want to. I'm rooting for you.
+fry_potato (uwu): A fry?
+gran_potato (smile): I've only heard rumors about it. Crowtato told me that some potatoes get chosen by the big giant creatures to be fried and become a better version of them.
+gran_potato (smile): Time fries when you're having fun. But that will be a story for another time. We'll ask Crowtato about it when we see him.
 leave --All--
+[zoom hide_text="false" wait_game_signal="false"]
+The hours go by. The more Little sprout thinks about, the more it wants to become a fry.\
+It feels like it wants to become better than all the other potatoes.
+Hours go by until later that day, a food trucks show up.
+[start_anim anim_name="TruckRollsIn" hide_text="null"]
+join gran_potato leftmost [animation="Slide In Left"]
+gran_potato: Ah, the food truck Crowtato pota-told me about.\
+I guess that means that Crowtato will show up soon.
+join fry_potato (smile) rightmost [animation="Slide In Right" mirrored="true"]
+fry_potato (uwu): What is that?
+gran_potato: That, my little sprout, is a food truck. The big creature come to pick up the potatoes they want to fry.
+gran_potato: I've tried getting their attention a few times, but I guess I'm just too potat-old to get chosen, Little sprout.
+fry_potato (smile): Gran Patat, please call me Fry. I've decided I want to become a..
+[start_anim anim_name="CrowFlyIn" hide_text="null"]
+And there was Crowtato, Gran Patat's friend. Just as predicted.
+Gran Patat and Crowtato have known each other for a few days, as potatoes normally do not grow old. But their friendship is pretty strong
 [style name="text_bubble_style"]
-gran_potato: [signal=zoom_gan_hair]Give me an hair cut and try to get it out
+[zoom character="gran_potato" zoom_level="5.0" hide_text="false" wait_game_signal="false"]
+gran_potato: Give me an hair cut and try to get it out
 [start_anim anim_name="FadeToSodaCapMG" hide_text="null"]
 [start_mini_game minigame_name="SodaCapMG" difficulty="easy"]
 [start_anim anim_name="FadeToSodaCapMG" backwards="true" hide_text="null"]

@@ -7,4 +7,5 @@ func _get_events() -> Array:
 		this_folder.path_join('event_start_anim.gd'),
 		this_folder.path_join('event_wait_signal.gd'),
 		this_folder.path_join('event_start_mini_game.gd'),
+		this_folder.path_join('event_zoom.gd'),
 	]

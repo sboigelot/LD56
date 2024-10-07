@@ -12,7 +12,12 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("fullscreen"):
 		swap_fullscreen_mode()
 		
-	if Input.is_action_just_pressed("quit"):			
+	if Input.is_action_just_pressed("quit"):
+		var current_scene = get_tree().current_scene.name
+		if "MainMenu" in current_scene:
+			get_tree().quit()
+			return
+		Dialogic.end_timeline()
 		SceneTransitionManager.transition_scene_to_file(
 			"res://scenes/main_menu/main_menu.tscn", 
 			SceneTransitionManager.TRANSITIONS.FADE_TO_BLACK,

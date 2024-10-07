@@ -11,36 +11,40 @@ func on_story_scene_ready() -> void:
 	super.on_story_scene_ready()
 	
 	start_new_timeline("FarmScene1Timeline1")
-	#start_new_timeline("FarmScene1Timeline2")
 	
 	await get_tree().create_timer(3.0).timeout
 	crow_animation_player.play("CrowFlyAround")
 
-func _handle_timeline_signal(args:Dictionary):
-	super._handle_timeline_signal(args)
-	if not "action" in args:
+func _on_zoom_request(args:Dictionary):
+	super._on_zoom_request(args)
+	
+	match args["character_name"]:
+		"fry_potato", "fry":
+			$StoryCamera2D.tween_to_rect($FryWorldPortrait2D.position, args["zoom_level"], 1.5)
+		"gran_patat", "gran_potato":
+			$StoryCamera2D.tween_to_rect($GranpaWorldPortrait2D.position, args["zoom_level"], 1.5)
+		"":
+			$StoryCamera2D.tween_to_origin(args["zoom_level"], 1.5)
+		_:
+			printerr("_on_zoom_request unknown character_name '%s'" % args["character_name"])
+	
+func _on_start_anim(args:Dictionary):
+	super._on_start_anim(args)
+	if "character_name" in args and args["character_name"] != "":
 		return
-		
-	var action = args["action"]
-	match action:
-		"start_mini_game":
-			_on_start_mini_game(args)
-			
-		"start_anim":
-			if "character_name" in args and args["character_name"] != "":
-				return	
-			var anim_name = args["anim_name"]
-			
-			var player = animation_player
-			if "Crow" in anim_name:
-				player = crow_animation_player
-			
-			if not args["backwards"]:
-				player.play(anim_name)
-			else:
-				player.play_backwards(anim_name)
+	var anim_name = args["anim_name"]
+	
+	var player = animation_player
+	if "Crow" in anim_name:
+		player = crow_animation_player
+	
+	if not args["backwards"]:
+		player.play(anim_name)
+	else:
+		player.play_backwards(anim_name)
 			
 func _on_start_mini_game(args:Dictionary):
+	super._on_start_mini_game(args)
 	match args["minigame_name"]:
 		"SodaCapMG":
 			soda_cap_reaveal_mini_game.start()

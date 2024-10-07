@@ -56,6 +56,11 @@ func stop() -> void:
 	visible = false
 	accept_inputs = false
 	process_mode = PROCESS_MODE_DISABLED
+
+func _process(delta: float) -> void:
+	if started and accept_inputs:
+		if Input.is_action_just_released("cheat"):
+			trigger_win()
 		
 func trigger_win():
 	if on_win_auto_hide:
