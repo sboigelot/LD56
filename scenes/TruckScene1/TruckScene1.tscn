@@ -1,0 +1,57 @@
+[gd_scene load_steps=10 format=3 uid="uid://dhh4s0n5ua2pl"]
+
+[ext_resource type="Script" path="res://scenes/TruckScene1/TruckScene1.gd" id="1_drd2w"]
+[ext_resource type="PackedScene" uid="uid://cb40qf1q6r5oe" path="res://components/StoryCamera2D.tscn" id="4_cafdj"]
+[ext_resource type="PackedScene" uid="uid://bi7328nybm04r" path="res://components/world_portrait_2d.tscn" id="5_03hmb"]
+[ext_resource type="Texture2D" uid="uid://oct5gh5lumns" path="res://dialogic_data/characters/fry/fry_potato_pain.png" id="6_n3bs3"]
+[ext_resource type="Texture2D" uid="uid://dua0o42yskmwx" path="res://dialogic_data/characters/gran_potato/granpatato_smile.png" id="7_ciyqw"]
+[ext_resource type="Script" path="res://components/laser_chain/laser_source.gd" id="7_ddphw"]
+[ext_resource type="Texture2D" uid="uid://1o221ybhna1d" path="res://dialogic_data/characters/crowtato/crowtato_normal.png" id="8_1854e"]
+[ext_resource type="Texture2D" uid="uid://chr5txs774shh" path="res://icon.svg" id="8_wjlwh"]
+[ext_resource type="PackedScene" uid="uid://nqky2vy0doul" path="res://minigames/ddr/ddr_mini_game.tscn" id="9_jfose"]
+
+[node name="TruckScene1" type="Node"]
+script = ExtResource("1_drd2w")
+bubble_chararcters = Array[NodePath]([NodePath("FryWorldPortrait2D"), NodePath("GranpaWorldPortrait2D"), NodePath("CrowtatoWorldPortrait2D")])
+
+[node name="Background" type="Sprite2D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="StoryCamera2D" parent="." instance=ExtResource("4_cafdj")]
+
+[node name="FryWorldPortrait2D" parent="." instance=ExtResource("5_03hmb")]
+position = Vector2(332, -109)
+texture = ExtResource("6_n3bs3")
+
+[node name="GranpaWorldPortrait2D" parent="." instance=ExtResource("5_03hmb")]
+position = Vector2(-79, 48)
+scale = Vector2(0.175, 0.175)
+dialogic_character_name = "gran_potato"
+dialogic_character_path = "res://dialogic_data/characters/gran_potato/gran_potato.dch"
+texture = ExtResource("7_ciyqw")
+
+[node name="CrowtatoWorldPortrait2D" parent="." instance=ExtResource("5_03hmb")]
+position = Vector2(-1100, -350)
+scale = Vector2(0.25, 0.25)
+dialogic_character_name = "crowtato"
+dialogic_character_path = "res://dialogic_data/characters/crowtato/crowtato.dch"
+texture = ExtResource("8_1854e")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="CatLaserPuzle" type="Node2D" parent="."]
+position = Vector2(1211, -197)
+
+[node name="LaserSource" type="Area2D" parent="CatLaserPuzle"]
+script = ExtResource("7_ddphw")
+
+[node name="Sprite2D" type="Sprite2D" parent="CatLaserPuzle/LaserSource"]
+texture = ExtResource("8_wjlwh")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CatLaserPuzle/LaserSource"]
+polygon = PackedVector2Array(59.1, -64, -59, -64, -63.8, -59, -64, 61, -60.3, 64, 59.6, 64, 63.9, 59, 64, -61.1)
+
+[node name="DdrMiniGame" parent="." instance=ExtResource("9_jfose")]
+position = Vector2(-749, -426)
+
+[connection signal="note_hit_in_time" from="DdrMiniGame" to="." method="_on_ddr_mini_game_note_hit_in_time"]

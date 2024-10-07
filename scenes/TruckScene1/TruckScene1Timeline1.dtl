@@ -1,0 +1,5 @@
+[style name="full_screen_style"]
+And so Crowtato brings Fry and Gran Patat to the counter of the food truck.
+[style name="text_bubble_style"]
+gran_potato: That was the ride of my life!
+[start_mini_game minigame_name="DdrMiniGame" difficulty="easy"]

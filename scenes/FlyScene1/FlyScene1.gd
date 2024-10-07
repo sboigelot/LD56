@@ -33,6 +33,6 @@ func trigger_loose():
 
 func _on_obstacles_animation_player_animation_finished(anim_name: StringName) -> void:
 	SceneTransitionManager.transition_scene_to_file(
-		"res://scenes/main_menu/main_menu.tscn", 
+		"res://scenes/TruckScene1/TruckScene1.tscn", 
 		SceneTransitionManager.TRANSITIONS.RADIAL_TO_BLACK,
 		SceneTransitionManager.TRANSITIONS.FADE_TO_BLACK)
