@@ -1,0 +1,102 @@
+[gd_resource type="Resource" script_class="DdrSong" load_steps=23 format=3 uid="uid://cugdpqmec81ac"]
+
+[ext_resource type="Script" path="res://minigames/ddr/ddr_note.gd" id="1_rww6u"]
+[ext_resource type="Script" path="res://addons/MusicManager/music_track.gd" id="1_vt23o"]
+[ext_resource type="AudioStream" uid="uid://cinosbi8mdvpp" path="res://minigames/ddr/songs/brabancone.mp3" id="2_jjvvc"]
+[ext_resource type="Script" path="res://minigames/ddr/songs/ddr_song.gd" id="2_stuc8"]
+
+[sub_resource type="Resource" id="Resource_8sff5"]
+script = ExtResource("1_vt23o")
+name = ""
+artist = ""
+track = ExtResource("2_jjvvc")
+
+[sub_resource type="Resource" id="Resource_l6lgy"]
+script = ExtResource("1_rww6u")
+time = 4.0
+direction = 1
+
+[sub_resource type="Resource" id="Resource_ay1h1"]
+script = ExtResource("1_rww6u")
+time = 6.0
+direction = 2
+
+[sub_resource type="Resource" id="Resource_3jh55"]
+script = ExtResource("1_rww6u")
+time = 7.0
+direction = 2
+
+[sub_resource type="Resource" id="Resource_ds0s2"]
+script = ExtResource("1_rww6u")
+time = 7.8
+direction = 0
+
+[sub_resource type="Resource" id="Resource_t4u0t"]
+script = ExtResource("1_rww6u")
+time = 8.6
+direction = 3
+
+[sub_resource type="Resource" id="Resource_fc33v"]
+script = ExtResource("1_rww6u")
+time = 9.0
+direction = 2
+
+[sub_resource type="Resource" id="Resource_s421c"]
+script = ExtResource("1_rww6u")
+time = 10.0
+direction = 2
+
+[sub_resource type="Resource" id="Resource_ue173"]
+script = ExtResource("1_rww6u")
+time = 11.0
+direction = 0
+
+[sub_resource type="Resource" id="Resource_d4wup"]
+script = ExtResource("1_rww6u")
+time = 12.0
+direction = 3
+
+[sub_resource type="Resource" id="Resource_cyl8b"]
+script = ExtResource("1_rww6u")
+time = 13.0
+direction = 0
+
+[sub_resource type="Resource" id="Resource_grmpl"]
+script = ExtResource("1_rww6u")
+time = 14.0
+direction = 3
+
+[sub_resource type="Resource" id="Resource_u1ias"]
+script = ExtResource("1_rww6u")
+time = 15.0
+direction = 0
+
+[sub_resource type="Resource" id="Resource_5iivf"]
+script = ExtResource("1_rww6u")
+time = 18.0
+direction = 3
+
+[sub_resource type="Resource" id="Resource_v7n1y"]
+script = ExtResource("1_rww6u")
+time = 19.0
+direction = 2
+
+[sub_resource type="Resource" id="Resource_8rx57"]
+script = ExtResource("1_rww6u")
+time = 19.8
+direction = 1
+
+[sub_resource type="Resource" id="Resource_uwbg0"]
+script = ExtResource("1_rww6u")
+time = 20.6
+direction = 0
+
+[sub_resource type="Resource" id="Resource_7utut"]
+script = ExtResource("1_rww6u")
+time = 21.4
+direction = 3
+
+[resource]
+script = ExtResource("2_stuc8")
+music_track = SubResource("Resource_8sff5")
+notes = Array[ExtResource("1_rww6u")]([SubResource("Resource_l6lgy"), SubResource("Resource_ay1h1"), SubResource("Resource_3jh55"), SubResource("Resource_ds0s2"), SubResource("Resource_t4u0t"), SubResource("Resource_fc33v"), SubResource("Resource_s421c"), SubResource("Resource_ue173"), SubResource("Resource_d4wup"), SubResource("Resource_cyl8b"), SubResource("Resource_grmpl"), SubResource("Resource_u1ias"), SubResource("Resource_5iivf"), SubResource("Resource_v7n1y"), SubResource("Resource_8rx57"), SubResource("Resource_uwbg0"), SubResource("Resource_7utut")])

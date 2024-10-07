@@ -15,6 +15,15 @@
 "nicknames": [""],
 "offset": Vector2(0, 0),
 "portraits": {
+"mouse_open": {
+"export_overrides": {
+"image": "\"res://dialogic_data/characters/crowtato/crowtato_open_mouth.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
 "normal": {
 "export_overrides": {
 "image": "\"res://dialogic_data/characters/crowtato/crowtato_normal.png\""

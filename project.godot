@@ -33,7 +33,8 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 directories/dch_directory={
 "crowtato": "res://dialogic_data/characters/crowtato/crowtato.dch",
 "fry_potato": "res://dialogic_data/characters/fry/fry_potato.dch",
-"gran_potato": "res://dialogic_data/characters/gran_potato/gran_potato.dch"
+"gran_potato": "res://dialogic_data/characters/gran_potato/gran_potato.dch",
+"purrtato": "res://dialogic_data/characters/purrtato/purrtato.dch"
 }
 directories/dtl_directory={
 "FarmScene1Timeline1": "res://scenes/FarmScene1/FarmScene1Timeline1.dtl",

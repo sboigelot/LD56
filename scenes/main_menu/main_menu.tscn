@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://dgofrtm4r3eug"]
+[gd_scene load_steps=7 format=3 uid="uid://dgofrtm4r3eug"]
 
 [ext_resource type="Script" path="res://scenes/main_menu/main_menu.gd" id="1_jeenq"]
 [ext_resource type="PackedScene" uid="uid://b3iav6cm8purx" path="res://minigames/time_hit/time_hit_mini_game.tscn" id="2_1w65f"]
 [ext_resource type="PackedScene" uid="uid://wo65ur74hgk5" path="res://minigames/wiggle_keys/wiggle_keys_mini_game.tscn" id="3_hbhyf"]
 [ext_resource type="PackedScene" uid="uid://ddofaqwx8104e" path="res://minigames/soda_cap_reveal/soda_cap_reaveal_mini_game.tscn" id="4_7e7u0"]
 [ext_resource type="Script" path="res://minigames/mini_game_chain.gd" id="5_urrc7"]
+[ext_resource type="PackedScene" uid="uid://nqky2vy0doul" path="res://minigames/ddr/ddr_mini_game.tscn" id="6_yhfhf"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -45,6 +46,11 @@ layout_mode = 2
 text = "Chained Mini Games
 "
 
+[node name="StarMiniGame5" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "DDR Mini Games
+"
+
 [node name="TimeHitMiniGame" parent="." instance=ExtResource("2_1w65f")]
 position = Vector2(457, 25)
 
@@ -83,10 +89,14 @@ target_revolution_size = 0.1
 spin_revolution_per_second = 1.0
 on_win_auto_hide = false
 
+[node name="DdrMiniGame" parent="." instance=ExtResource("6_yhfhf")]
+position = Vector2(816, 204)
+
 [connection signal="pressed" from="VBoxContainer/NewGameButton" to="." method="_on_new_game_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/StarMiniGame1" to="." method="_on_star_mini_game_1_pressed"]
 [connection signal="pressed" from="VBoxContainer/StarMiniGame2" to="." method="_on_star_mini_game_2_pressed"]
 [connection signal="pressed" from="VBoxContainer/StarMiniGame3" to="." method="_on_star_mini_game_3_pressed"]
 [connection signal="pressed" from="VBoxContainer/StarMiniGame4" to="." method="_on_star_mini_game_4_pressed"]
+[connection signal="pressed" from="VBoxContainer/StarMiniGame5" to="." method="_on_star_mini_game_5_pressed"]
 [connection signal="win" from="WiggleKeysMiniGame" to="." method="_on_wiggle_keys_mini_game_win"]
 [connection signal="win" from="SodaCapReavealMiniGame" to="." method="_on_soda_cap_reaveal_mini_game_win"]

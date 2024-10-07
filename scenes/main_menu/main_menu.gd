@@ -28,3 +28,6 @@ func _on_soda_cap_reaveal_mini_game_win() -> void:
 
 func _on_star_mini_game_4_pressed() -> void:
 	$MiniGameChain.start()
+
+func _on_star_mini_game_5_pressed() -> void:
+	$DdrMiniGame.start()

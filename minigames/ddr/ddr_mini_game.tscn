@@ -1,0 +1,60 @@
+[gd_scene load_steps=7 format=3 uid="uid://nqky2vy0doul"]
+
+[ext_resource type="Script" path="res://minigames/ddr/ddr_mini_game.gd" id="1_hcest"]
+[ext_resource type="Script" path="res://minigames/ddr/ddr_column.gd" id="2_d0rc4"]
+[ext_resource type="Resource" uid="uid://cugdpqmec81ac" path="res://minigames/ddr/songs/ddr_brabancone.tres" id="2_md1da"]
+[ext_resource type="Texture2D" uid="uid://oct5gh5lumns" path="res://dialogic_data/characters/fry/fry_potato_pain.png" id="3_f0hd5"]
+[ext_resource type="PackedScene" uid="uid://15htwgp6q0yk" path="res://minigames/ddr/ddr_note_view.tscn" id="4_ryfso"]
+[ext_resource type="Texture2D" uid="uid://dqk7imix1olng" path="res://minigames/ddr/icons/ddr_right.png" id="5_1ygon"]
+
+[node name="DdrMiniGame" type="Node2D"]
+script = ExtResource("1_hcest")
+ddr_song = ExtResource("2_md1da")
+accepted_keys = Array[int]([4194320, 4194321, 4194322, 4194319])
+accepted_button_indexes = Array[int]([])
+accept_inputs_delay_on_start = 0.2
+
+[node name="Lifes" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Lifes"]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("3_f0hd5")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Lifes"]
+position = Vector2(64, 0)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("3_f0hd5")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Lifes"]
+position = Vector2(128, 0)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("3_f0hd5")
+
+[node name="DdrColumnLeft" type="Node2D" parent="."]
+position = Vector2(0, 96)
+script = ExtResource("2_d0rc4")
+
+[node name="DdrNoteView" parent="DdrColumnLeft" instance=ExtResource("4_ryfso")]
+texture = ExtResource("5_1ygon")
+flip_h = true
+
+[node name="DdrColumnDown" type="Node2D" parent="."]
+position = Vector2(128, 96)
+script = ExtResource("2_d0rc4")
+
+[node name="DdrNoteView" parent="DdrColumnDown" instance=ExtResource("4_ryfso")]
+flip_v = true
+
+[node name="DdrColumnUp" type="Node2D" parent="."]
+position = Vector2(256, 96)
+script = ExtResource("2_d0rc4")
+
+[node name="DdrNoteView" parent="DdrColumnUp" instance=ExtResource("4_ryfso")]
+flip_h = true
+
+[node name="DdrColumnRight" type="Node2D" parent="."]
+position = Vector2(384, 96)
+script = ExtResource("2_d0rc4")
+
+[node name="DdrNoteView" parent="DdrColumnRight" instance=ExtResource("4_ryfso")]
+texture = ExtResource("5_1ygon")
