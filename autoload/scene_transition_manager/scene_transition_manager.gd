@@ -7,9 +7,9 @@ enum TRANSITIONS {
 }
 
 const transition_scene:Dictionary = {
-	TRANSITIONS.CONICAL_TO_BLACK: preload("res://addons/scene_manager/test/change_scene/transition/conical_to_black.tres"),
-	TRANSITIONS.FADE_TO_BLACK: preload("res://addons/scene_manager/test/change_scene/transition/fade_to_black.tres"),
-	TRANSITIONS.RADIAL_TO_BLACK: preload("res://addons/scene_manager/test/change_scene/transition/radial_to_black.tres"),
+	TRANSITIONS.CONICAL_TO_BLACK: preload("res://autoload/scene_transition_manager/transition/conical_to_black.tres"),
+	TRANSITIONS.FADE_TO_BLACK: preload("res://autoload/scene_transition_manager/transition/fade_to_black.tres"),
+	TRANSITIONS.RADIAL_TO_BLACK: preload("res://autoload/scene_transition_manager/transition/radial_to_black.tres"),
 }
 
 var next_scene_path:String
