@@ -1,57 +1,346 @@
-[gd_scene load_steps=10 format=3 uid="uid://dhh4s0n5ua2pl"]
+[gd_scene load_steps=21 format=3 uid="uid://dhh4s0n5ua2pl"]
 
 [ext_resource type="Script" path="res://scenes/TruckScene1/TruckScene1.gd" id="1_drd2w"]
+[ext_resource type="Texture2D" uid="uid://b4jg2oc14jyvf" path="res://scenes/TruckScene1/frying_scene_ext.png" id="2_8gaup"]
+[ext_resource type="Texture2D" uid="uid://b141hdh7i2cg0" path="res://scenes/TruckScene1/frying_scene.png" id="2_r863n"]
 [ext_resource type="PackedScene" uid="uid://cb40qf1q6r5oe" path="res://components/StoryCamera2D.tscn" id="4_cafdj"]
 [ext_resource type="PackedScene" uid="uid://bi7328nybm04r" path="res://components/world_portrait_2d.tscn" id="5_03hmb"]
 [ext_resource type="Texture2D" uid="uid://oct5gh5lumns" path="res://dialogic_data/characters/fry/fry_potato_pain.png" id="6_n3bs3"]
 [ext_resource type="Texture2D" uid="uid://dua0o42yskmwx" path="res://dialogic_data/characters/gran_potato/granpatato_smile.png" id="7_ciyqw"]
 [ext_resource type="Script" path="res://components/laser_chain/laser_source.gd" id="7_ddphw"]
 [ext_resource type="Texture2D" uid="uid://1o221ybhna1d" path="res://dialogic_data/characters/crowtato/crowtato_normal.png" id="8_1854e"]
+[ext_resource type="Texture2D" uid="uid://dhxw2wmui03el" path="res://dialogic_data/characters/purrtato/purrtato_sit.png" id="8_l0rek"]
 [ext_resource type="Texture2D" uid="uid://chr5txs774shh" path="res://icon.svg" id="8_wjlwh"]
+[ext_resource type="Texture2D" uid="uid://dna1h04ckrcly" path="res://dialogic_data/characters/fry/fry_potato_smile.png" id="9_e1oln"]
 [ext_resource type="PackedScene" uid="uid://nqky2vy0doul" path="res://minigames/ddr/ddr_mini_game.tscn" id="9_jfose"]
+[ext_resource type="Script" path="res://components/laser_chain/laser_destinaton.gd" id="9_s13kt"]
+[ext_resource type="Texture2D" uid="uid://cflnr3nqrpxgo" path="res://dialogic_data/characters/pip/pip_normal.png" id="9_yvkxs"]
+
+[sub_resource type="Animation" id="Animation_wtdqw"]
+resource_name = "CrowtatoLeave"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CrowtatoWorldPortrait2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.333333, 0.7, 1),
+"transitions": PackedFloat32Array(2, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-665, -198), Vector2(-631, -219), Vector2(-581, -310), Vector2(-501, -403)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CrowtatoWorldPortrait2D:scale")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(2, 1),
+"update": 0,
+"values": [Vector2(0.25, 0.25), Vector2(1e-05, 1e-05)]
+}
+
+[sub_resource type="Animation" id="Animation_q6otg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CrowtatoWorldPortrait2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-665, -198)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CrowtatoWorldPortrait2D:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.25, 0.25)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PipWorldPortrait2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1353, 232)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("FryWorldPortrait2D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-517, -73)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("GranpaWorldPortrait2D:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-733, -68)]
+}
+
+[sub_resource type="Animation" id="Animation_1bvpd"]
+resource_name = "PipEnter"
+length = 2.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PipWorldPortrait2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.5),
+"transitions": PackedFloat32Array(-2, 1),
+"update": 0,
+"values": [Vector2(-1353, 232), Vector2(-703, 150)]
+}
+
+[sub_resource type="Animation" id="Animation_6w7yi"]
+resource_name = "MoveToCutBoard"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PipWorldPortrait2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-703, 150), Vector2(-189, 137)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FryWorldPortrait2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-517, -73), Vector2(-50, 91)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("GranpaWorldPortrait2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-733, -68), Vector2(-292, 97)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("GranpaWorldPortrait2D:flip_h")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_th41s"]
+_data = {
+"CrowtatoLeave": SubResource("Animation_wtdqw"),
+"MoveToCutBoard": SubResource("Animation_6w7yi"),
+"PipEnter": SubResource("Animation_1bvpd"),
+"RESET": SubResource("Animation_q6otg")
+}
 
 [node name="TruckScene1" type="Node"]
 script = ExtResource("1_drd2w")
-bubble_chararcters = Array[NodePath]([NodePath("FryWorldPortrait2D"), NodePath("GranpaWorldPortrait2D"), NodePath("CrowtatoWorldPortrait2D")])
+bubble_chararcters = Array[NodePath]([NodePath("FryWorldPortrait2D"), NodePath("GranpaWorldPortrait2D"), NodePath("CrowtatoWorldPortrait2D"), NodePath("PurrtatoWorldPortrait2D"), NodePath("PipWorldPortrait2D")])
+
+[node name="Background3" type="Sprite2D" parent="."]
+position = Vector2(-303, 0)
+texture = ExtResource("2_8gaup")
+metadata/_edit_lock_ = true
 
 [node name="Background" type="Sprite2D" parent="."]
+texture = ExtResource("2_r863n")
 metadata/_edit_lock_ = true
 
 [node name="StoryCamera2D" parent="." instance=ExtResource("4_cafdj")]
 
 [node name="FryWorldPortrait2D" parent="." instance=ExtResource("5_03hmb")]
-position = Vector2(332, -109)
+position = Vector2(-517, -73)
 texture = ExtResource("6_n3bs3")
 
 [node name="GranpaWorldPortrait2D" parent="." instance=ExtResource("5_03hmb")]
-position = Vector2(-79, 48)
+position = Vector2(-733, -68)
 scale = Vector2(0.175, 0.175)
 dialogic_character_name = "gran_potato"
 dialogic_character_path = "res://dialogic_data/characters/gran_potato/gran_potato.dch"
 texture = ExtResource("7_ciyqw")
 
 [node name="CrowtatoWorldPortrait2D" parent="." instance=ExtResource("5_03hmb")]
-position = Vector2(-1100, -350)
+position = Vector2(-665, -198)
 scale = Vector2(0.25, 0.25)
 dialogic_character_name = "crowtato"
 dialogic_character_path = "res://dialogic_data/characters/crowtato/crowtato.dch"
 texture = ExtResource("8_1854e")
 
+[node name="PurrtatoWorldPortrait2D" parent="." instance=ExtResource("5_03hmb")]
+position = Vector2(831, 563)
+scale = Vector2(0.5, 0.5)
+dialogic_character_name = "purrtato"
+dialogic_character_path = "res://dialogic_data/characters/purrtato/purrtato.dch"
+texture = ExtResource("8_l0rek")
+flip_h = true
+
+[node name="PipWorldPortrait2D" parent="." instance=ExtResource("5_03hmb")]
+position = Vector2(-1353, 232)
+scale = Vector2(0.25, 0.25)
+dialogic_character_name = "pip"
+dialogic_character_path = "res://dialogic_data/characters/pip/pip.dch"
+texture = ExtResource("9_yvkxs")
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_th41s")
+}
 
 [node name="CatLaserPuzle" type="Node2D" parent="."]
+visible = false
 position = Vector2(1211, -197)
 
-[node name="LaserSource" type="Area2D" parent="CatLaserPuzle"]
+[node name="LaserOrigin" type="Area2D" parent="CatLaserPuzle" node_paths=PackedStringArray("targets")]
+position = Vector2(-2062, 32)
 script = ExtResource("7_ddphw")
+receive_light = true
+targets = [NodePath("../LazerTargetA0"), NodePath("../LaserA"), NodePath("../LaserB")]
+target_index = 1
 
-[node name="Sprite2D" type="Sprite2D" parent="CatLaserPuzle/LaserSource"]
+[node name="Sprite2D" type="Sprite2D" parent="CatLaserPuzle/LaserOrigin"]
 texture = ExtResource("8_wjlwh")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CatLaserPuzle/LaserSource"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CatLaserPuzle/LaserOrigin"]
 polygon = PackedVector2Array(59.1, -64, -59, -64, -63.8, -59, -64, 61, -60.3, 64, 59.6, 64, 63.9, 59, 64, -61.1)
 
+[node name="Line2D" type="Line2D" parent="CatLaserPuzle/LaserOrigin"]
+points = PackedVector2Array(0, 0, 100, 100)
+
+[node name="LaserA" type="Area2D" parent="CatLaserPuzle" node_paths=PackedStringArray("targets")]
+position = Vector2(-1941, 453)
+script = ExtResource("7_ddphw")
+targets = [NodePath("../LaserAA"), NodePath("../LaserB")]
+
+[node name="Sprite2D" type="Sprite2D" parent="CatLaserPuzle/LaserA"]
+texture = ExtResource("8_wjlwh")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CatLaserPuzle/LaserA"]
+polygon = PackedVector2Array(59.1, -64, -59, -64, -63.8, -59, -64, 61, -60.3, 64, 59.6, 64, 63.9, 59, 64, -61.1)
+
+[node name="Line2D" type="Line2D" parent="CatLaserPuzle/LaserA"]
+points = PackedVector2Array(0, 0, 100, 100)
+
+[node name="LaserAA" type="Area2D" parent="CatLaserPuzle" node_paths=PackedStringArray("targets")]
+position = Vector2(-1672, 27)
+script = ExtResource("7_ddphw")
+targets = [NodePath("../LazerTargetAA1"), NodePath("../LazerTargetAA3")]
+
+[node name="Sprite2D" type="Sprite2D" parent="CatLaserPuzle/LaserAA"]
+texture = ExtResource("8_wjlwh")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CatLaserPuzle/LaserAA"]
+polygon = PackedVector2Array(59.1, -64, -59, -64, -63.8, -59, -64, 61, -60.3, 64, 59.6, 64, 63.9, 59, 64, -61.1)
+
+[node name="Line2D" type="Line2D" parent="CatLaserPuzle/LaserAA"]
+points = PackedVector2Array(0, 0, 100, 100)
+
+[node name="LaserB" type="Area2D" parent="CatLaserPuzle" node_paths=PackedStringArray("targets")]
+position = Vector2(-1489, 378)
+script = ExtResource("7_ddphw")
+targets = [NodePath("../LazerTargetB"), NodePath("../LazerTargetB2"), NodePath("../LaserDestinationB3")]
+
+[node name="Sprite2D" type="Sprite2D" parent="CatLaserPuzle/LaserB"]
+texture = ExtResource("8_wjlwh")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CatLaserPuzle/LaserB"]
+polygon = PackedVector2Array(59.1, -64, -59, -64, -63.8, -59, -64, 61, -60.3, 64, 59.6, 64, 63.9, 59, 64, -61.1)
+
+[node name="Line2D" type="Line2D" parent="CatLaserPuzle/LaserB"]
+points = PackedVector2Array(0, 0, 100, 100)
+
+[node name="LazerTargetA0" type="Marker2D" parent="CatLaserPuzle"]
+position = Vector2(-1991, -91)
+
+[node name="LazerTargetAA1" type="Marker2D" parent="CatLaserPuzle"]
+position = Vector2(-729, 340)
+
+[node name="LazerTargetAA3" type="Marker2D" parent="CatLaserPuzle"]
+position = Vector2(-1367, -158)
+
+[node name="LazerTargetB" type="Marker2D" parent="CatLaserPuzle"]
+position = Vector2(-1108, -120)
+
+[node name="LazerTargetB2" type="Marker2D" parent="CatLaserPuzle"]
+position = Vector2(-953, 453)
+
+[node name="LaserDestinationB3" type="Sprite2D" parent="CatLaserPuzle"]
+position = Vector2(-641, 605)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("9_e1oln")
+script = ExtResource("9_s13kt")
+
 [node name="DdrMiniGame" parent="." instance=ExtResource("9_jfose")]
-position = Vector2(-749, -426)
+position = Vector2(24, -30)
+scale = Vector2(0.3, 0.3)
+
+[node name="DDR_Left" type="Marker2D" parent="."]
+position = Vector2(-95, 90)
+scale = Vector2(0.25, 0.25)
+
+[node name="DDR_Down" type="Marker2D" parent="."]
+position = Vector2(-50, 110)
+scale = Vector2(0.25, 0.25)
+
+[node name="DDR_Center" type="Marker2D" parent="."]
+position = Vector2(-50, 90)
+scale = Vector2(0.25, 0.25)
+
+[node name="DDR_Up" type="Marker2D" parent="."]
+position = Vector2(-50, 70)
+scale = Vector2(0.25, 0.25)
+
+[node name="DDR_Right" type="Marker2D" parent="."]
+position = Vector2(-5, 90)
+scale = Vector2(0.25, 0.25)
 
 [connection signal="note_hit_in_time" from="DdrMiniGame" to="." method="_on_ddr_mini_game_note_hit_in_time"]
+[connection signal="win" from="DdrMiniGame" to="." method="_on_ddr_mini_game_win"]

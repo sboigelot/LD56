@@ -34,6 +34,7 @@ directories/dch_directory={
 "crowtato": "res://dialogic_data/characters/crowtato/crowtato.dch",
 "fry_potato": "res://dialogic_data/characters/fry/fry_potato.dch",
 "gran_potato": "res://dialogic_data/characters/gran_potato/gran_potato.dch",
+"pip": "res://dialogic_data/characters/pip/pip.dch",
 "purrtato": "res://dialogic_data/characters/purrtato/purrtato.dch"
 }
 directories/dtl_directory={
@@ -49,7 +50,9 @@ directories/dtl_directory={
 layout/style_list=["res://dialogic_data/styles/full_screen_style.tres", "res://dialogic_data/styles/text_bubble_style.tres"]
 layout/default_style="res://dialogic_data/styles/text_bubble_style.tres"
 glossary/default_case_sensitive=true
-variables={}
+variables={
+"fry_name": "Little Sprout"
+}
 extensions_folder="res://addons/dialogic_additions"
 text/letter_speed=0.01
 text/initial_text_reveal_skippable=true

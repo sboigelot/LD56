@@ -1,5 +1,72 @@
+jump top
+label top
 [style name="full_screen_style"]
 And so Crowtato brings Fry and Gran Patat to the counter of the food truck.
+leave --All--
 [style name="text_bubble_style"]
-gran_potato: That was the ride of my life!
+[zoom character="fry_potato" zoom_level="1.5" hide_text="false" wait_game_signal="false"]
+gran_potato: That was the potato ride of my life.
+fry_potato: We made it!
+crowtato: One can only hope that luck shall accompany you on your adventure.\
+Gran Patat, I shall look back fondly on our friendship.
+crowtato: I must bid you adieu, for I have observed a cat. Fare thee well.
+[start_anim anim_name="CrowtatoLeave" hide_text="null"]
+gran_potato: Farewell, bro-tato.
+[zoom hide_text="false" wait_game_signal="false"]
+[style name="full_screen_style"]
+The crow flies away hastily, leaving Gran Potato and Fry behind.
+Not a single human was near in the food truck on this beautiful sunny day. But the distinct smell of grease warming up can be smelled. If you have a nose, of course.
+Fry and Gran Patat can see buckets of cut fries, ready to be served, later that day.
+leave --All--
+[style name="text_bubble_style"]
+fry_potato: So what now?
+gran_potato: Quiet, there's a mouse staring at us.
+[start_anim anim_name="PipEnter" hide_text="null"]
+[style name="full_screen_style"]
+The potatoes caught the eye of a mouse looking for food. The mouse has a knife stuck on his back. But you have to know... this is an exception and never happens in Belgian food trucks.
+People from Belgium are very hygienic. Under no circumstance are the potatoes being confronted with germs from mice. We can really guarantee that the food truck is cleaned and...
+join pip (normal) center [animation="Slide In Up"]
+pip (normal): The name's Pip, I have never in my short life ever seen this. Whatcha two potatoes doing in here?
+update pip leftmost
+join gran_potato rightmost [mirrored="true"]
+gran_potato: I am Gran Patat. We're in quite the mash! Would you be so kind as to help out some potatoes in need?"
+join fry_potato right [mirrored="true"]
+fry_potato (pain): And I am Fry. We would like to become Belgian fries. Can you help us?
+pip (cut_up): The process can be quite difficult to accept. Do you understand what needs to happen for you to become a Belgian fry?
+fry_potato (uwu): Yes, we need to get in shape.
+pip (cut_down): Are you willing to make the sacrifice and lose your current form?
+fry_potato (smile): Yes we do, it's our dream to become the best fries ever.
+pip (cut_up): I've seen how the humans prepare Belgian fries. If you want to become a Belgian fry, you will have to take several steps.
+label Pipxplaining
+pip (cut_down): Step 1\: get cut in a nice shape.
+pip (cut_up): Step 2\: you need to get thrown in a frying pan for a few moments at high degrees.
+pip (cut_down): Step 3\: you need to get removed with a net and rest a bit for maximum flavor.
+pip (cut_up): Step 4\: you have to be put in another frying pan to fry for a last time and become really golden and crunchy.
+pip (cut_down): Step 5\: Le moment supreme\: you get eaten!
+pip (normal): Did you get all that?
+- No, can you repeat?
+	jump Pipxplaining
+- Loud and clear!
+fry_potato (smile): I understand it all. But how can I be cut in the right form?
+pip (normal): You're in luck because that is what I'm good at. With this knife on my back I can make miracles. Who goes first?
+fry_potato (smile): [wave][b]MEEEEE[b][wave]
+pip (cut_down): Okay, the mini potato first, than the older potato.
+gran_potato: *gulp*
+pip (cut_up): I hope you don't mind that I sing during while I'm working. It's a song I heard in Belgium somewhere.
+leave --All--
+label DDR Time
+[start_anim anim_name="MoveToCutBoard" hide_text="null"]
+[wait time="3.0"]
+[zoom character="fry_potato" zoom_level="3.0" hide_text="false" wait_game_signal="false"]
+[style name="text_bubble_style"]
+pip (cut_up): Are you ready?\
+Move around using the [b]arrow keys[/b] to help me cut at the correct places!
 [start_mini_game minigame_name="DdrMiniGame" difficulty="easy"]
+[wait_signal]
+[style name="full_screen_style"]
+join fry_potato (sliced) center [animation="Slide In Up"]
+fry_potato: Tadaaaa
+join gran_potato leftmost
+gran_potato: Wow, Fry, you look fry-nomenal!
+update fry_potato rightmost
+fry_potato: I feel spectacular. It is your turn now, Gran Patat.

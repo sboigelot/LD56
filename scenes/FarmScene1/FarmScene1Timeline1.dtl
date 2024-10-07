@@ -100,6 +100,7 @@ crowtato (mouse_open): My dear, Gran Patat, how are you faring?
 gran_potato: I'm feeling spud-tacular, let me introduce you to Little sp...
 update fry_potato (smile) right [mirrored="true"]
 update gran_potato (smile) rightmost [mirrored="true"]
+set {fry_name} = "Fry"
 fry_potato: You can call me Fry!
 gran_potato: Oh, sure. Are you here to pick the leftovers of the food truck, Crowtato?
 crowtato (mouse_open): Indubitably. Anything less would be quite unsatisfactory.
