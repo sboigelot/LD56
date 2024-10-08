@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://bfup0wri4a2q6"]
+
+[ext_resource type="PackedScene" uid="uid://ddofaqwx8104e" path="res://minigames/soda_cap_reveal/soda_cap_reaveal_mini_game.tscn" id="1_q446r"]
+
+[node name="TestSodaCap" type="Node2D"]
+
+[node name="SodaCapReavealMiniGame" parent="." instance=ExtResource("1_q446r")]
+position = Vector2(583, 225)
+scale = Vector2(0.3, 0.3)

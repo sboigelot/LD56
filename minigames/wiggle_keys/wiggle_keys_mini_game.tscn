@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://wo65ur74hgk5"]
 
 [ext_resource type="Script" path="res://minigames/wiggle_keys/wiggle_keys_mini_game.gd" id="1_s7uqq"]
-[ext_resource type="Texture2D" uid="uid://btyg60vnh1m3p" path="res://input_icons/keyboard/left.png" id="2_d0t5h"]
-[ext_resource type="Texture2D" uid="uid://ci7hl8jhywnrm" path="res://input_icons/keyboard/right.png" id="3_qmiad"]
+[ext_resource type="Texture2D" uid="uid://c3p2tit4xluyw" path="res://minigames/wiggle_keys/arrow_left.png" id="2_uwxt8"]
 [ext_resource type="Texture2D" uid="uid://dna1h04ckrcly" path="res://dialogic_data/characters/fry/fry_potato_smile.png" id="3_yebde"]
+[ext_resource type="Texture2D" uid="uid://db1ctuuk3dihq" path="res://minigames/wiggle_keys/arrow_right.png" id="4_0jfi8"]
 
 [node name="WiggleKeysMiniGame" type="Node2D"]
 process_mode = 4
@@ -20,7 +20,7 @@ layout_mode = 2
 
 [node name="LeftTextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
-texture = ExtResource("2_d0t5h")
+texture = ExtResource("2_uwxt8")
 expand_mode = 3
 
 [node name="PotatoTextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer"]
@@ -31,5 +31,5 @@ expand_mode = 3
 
 [node name="RightTextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
-texture = ExtResource("3_qmiad")
+texture = ExtResource("4_0jfi8")
 expand_mode = 3

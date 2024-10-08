@@ -1,8 +1,10 @@
-[gd_scene load_steps=21 format=3 uid="uid://dhh4s0n5ua2pl"]
+[gd_scene load_steps=32 format=3 uid="uid://dhh4s0n5ua2pl"]
 
 [ext_resource type="Script" path="res://scenes/TruckScene1/TruckScene1.gd" id="1_drd2w"]
 [ext_resource type="Texture2D" uid="uid://b4jg2oc14jyvf" path="res://scenes/TruckScene1/frying_scene_ext.png" id="2_8gaup"]
+[ext_resource type="Script" path="res://addons/MusicManager/music_track.gd" id="2_nad2b"]
 [ext_resource type="Texture2D" uid="uid://b141hdh7i2cg0" path="res://scenes/TruckScene1/frying_scene.png" id="2_r863n"]
+[ext_resource type="AudioStream" uid="uid://veu0cuewmeen" path="res://audio/music/nature3.mp3" id="3_exmsk"]
 [ext_resource type="PackedScene" uid="uid://cb40qf1q6r5oe" path="res://components/StoryCamera2D.tscn" id="4_cafdj"]
 [ext_resource type="PackedScene" uid="uid://bi7328nybm04r" path="res://components/world_portrait_2d.tscn" id="5_03hmb"]
 [ext_resource type="Texture2D" uid="uid://oct5gh5lumns" path="res://dialogic_data/characters/fry/fry_potato_pain.png" id="6_n3bs3"]
@@ -14,7 +16,423 @@
 [ext_resource type="Script" path="res://components/laser_chain/laser_destinaton.gd" id="9_s13kt"]
 [ext_resource type="Texture2D" uid="uid://cflnr3nqrpxgo" path="res://dialogic_data/characters/pip/pip_normal.png" id="9_yvkxs"]
 [ext_resource type="Texture2D" uid="uid://iri62ylmvqxf" path="res://scenes/TruckScene1/knife.png" id="13_qkbcw"]
+[ext_resource type="Texture2D" uid="uid://b7p0csedmldyp" path="res://scenes/TruckScene1/laser.png" id="13_tsuda"]
+[ext_resource type="Texture2D" uid="uid://d0l0ywvi57ip6" path="res://scenes/TruckScene1/spoon.png" id="14_4i5bs"]
 [ext_resource type="Texture2D" uid="uid://dasc6vtpcj1h3" path="res://input_icons/sony/circle.png" id="14_g7k0k"]
+
+[sub_resource type="Resource" id="Resource_mehi5"]
+script = ExtResource("2_nad2b")
+name = ""
+artist = ""
+track = ExtResource("3_exmsk")
+
+[sub_resource type="Animation" id="Animation_pep5t"]
+resource_name = "CatMouseAnim1"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FryWorldPortrait2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-50, 91)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GranpaWorldPortrait2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-344, 130)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PurrtatoWorldPortrait2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(831, 563)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("PipWorldPortrait2D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-189, 137), Vector2(-812, -62)]
+}
+
+[sub_resource type="Animation" id="Animation_4kv0m"]
+resource_name = "CatMouseAnim2"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FryWorldPortrait2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-50, 91)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GranpaWorldPortrait2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-344, 130)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PurrtatoWorldPortrait2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(831, 563), Vector2(309, 486), Vector2(-597, 515), Vector2(-460, 166)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("PipWorldPortrait2D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-812, -62), Vector2(-1333, 48)]
+}
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(1.96667, 3),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": ["res://dialogic_data/characters/purrtato/purrtato_up.png"],
+"method": &"freaking_change_cat_pic"
+}, {
+"args": ["res://dialogic_data/characters/purrtato/purrtato_angry.png"],
+"method": &"freaking_change_cat_pic"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_pevvu"]
+resource_name = "CatMoveToDot"
+length = 0.75
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FryWorldPortrait2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-50, 91)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GranpaWorldPortrait2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-344, 130)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PurrtatoWorldPortrait2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.233333, 0.466667, 0.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-460, 166), Vector2(-268, -11), Vector2(-201, 100), Vector2(-175, 92)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("PipWorldPortrait2D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1333, 48)]
+}
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.566667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"values": [{
+"args": ["res://dialogic_data/characters/purrtato/purrtato_sit.png"],
+"method": &"freaking_change_cat_pic"
+}, {
+"args": ["res://dialogic_data/characters/purrtato/purrtato_up.png"],
+"method": &""
+}, {
+"args": ["res://dialogic_data/characters/purrtato/purrtato_angry.png"],
+"method": &""
+}]
+}
+
+[sub_resource type="Animation" id="Animation_qlgbn"]
+resource_name = "CatPushFry"
+length = 0.75
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FryWorldPortrait2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.366667, 0.733333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-50, 91), Vector2(159, -26), Vector2(409, 96)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GranpaWorldPortrait2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-796, -445)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PurrtatoWorldPortrait2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-175, 92)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("PipWorldPortrait2D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1333, 48)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("GranpaWorldPortrait2D:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("FryWorldPortrait2D:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.366667, 0.733333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 1.0472, 0.0]
+}
+tracks/6/type = "method"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath(".")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.733333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"values": [{
+"args": ["res://dialogic_data/characters/purrtato/purrtato_sit.png"],
+"method": &"freaking_change_cat_pic"
+}, {
+"args": ["res://dialogic_data/characters/purrtato/purrtato_push.png"],
+"method": &"freaking_change_cat_pic"
+}, {
+"args": ["res://dialogic_data/characters/purrtato/purrtato_sit.png"],
+"method": &"freaking_change_cat_pic"
+}]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("PurrtatoWorldPortrait2D:flip_h")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_xdtrf"]
+resource_name = "CatPushGranpa"
+length = 0.75
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FryWorldPortrait2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-50, 91)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GranpaWorldPortrait2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.166667, 0.266667, 0.5, 0.733333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-344, 130), Vector2(-344, 130), Vector2(-532, -319), Vector2(-664, -382), Vector2(-796, -445)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PurrtatoWorldPortrait2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-175, 92)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("PipWorldPortrait2D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1333, 48)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("GranpaWorldPortrait2D:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.166667, 0.733333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.175, 0.175), Vector2(0.175, 0.175), Vector2(1e-05, 1e-05)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("CatLaserPuzle:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "method"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath(".")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.733333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"values": [{
+"args": ["res://dialogic_data/characters/purrtato/purrtato_sit.png"],
+"method": &"freaking_change_cat_pic"
+}, {
+"args": ["res://dialogic_data/characters/purrtato/purrtato_push.png"],
+"method": &"freaking_change_cat_pic"
+}, {
+"args": ["res://dialogic_data/characters/purrtato/purrtato_sit.png"],
+"method": &"freaking_change_cat_pic"
+}]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("PurrtatoWorldPortrait2D:flip_h")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_wtdqw"]
 resource_name = "CrowtatoLeave"
@@ -28,7 +446,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.333333, 0.7, 1),
 "transitions": PackedFloat32Array(2, 1, 1, 1),
 "update": 0,
-"values": [Vector2(-665, -198), Vector2(-631, -219), Vector2(-581, -310), Vector2(-501, -403)]
+"values": [Vector2(-649, -239), Vector2(-631, -219), Vector2(-581, -310), Vector2(-501, -403)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -43,6 +461,126 @@ tracks/1/keys = {
 "values": [Vector2(0.25, 0.25), Vector2(1e-05, 1e-05)]
 }
 
+[sub_resource type="Animation" id="Animation_8lnx3"]
+resource_name = "FadeAllOff"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Background3:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.337255, 0.337255, 0.337255, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Background:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.336608, 0.336608, 0.336607, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PurrtatoWorldPortrait2D:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.337255, 0.337255, 0.337255, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("FryWorldPortrait2D:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.337255, 0.337255, 0.337255, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_6w7yi"]
+resource_name = "MoveToCutBoard"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PipWorldPortrait2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-703, 150), Vector2(-189, 137)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FryWorldPortrait2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-517, -73), Vector2(-50, 91)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("GranpaWorldPortrait2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-733, -68), Vector2(-344, 103)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("GranpaWorldPortrait2D:flip_h")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_1bvpd"]
+resource_name = "PipEnter"
+length = 2.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PipWorldPortrait2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.5),
+"transitions": PackedFloat32Array(-2, 1),
+"update": 0,
+"values": [Vector2(-1353, 232), Vector2(-703, 150)]
+}
+
 [sub_resource type="Animation" id="Animation_q6otg"]
 length = 0.001
 tracks/0/type = "value"
@@ -55,7 +593,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-665, -198)]
+"values": [Vector2(-649, -239)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -105,78 +643,112 @@ tracks/4/keys = {
 "update": 0,
 "values": [Vector2(-733, -68)]
 }
-
-[sub_resource type="Animation" id="Animation_1bvpd"]
-resource_name = "PipEnter"
-length = 2.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("PipWorldPortrait2D:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 2.5),
-"transitions": PackedFloat32Array(-2, 1),
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("PurrtatoWorldPortrait2D:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-1353, 232), Vector2(-703, 150)]
+"values": [Vector2(831, 563)]
 }
-
-[sub_resource type="Animation" id="Animation_6w7yi"]
-resource_name = "MoveToCutBoard"
-length = 3.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("PipWorldPortrait2D:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 3),
-"transitions": PackedFloat32Array(1, 1),
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("GranpaWorldPortrait2D:scale")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-703, 150), Vector2(-189, 137)]
+"values": [Vector2(0.175, 0.175)]
 }
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("FryWorldPortrait2D:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 3),
-"transitions": PackedFloat32Array(1, 1),
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("FryWorldPortrait2D:rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-517, -73), Vector2(-50, 91)]
+"values": [0.0]
 }
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("GranpaWorldPortrait2D:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 3),
-"transitions": PackedFloat32Array(1, 1),
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Background:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-733, -68), Vector2(-292, 97)]
+"values": [Color(1, 1, 1, 1)]
 }
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("GranpaWorldPortrait2D:flip_h")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Background3:modulate")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("PurrtatoWorldPortrait2D:modulate")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("FryWorldPortrait2D:modulate")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("PurrtatoWorldPortrait2D:flip_h")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false]
+"values": [true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_th41s"]
 _data = {
+"CatMouseAnim1": SubResource("Animation_pep5t"),
+"CatMouseAnim2": SubResource("Animation_4kv0m"),
+"CatMoveToDot": SubResource("Animation_pevvu"),
+"CatPushFry": SubResource("Animation_qlgbn"),
+"CatPushGranpa": SubResource("Animation_xdtrf"),
 "CrowtatoLeave": SubResource("Animation_wtdqw"),
+"FadeAllOff": SubResource("Animation_8lnx3"),
 "MoveToCutBoard": SubResource("Animation_6w7yi"),
 "PipEnter": SubResource("Animation_1bvpd"),
 "RESET": SubResource("Animation_q6otg")
@@ -185,6 +757,7 @@ _data = {
 [node name="TruckScene1" type="Node"]
 script = ExtResource("1_drd2w")
 bubble_chararcters = Array[NodePath]([NodePath("FryWorldPortrait2D"), NodePath("GranpaWorldPortrait2D"), NodePath("CrowtatoWorldPortrait2D"), NodePath("PurrtatoWorldPortrait2D"), NodePath("PipWorldPortrait2D")])
+music = SubResource("Resource_mehi5")
 
 [node name="Background3" type="Sprite2D" parent="."]
 position = Vector2(-303, 0)
@@ -209,7 +782,7 @@ dialogic_character_path = "res://dialogic_data/characters/gran_potato/gran_potat
 texture = ExtResource("7_ciyqw")
 
 [node name="CrowtatoWorldPortrait2D" parent="." instance=ExtResource("5_03hmb")]
-position = Vector2(-665, -198)
+position = Vector2(-649, -239)
 scale = Vector2(0.25, 0.25)
 dialogic_character_name = "crowtato"
 dialogic_character_path = "res://dialogic_data/characters/crowtato/crowtato.dch"
@@ -236,6 +809,7 @@ libraries = {
 }
 
 [node name="DdrMiniGame" parent="." instance=ExtResource("9_jfose")]
+visible = false
 position = Vector2(24, -30)
 scale = Vector2(0.3, 0.3)
 
@@ -260,92 +834,123 @@ position = Vector2(-5, 90)
 scale = Vector2(0.25, 0.25)
 
 [node name="CatLaserPuzle" type="Node2D" parent="."]
-visible = false
 position = Vector2(1211, -197)
 
-[node name="LaserOrigin" type="Area2D" parent="CatLaserPuzle" node_paths=PackedStringArray("targets")]
+[node name="LaserPointer" type="Area2D" parent="CatLaserPuzle" node_paths=PackedStringArray("targets")]
 position = Vector2(-1266, -110)
-scale = Vector2(0.3, 0.3)
 script = ExtResource("7_ddphw")
 receive_light = true
-targets = [NodePath("../LazerTargetA0"), NodePath("../LaserA"), NodePath("../LaserB")]
-target_index = 1
+targets = [NodePath("../LaserWrongDestination1"), NodePath("../SpoonCounterLeftW"), NodePath("../KnifeShelf")]
 
-[node name="Sprite2D" type="Sprite2D" parent="CatLaserPuzle/LaserOrigin"]
-texture = ExtResource("13_qkbcw")
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CatLaserPuzle/LaserOrigin"]
-polygon = PackedVector2Array(-59, -244.4, -59, -241.8, -60.8, -240, -62.7, -240, -65.7, -222, -66.9, -222, -69.9, -173, -71, -173, -71, 15.9, -76.6, 20, -78.7, 20, -81.8, 42, -83, 42, -83, 102.1, -80, 127.2, -80, 137.2, -72, 180.4, -72, 185.3, -62, 214.4, -62, 217.6, -52, 233.6, -52, 235.9, -41, 244.9, -41, 246.7, -35, 247.7, -35, 249.2, 4.2, 246, 10.3, 246, 27.4, 240, 30.6, 240, 44.6, 230, 47, 230, 62, 211, 63.4, 211, 73.4, 181, 74.8, 181, 79.8, 137, 81, 137, 82, 93, 83, 93, 83, 22.2, 71.8, 11, 69.1, 11, 71, -65, 71, -72.3, 64, -98, 64, -102.4, 50, -138.5, 50, -141.5, 31, -176.7, 31, -178.7, 1, -215.9, 1, -217, -15, -229, -15, -230.3, -30, -237.3, -30, -238.6)
-
-[node name="Line2D" type="Line2D" parent="CatLaserPuzle/LaserOrigin"]
-points = PackedVector2Array(0, 0, 100, 100)
-
-[node name="LaserA" type="Area2D" parent="CatLaserPuzle" node_paths=PackedStringArray("targets")]
-position = Vector2(-2333, 209)
+[node name="Sprite2D" type="Sprite2D" parent="CatLaserPuzle/LaserPointer"]
 scale = Vector2(0.3, 0.3)
-script = ExtResource("7_ddphw")
-targets = [NodePath("../LaserAA"), NodePath("../LaserB")]
+texture = ExtResource("13_tsuda")
 
-[node name="Sprite2D" type="Sprite2D" parent="CatLaserPuzle/LaserA"]
-texture = ExtResource("13_qkbcw")
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CatLaserPuzle/LaserA"]
-polygon = PackedVector2Array(-59, -244.4, -59, -241.8, -60.8, -240, -62.7, -240, -65.7, -222, -66.9, -222, -69.9, -173, -71, -173, -71, 15.9, -76.6, 20, -78.7, 20, -81.8, 42, -83, 42, -83, 102.1, -80, 127.2, -80, 137.2, -72, 180.4, -72, 185.3, -62, 214.4, -62, 217.6, -52, 233.6, -52, 235.9, -41, 244.9, -41, 246.7, -35, 247.7, -35, 249.2, 4.2, 246, 10.3, 246, 27.4, 240, 30.6, 240, 44.6, 230, 47, 230, 62, 211, 63.4, 211, 73.4, 181, 74.8, 181, 79.8, 137, 81, 137, 82, 93, 83, 93, 83, 22.2, 71.8, 11, 69.1, 11, 71, -65, 71, -72.3, 64, -98, 64, -102.4, 50, -138.5, 50, -141.5, 31, -176.7, 31, -178.7, 1, -215.9, 1, -217, -15, -229, -15, -230.3, -30, -237.3, -30, -238.6)
-
-[node name="Line2D" type="Line2D" parent="CatLaserPuzle/LaserA"]
-points = PackedVector2Array(0, 0, 100, 100)
-
-[node name="LaserAA" type="Area2D" parent="CatLaserPuzle" node_paths=PackedStringArray("targets")]
-position = Vector2(-1438, 365)
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CatLaserPuzle/LaserPointer"]
 scale = Vector2(0.3, 0.3)
-script = ExtResource("7_ddphw")
-targets = [NodePath("../LazerTargetAA1"), NodePath("../LazerTargetAA3")]
+polygon = PackedVector2Array(193, -81, 193, -80, 83.4, -80, 64, -68.1, -12.5, -68, -17, -70.3, -17, -72, -46.6, -72, -52.6, -68, -213.5, -68, -225.5, -62, -228, -62, -236, -52, -237.5, -52, -240.5, -42, -242, -42, -242, 40.5, -236, 51.6, -236, 54, -226, 61.9, -226, 63.5, -219, 65.4, -219, 66.6, -213.2, 68, -52.5, 68, -48, 70.2, -48, 72, -18.4, 72, -12.4, 68, 65.3, 68, 72, 73.8, 72, 75.5, 82, 78.4, 82, 80, 196, 81, 209.7, 81, 222.7, 71, 224.3, 71, 234.3, 48, 235.8, 48, 239.8, 11, 241.1, 11, 240, -17.1, 240, -29.2, 234, -53, 234, -56.7, 225, -68.7, 225, -71.1, 212, -79.1, 212, -81)
 
-[node name="Sprite2D" type="Sprite2D" parent="CatLaserPuzle/LaserAA"]
+[node name="Line2D" type="Line2D" parent="CatLaserPuzle/LaserPointer"]
+points = PackedVector2Array(0, 0, 100, 100)
+default_color = Color(1, 0.152941, 0, 0.819608)
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="SpoonCounterLeftW" type="Area2D" parent="CatLaserPuzle" node_paths=PackedStringArray("targets")]
+position = Vector2(-2091, 239)
+script = ExtResource("7_ddphw")
+targets = [NodePath("../KnifeCutBoard"), NodePath("../KnifeShelf")]
+
+[node name="Sprite2D" type="Sprite2D" parent="CatLaserPuzle/SpoonCounterLeftW"]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("14_4i5bs")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CatLaserPuzle/SpoonCounterLeftW"]
+scale = Vector2(0.3, 0.3)
+polygon = PackedVector2Array(-9, -248.1, -9, -246.5, -22.1, -243, -25.6, -243, -38.5, -234, -40.9, -234, -69.9, -203, -71.2, -203, -93.2, -159, -94.6, -159, -100.5, -135, -101.8, -135, -103.8, -114, -105.2, -114, -103, -88.8, -103, -82.6, -93, -57.6, -93, -55.3, -74, -31.4, -74, -30, -44.6, -9, -43.8, -9, -53.5, 19, -54.8, 19, -59.8, 59, -61, 59, -59, 160, -59, 175.2, -54, 204.3, -54, 209.4, -46, 226.4, -46, 229, -30, 241, -30, 242.7, -4.2, 247, 10.2, 247, 23.3, 245, 28.5, 245, 35.5, 241, 38, 241, 50, 225, 51.7, 225, 57.7, 194, 58.9, 194, 62, 142.1, 62, 57.8, 57, 25.7, 57, 20.7, 46.1, -10.2, 67.5, -25, 69.9, -25, 85.9, -44, 87.3, -44, 98.3, -67, 99.7, -67, 104.7, -93, 106.1, -93, 105, -115.1, 105, -123.3, 98, -148, 98, -152.4, 85, -180.4, 85, -182.6, 71, -202.6, 71, -204.8, 52, -224.8, 52, -226.1, 34, -238.1, 34, -239.4, 16, -245.5, 16, -246.9)
+
+[node name="Line2D" type="Line2D" parent="CatLaserPuzle/SpoonCounterLeftW"]
+points = PackedVector2Array(0, 0, 100, 100)
+default_color = Color(1, 0.152941, 0, 0.819608)
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="KnifeCutBoard" type="Area2D" parent="CatLaserPuzle" node_paths=PackedStringArray("targets")]
+position = Vector2(-1441, 428)
+script = ExtResource("7_ddphw")
+targets = [NodePath("../LazerTargetGround"), NodePath("../LazerTargetRight")]
+
+[node name="Sprite2D" type="Sprite2D" parent="CatLaserPuzle/KnifeCutBoard"]
+scale = Vector2(0.3, 0.3)
 texture = ExtResource("13_qkbcw")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CatLaserPuzle/LaserAA"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CatLaserPuzle/KnifeCutBoard"]
+scale = Vector2(0.3, 0.3)
 polygon = PackedVector2Array(-59, -244.4, -59, -241.8, -60.8, -240, -62.7, -240, -65.7, -222, -66.9, -222, -69.9, -173, -71, -173, -71, 15.9, -76.6, 20, -78.7, 20, -81.8, 42, -83, 42, -83, 102.1, -80, 127.2, -80, 137.2, -72, 180.4, -72, 185.3, -62, 214.4, -62, 217.6, -52, 233.6, -52, 235.9, -41, 244.9, -41, 246.7, -35, 247.7, -35, 249.2, 4.2, 246, 10.3, 246, 27.4, 240, 30.6, 240, 44.6, 230, 47, 230, 62, 211, 63.4, 211, 73.4, 181, 74.8, 181, 79.8, 137, 81, 137, 82, 93, 83, 93, 83, 22.2, 71.8, 11, 69.1, 11, 71, -65, 71, -72.3, 64, -98, 64, -102.4, 50, -138.5, 50, -141.5, 31, -176.7, 31, -178.7, 1, -215.9, 1, -217, -15, -229, -15, -230.3, -30, -237.3, -30, -238.6)
 
-[node name="Line2D" type="Line2D" parent="CatLaserPuzle/LaserAA"]
+[node name="Line2D" type="Line2D" parent="CatLaserPuzle/KnifeCutBoard"]
 points = PackedVector2Array(0, 0, 100, 100)
+default_color = Color(1, 0.152941, 0, 0.819608)
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
 
-[node name="LaserB" type="Area2D" parent="CatLaserPuzle" node_paths=PackedStringArray("targets")]
+[node name="KnifeShelf" type="Area2D" parent="CatLaserPuzle" node_paths=PackedStringArray("targets")]
 position = Vector2(-425, -96)
-scale = Vector2(0.3, 0.3)
 script = ExtResource("7_ddphw")
-targets = [NodePath("../LazerTargetB"), NodePath("../LazerTargetB2"), NodePath("../LaserDestinationB3")]
+targets = [NodePath("../LazerTargetRight"), NodePath("../LaserWrongDestination2"), NodePath("../LaserFinalGoal")]
 
-[node name="Sprite2D" type="Sprite2D" parent="CatLaserPuzle/LaserB"]
+[node name="Sprite2D" type="Sprite2D" parent="CatLaserPuzle/KnifeShelf"]
+scale = Vector2(0.3, 0.3)
 texture = ExtResource("13_qkbcw")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CatLaserPuzle/LaserB"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CatLaserPuzle/KnifeShelf"]
+scale = Vector2(0.3, 0.3)
 polygon = PackedVector2Array(-59, -244.4, -59, -241.8, -60.8, -240, -62.7, -240, -65.7, -222, -66.9, -222, -69.9, -173, -71, -173, -71, 15.9, -76.6, 20, -78.7, 20, -81.8, 42, -83, 42, -83, 102.1, -80, 127.2, -80, 137.2, -72, 180.4, -72, 185.3, -62, 214.4, -62, 217.6, -52, 233.6, -52, 235.9, -41, 244.9, -41, 246.7, -35, 247.7, -35, 249.2, 4.2, 246, 10.3, 246, 27.4, 240, 30.6, 240, 44.6, 230, 47, 230, 62, 211, 63.4, 211, 73.4, 181, 74.8, 181, 79.8, 137, 81, 137, 82, 93, 83, 93, 83, 22.2, 71.8, 11, 69.1, 11, 71, -65, 71, -72.3, 64, -98, 64, -102.4, 50, -138.5, 50, -141.5, 31, -176.7, 31, -178.7, 1, -215.9, 1, -217, -15, -229, -15, -230.3, -30, -237.3, -30, -238.6)
 
-[node name="Line2D" type="Line2D" parent="CatLaserPuzle/LaserB"]
+[node name="Line2D" type="Line2D" parent="CatLaserPuzle/KnifeShelf"]
 points = PackedVector2Array(0, 0, 100, 100)
+default_color = Color(1, 0.152941, 0, 0.819608)
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
 
-[node name="LazerTargetA0" type="Marker2D" parent="CatLaserPuzle"]
-position = Vector2(-1637, -475)
+[node name="LaserWrongDestination1" type="Sprite2D" parent="CatLaserPuzle"]
+self_modulate = Color(100, 1, 1, 1)
+position = Vector2(-1754, 250)
+scale = Vector2(3, 3)
+texture = ExtResource("14_g7k0k")
+script = ExtResource("9_s13kt")
 
-[node name="LazerTargetAA1" type="Marker2D" parent="CatLaserPuzle"]
-position = Vector2(-2637, -62)
+[node name="LaserWrongDestination2" type="Sprite2D" parent="CatLaserPuzle"]
+self_modulate = Color(100, 1, 1, 1)
+position = Vector2(-675, 502)
+scale = Vector2(3, 3)
+texture = ExtResource("14_g7k0k")
+script = ExtResource("9_s13kt")
 
-[node name="LazerTargetAA3" type="Marker2D" parent="CatLaserPuzle"]
-position = Vector2(-1927, 848)
+[node name="LazerTargetGround" type="Marker2D" parent="CatLaserPuzle"]
+position = Vector2(-1680, 908)
 
-[node name="LazerTargetB" type="Marker2D" parent="CatLaserPuzle"]
+[node name="LazerTargetLeft" type="Marker2D" parent="CatLaserPuzle"]
+position = Vector2(-2617, 250)
+
+[node name="LazerTargetRight" type="Marker2D" parent="CatLaserPuzle"]
 position = Vector2(-68, 300)
 
-[node name="LazerTargetB2" type="Marker2D" parent="CatLaserPuzle"]
-position = Vector2(-1035, 517)
-
-[node name="LaserDestinationB3" type="Sprite2D" parent="CatLaserPuzle"]
+[node name="LaserFinalGoal" type="Sprite2D" parent="CatLaserPuzle"]
 self_modulate = Color(100, 1, 1, 1)
-position = Vector2(-1657, 449)
+position = Vector2(-1260, 278)
 scale = Vector2(3, 3)
 texture = ExtResource("14_g7k0k")
 script = ExtResource("9_s13kt")
 
 [connection signal="note_hit_in_time" from="DdrMiniGame" to="." method="_on_ddr_mini_game_note_hit_in_time"]
 [connection signal="win" from="DdrMiniGame" to="." method="_on_ddr_mini_game_win"]
+[connection signal="lit" from="CatLaserPuzle/LaserFinalGoal" to="." method="_on_laser_final_goal_lit"]

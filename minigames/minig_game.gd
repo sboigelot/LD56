@@ -13,6 +13,7 @@ signal loose
 
 @export var on_start_auto_self_modulate:Color = Color.WHITE
 @export var on_win_auto_hide:bool = true
+@export var on_win_auto_modulate:bool = true
 @export var on_win_auto_self_modulate:Color = Color(0.3,0.3,0.3,0.5)
 
 ## Icon to display when status is Status.SUCCESS
@@ -53,7 +54,8 @@ func start() -> void:
 	
 func stop() -> void:
 	started = false
-	visible = false
+	if on_win_auto_hide:
+		visible = false
 	accept_inputs = false
 	process_mode = PROCESS_MODE_DISABLED
 
@@ -65,7 +67,8 @@ func _process(delta: float) -> void:
 func trigger_win():
 	if on_win_auto_hide:
 		hide()
-	self_modulate = on_win_auto_self_modulate
+	if on_win_auto_modulate:
+		self_modulate = on_win_auto_self_modulate
 	win.emit()
 	stop()
 

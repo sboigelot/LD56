@@ -19,8 +19,8 @@ func _on_crow_and_potaotes_area_entered(area: Area2D) -> void:
 	
 func trigger_loose():
 	$CrowAndPotaotes.controllable = false
-	$CrowAndPotaotes.monitoring = false
-	$CrowAndPotaotes.monitorable = false
+	$CrowAndPotaotes.set_deferred("monitoring", false)
+	$CrowAndPotaotes.set_deferred("monitorable", false)
 
 	$FailSplash.scale = Vector2.ZERO
 	$FailSplash.visible = true

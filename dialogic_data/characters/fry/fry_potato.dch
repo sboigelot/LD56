@@ -15,31 +15,53 @@
 "nicknames": [""],
 "offset": Vector2(0, 0),
 "portraits": {
+"cone": {
+"export_overrides": {
+"image": "\"res://dialogic_data/characters/fry/fry_cone.png\""
+},
+"ignore_char_scale": false,
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 0.75,
+"scene": ""
+},
 "pain": {
 "export_overrides": {
 "image": "\"res://dialogic_data/characters/fry/fry_potato_pain.png\""
 },
+"ignore_char_scale": false,
 "mirror": false,
 "offset": Vector2(0, 0),
-"scale": 0.75,
+"scale": 0.5,
+"scene": ""
+},
+"sleepy": {
+"export_overrides": {
+"image": "\"res://dialogic_data/characters/fry/fry_potato_sleepy.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 0.5,
 "scene": ""
 },
 "sliced": {
 "export_overrides": {
 "image": "\"res://dialogic_data/characters/fry/fry_sliced.png\""
 },
+"ignore_char_scale": false,
 "mirror": false,
 "offset": Vector2(0, 0),
-"scale": 1.0,
+"scale": 0.5,
 "scene": ""
 },
 "smile": {
 "export_overrides": {
 "image": "\"res://dialogic_data/characters/fry/fry_potato_smile.png\""
 },
+"ignore_char_scale": false,
 "mirror": false,
 "offset": Vector2(0, 0),
-"scale": 0.75,
+"scale": 0.5,
 "scene": ""
 },
 "uwu": {
@@ -48,7 +70,7 @@
 },
 "mirror": false,
 "offset": Vector2(0, 0),
-"scale": 0.75,
+"scale": 0.5,
 "scene": ""
 }
 },

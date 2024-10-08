@@ -11,11 +11,23 @@ class_name WorldPortrait2D
 @onready var sprite_2d: Sprite2D = $Sprite2D
 
 @export var valid_texture_paths: Array[String] = [
-	"res://dialogic_data/characters/fry/fry_potato_smile.png",
-	"res://dialogic_data/characters/fry/fry_potato_pain.png",
-	"res://dialogic_data/characters/fry/fry_potato_uwu.png",
-	"res://dialogic_data/characters/gran_potato/granpatato_smile.png",
+	"res://dialogic_data/characters/crowtato/crowtato_mouth_shiny.png", 
 	"res://dialogic_data/characters/crowtato/crowtato_normal.png",
+	"res://dialogic_data/characters/crowtato/crowtato_open_mouth.png", 
+	"res://dialogic_data/characters/fry/fry_cone.png",
+	"res://dialogic_data/characters/fry/fry_potato_pain.png",
+	"res://dialogic_data/characters/fry/fry_potato_sleepy.png",
+	"res://dialogic_data/characters/fry/fry_potato_smile.png",
+	"res://dialogic_data/characters/fry/fry_potato_uwu.png",
+	"res://dialogic_data/characters/fry/fry_sliced.png",
+	"res://dialogic_data/characters/gran_potato/granpatato_smile.png",
+	"res://dialogic_data/characters/pip/pip_cutdown.png",
+	"res://dialogic_data/characters/pip/pip_cutup.png",
+	"res://dialogic_data/characters/pip/pip_normal.png",
+	"res://dialogic_data/characters/purrtato/purrtato_angry.png",
+	"res://dialogic_data/characters/purrtato/purrtato_push.png",
+	"res://dialogic_data/characters/purrtato/purrtato_sit.png",
+	"res://dialogic_data/characters/purrtato/purrtato_up.png",
 ]
 
 func _ready() -> void:

@@ -1,7 +1,9 @@
-[gd_scene load_steps=15 format=3 uid="uid://cjc0m57xad887"]
+[gd_scene load_steps=18 format=3 uid="uid://cjc0m57xad887"]
 
 [ext_resource type="Texture2D" uid="uid://oa4enuht0lse" path="res://scenes/FlyScene1/fly_scene.png" id="1_nvpt2"]
 [ext_resource type="Script" path="res://scenes/FlyScene1/FlyScene1.gd" id="1_ya6m8"]
+[ext_resource type="Script" path="res://addons/MusicManager/music_track.gd" id="2_5ob6j"]
+[ext_resource type="AudioStream" uid="uid://rpmotyi2p2fk" path="res://audio/music/minigamesong.mp3" id="3_fbbg3"]
 [ext_resource type="Texture2D" uid="uid://dte4xq84xh78b" path="res://addons/tattomoosa.spinner/icons/StatusError.svg" id="3_oevi1"]
 [ext_resource type="PackedScene" uid="uid://btwimivy2fuqo" path="res://scenes/FlyScene1/Obstacles/obstacle_cloud_1.tscn" id="3_pcd20"]
 [ext_resource type="PackedScene" uid="uid://cb40qf1q6r5oe" path="res://components/StoryCamera2D.tscn" id="3_usohv"]
@@ -11,6 +13,12 @@
 [ext_resource type="Texture2D" uid="uid://dua0o42yskmwx" path="res://dialogic_data/characters/gran_potato/granpatato_smile.png" id="7_tjrji"]
 [ext_resource type="Texture2D" uid="uid://cju5jukxjbcww" path="res://dialogic_data/characters/fry/fry_potato_uwu.png" id="8_ss8fb"]
 [ext_resource type="Texture2D" uid="uid://1o221ybhna1d" path="res://dialogic_data/characters/crowtato/crowtato_normal.png" id="9_4u30i"]
+
+[sub_resource type="Resource" id="Resource_42dps"]
+script = ExtResource("2_5ob6j")
+name = ""
+artist = ""
+track = ExtResource("3_fbbg3")
 
 [sub_resource type="Animation" id="Animation_g11g1"]
 resource_name = "Advance"
@@ -76,6 +84,7 @@ _data = {
 
 [node name="FlyScene1" type="Node"]
 script = ExtResource("1_ya6m8")
+music = SubResource("Resource_42dps")
 
 [node name="Background" type="Sprite2D" parent="."]
 texture = ExtResource("1_nvpt2")

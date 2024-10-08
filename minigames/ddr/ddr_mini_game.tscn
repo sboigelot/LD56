@@ -35,6 +35,7 @@ position = Vector2(0, 96)
 script = ExtResource("2_d0rc4")
 
 [node name="DdrNoteView" parent="DdrColumnLeft" instance=ExtResource("4_ryfso")]
+position = Vector2(0, 5)
 texture = ExtResource("5_1ygon")
 flip_h = true
 
@@ -43,6 +44,7 @@ position = Vector2(128, 96)
 script = ExtResource("2_d0rc4")
 
 [node name="DdrNoteView" parent="DdrColumnDown" instance=ExtResource("4_ryfso")]
+position = Vector2(0, 5)
 flip_v = true
 
 [node name="DdrColumnUp" type="Node2D" parent="."]
@@ -50,6 +52,7 @@ position = Vector2(256, 96)
 script = ExtResource("2_d0rc4")
 
 [node name="DdrNoteView" parent="DdrColumnUp" instance=ExtResource("4_ryfso")]
+position = Vector2(0, 5)
 flip_h = true
 
 [node name="DdrColumnRight" type="Node2D" parent="."]
@@ -57,4 +60,5 @@ position = Vector2(384, 96)
 script = ExtResource("2_d0rc4")
 
 [node name="DdrNoteView" parent="DdrColumnRight" instance=ExtResource("4_ryfso")]
+position = Vector2(0, 5)
 texture = ExtResource("5_1ygon")

@@ -15,7 +15,7 @@ func _physics_process(delta: float) -> void:
 		return
 		
 	var velocity = Vector2.ZERO
-	if controllable:
+	if controllable:			
 		if Input.is_action_pressed("move_up"):
 			velocity.y -= 1
 	

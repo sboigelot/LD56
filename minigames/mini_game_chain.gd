@@ -2,6 +2,8 @@ extends Node2D
 
 class_name MiniGameChain
 
+signal win
+
 var mini_game_index = -1
 var current_mini_game:MiniGame
 
@@ -26,3 +28,4 @@ func _on_current_mini_game_win():
 func trigger_win():
 	for child in get_children():
 		child.stop()
+	win.emit()

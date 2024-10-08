@@ -2,7 +2,11 @@ extends Node
 class_name  StoryScene
 
 @export var bubble_chararcters: Array[NodePath]
+@export var music: MusicTrack
 
+func play_bg_music():	
+	MusicManager.play_song.emit(music, true, true, 0.3)
+	
 func _ready() -> void:
 	SceneTransitionManager.transition_scene_in(self)
 	
@@ -13,6 +17,9 @@ func _ready() -> void:
 	Dialogic.timeline_ended.connect(_on_dialogic_timeline_ended)
 	
 	on_story_scene_ready()
+	
+	if music != null:
+		play_bg_music()
 	
 func on_story_scene_ready():
 	pass

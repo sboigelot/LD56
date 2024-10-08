@@ -16,6 +16,7 @@ var ddr_cut = false
 
 func on_story_scene_ready() -> void:
 	super.on_story_scene_ready()
+	$CatLaserPuzle.visible = false
 	start_new_timeline("TruckScene1Timeline1")
 	
 func _on_zoom_request(args:Dictionary):
@@ -53,7 +54,6 @@ func _on_start_mini_game(args:Dictionary):
 		"CatLaserPuzle":
 			$CatLaserPuzle.visible = true
 
-
 func _on_ddr_mini_game_note_hit_in_time(note: DdrNote) -> void:
 	ddr_cut = !ddr_cut
 	if ddr_cut:
@@ -67,3 +67,10 @@ func _on_ddr_mini_game_note_hit_in_time(note: DdrNote) -> void:
 
 func _on_ddr_mini_game_win() -> void:
 	Game.signal_to_dialogic.emit()
+	play_bg_music()
+
+func _on_laser_final_goal_lit(destination: LaserDestination) -> void:
+	Game.signal_to_dialogic.emit()
+
+func freaking_change_cat_pic(pic:String):
+	$PurrtatoWorldPortrait2D.sprite_2d.texture = load(pic)
