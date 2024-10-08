@@ -14,7 +14,9 @@
 [sub_resource type="Resource" id="Resource_ni102"]
 script = ExtResource("1_i84ov")
 scene = ExtResource("2_6gpwi")
-overrides = {}
+overrides = {
+"disabled": "true"
+}
 
 [sub_resource type="Resource" id="Resource_he62t"]
 script = ExtResource("1_i84ov")
@@ -63,4 +65,4 @@ script = ExtResource("10_an77v")
 name = "full_screen_style"
 base_overrides = {}
 layers = Array[ExtResource("1_i84ov")]([SubResource("Resource_ni102"), SubResource("Resource_he62t"), SubResource("Resource_svidx"), SubResource("Resource_hidhs"), SubResource("Resource_ysk1b"), SubResource("Resource_w74va"), SubResource("Resource_orw0a"), SubResource("Resource_a3oyx")])
-metadata/_latest_layer = 3
+metadata/_latest_layer = 0

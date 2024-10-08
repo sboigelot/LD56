@@ -5,7 +5,7 @@ class_name  StoryScene
 @export var music: MusicTrack
 
 func play_bg_music():	
-	MusicManager.play_song.emit(music, true, true, 0.3)
+	MusicManager.play_song.emit(music, true, false, 0.0)
 	
 func _ready() -> void:
 	SceneTransitionManager.transition_scene_in(self)

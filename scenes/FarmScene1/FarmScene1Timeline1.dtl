@@ -1,21 +1,18 @@
-jump Debug This
-label Debug This
+set {fry_name} = "Little Sprout"
 [sound path="res://audio/sfx/crow-far.mp3" volume="0.0"]
 [style name="full_screen_style"]
-leave --All--
 Potatoes. Potatoes. Potatoes.[pause=0.5]\
 Whether you eat them mashed, jacked, baked or as chips, let’s admit it\: we all can't miss our lovely potatoes.
 Every potato is destined to be eaten and has its own tale.
 [zoom character="fry_potato" zoom_level="2.0" hide_text="false" wait_game_signal="false"]
 But this is no ordinary tale.[pause=3.0]\
 This is the story about how Belgian fries are made.
-leave --All--
 [style name="text_bubble_style"]
 gran_potato: … Wake up![pause=2.0] Little sprout; wake uuuup!
 gran_potato: It is time you get out of there.[pause=2.0]
 [start_anim character="fry_potato" anim_name="Wiggle" hide_text="null"]
 [sound path="res://audio/sfx/fry-forcing.mp3" volume="0.0"]
-fry_potato (sleepy): mmmmm....[pause=0.5] 5 more minutes!
+fry_potato (sleepy): Mmmmm....[pause=0.5] 5 more minutes!
 [sound path="res://audio/sfx/gran-sigh.mp3" volume="0.0" bus=""]
 gran_potato: Finally, little sprout! I'm your Gran Patat.\
 You need to get out of that potato bucket. You need to wiggle!
@@ -60,8 +57,8 @@ We should skip a part of this conversation because this will take long. You can'
 	fry_potato (smile): I don't understand anything you say. Can we talk about something else?
 	gran_potato: Sure.
 	fry_potato (smile): Do some potatoes get prepared differently?
-	gran_potato: There are so many ways to prepare potatoes. You can eat them jacked, boiled, mashed, in a stew, or raw.\
-fry_potato (smile)\: What is boil?
+	gran_potato: There are so many ways to prepare potatoes. You can eat them jacked, boiled, mashed, in a stew, or raw.
+	fry_potato: What is boil?
 	gran_potato: Boil is a cooking technique in which we, potatoes, are immersed in water to a high temperature, causing the liquid to bubble and steam.
 	fry_potato (smile): What is mash?
 	gran_potato: Mash is a food preparation method that involves breaking down and combining potatoes and other ingredients into a smooth or chunky consistency.
@@ -133,7 +130,7 @@ fry_potato: Gran Patat told me about it, those are french fries, right?
 crowtato (mouse_open): Oh my, no, I'm conversing about Belgian fries. I've heard that Belgian fries come to be golden once they get dipped.
 [sound path="res://audio/sfx/fry-confused.mp3" volume="0.0" bus=""]
 fry_potato: A golden fry?
-fry_potato: [wave][b]GRAN PATAT, I WANT TO BECOME A BELGIAN FRY.[b][wave]
+fry_potato: [wave][b]GRAN PATAT, I WANT TO BECOME A BELGIAN FRY.[/b][/wave]
 update fry_potato (smile) rightmost [mirrored="true"]
 update gran_potato (smile) right [mirrored="true"]
 gran_potato: I figured as mulch. You are my offspring of course. But you will have to give up hope,\
@@ -153,9 +150,9 @@ update gran_potato (smile) right [mirrored="true"]
 [sound path="res://audio/sfx/gran-confused.mp3" volume="0.0" bus=""]
 gran_potato: Can you spare us a moment, Crowtato?
 crowtato (normal): Undoubtedly.
-leave crowtato [wait="true"]
-update fry_potato (smile) rightmost
-update gran_potato leftmost [mirrored="false"]
+update fry_potato right
+update gran_potato left [mirrored="false"]
+leave crowtato [animation="Slide Out Up"]
 gran_potato: My dear Fry, I have always kept your inheritance with me.\
 My grandpotato gave it to me and it has been in this family for months and now it is yours.
 [sound path="res://audio/sfx/gran-forcing.mp3" volume="0.0" bus=""]

@@ -32,14 +32,14 @@ func _input(event: InputEvent) -> void:
 		return
 		
 	if (event is InputEventKey and 
-		event.is_released()):
+		event.is_pressed()):
 			for accepted_key in accepted_keys:
 				if event.keycode == accepted_key:
 					_on_hit(event.keycode in [KEY_A, KEY_Q, KEY_LEFT])
 					break
 	
 	if(event is InputEventMouseButton and
-		event.is_released()):
+		event.is_pressed()):
 			var can_hit = true
 			if inputs_needs_mouse_capture:
 				var mouse_position = get_global_mouse_position()

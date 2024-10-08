@@ -39,7 +39,7 @@ func _input(event: InputEvent) -> void:
 		event.is_released()):
 			var can_hit = true
 			if inputs_needs_mouse_capture:
-				var mouse_position = get_global_mouse_position()
+				#var mouse_position = get_global_mouse_position()
 				var capture = true
 				printerr("Not implemented: hit_needs_mouse_capture")
 				can_hit = capture

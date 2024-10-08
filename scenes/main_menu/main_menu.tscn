@@ -1,13 +1,26 @@
-[gd_scene load_steps=9 format=3 uid="uid://dgofrtm4r3eug"]
+[gd_scene load_steps=13 format=3 uid="uid://dgofrtm4r3eug"]
 
 [ext_resource type="Script" path="res://scenes/main_menu/main_menu.gd" id="1_jeenq"]
 [ext_resource type="PackedScene" uid="uid://b3iav6cm8purx" path="res://minigames/time_hit/time_hit_mini_game.tscn" id="2_1w65f"]
 [ext_resource type="Texture2D" uid="uid://oa4enuht0lse" path="res://scenes/FlyScene1/fly_scene.png" id="2_cpmjp"]
-[ext_resource type="Texture2D" uid="uid://cju5jukxjbcww" path="res://dialogic_data/characters/fry/fry_potato_uwu.png" id="5_r5nd5"]
+[ext_resource type="Texture2D" uid="uid://dhxw2wmui03el" path="res://dialogic_data/characters/purrtato/purrtato_sit.png" id="5_tt31n"]
 [ext_resource type="Script" path="res://minigames/mini_game_chain.gd" id="5_urrc7"]
 [ext_resource type="Texture2D" uid="uid://dr8h7dmtrov5f" path="res://scenes/FlyScene1/Obstacles/fly_scene_cloud1.png" id="6_v02fb"]
 [ext_resource type="Texture2D" uid="uid://baeh30odboe08" path="res://scenes/FlyScene1/Obstacles/fly_scene_cloud2.png" id="7_7squv"]
 [ext_resource type="Texture2D" uid="uid://1o221ybhna1d" path="res://dialogic_data/characters/crowtato/crowtato_normal.png" id="8_1ss8q"]
+[ext_resource type="Texture2D" uid="uid://bcodr3td6ct2q" path="res://scenes/main_menu/logo_nobackground.png" id="9_hm753"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o7fjl"]
+bg_color = Color(0.882353, 0.658824, 0.270588, 1)
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t8hsd"]
+bg_color = Color(0.784545, 0.575649, 0.201472, 1)
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yg2tg"]
+bg_color = Color(0.772549, 0.470588, 0.207843, 1)
+border_color = Color(0, 0, 0, 1)
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -25,7 +38,7 @@ texture = ExtResource("2_cpmjp")
 metadata/_edit_lock_ = true
 
 [node name="MiniGameChain" type="Node2D" parent="."]
-position = Vector2(780, 577)
+position = Vector2(780, 687)
 script = ExtResource("5_urrc7")
 
 [node name="TimeHitMiniGame" parent="MiniGameChain" instance=ExtResource("2_1w65f")]
@@ -58,71 +71,23 @@ on_win_auto_hide = false
 
 [node name="TitleContainer" type="MarginContainer" parent="."]
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -207.0
-offset_right = 207.0
-offset_bottom = 136.0
-grow_horizontal = 2
-theme_override_constants/margin_top = 100
-
-[node name="FryCone" type="Sprite2D" parent="TitleContainer"]
-position = Vector2(-423, 954)
-rotation = 0.275762
-texture = ExtResource("5_r5nd5")
-
-[node name="FlySceneCloud1" type="Sprite2D" parent="TitleContainer"]
-modulate = Color(0.808998, 0.808998, 0.808998, 1)
-position = Vector2(916, 233)
-texture = ExtResource("6_v02fb")
-
-[node name="FlySceneCloud2" type="Sprite2D" parent="TitleContainer"]
-modulate = Color(0.807843, 0.807843, 0.807843, 1)
-position = Vector2(-349, 337)
-texture = ExtResource("7_7squv")
-
-[node name="FlySceneCloud3" type="Sprite2D" parent="TitleContainer"]
-modulate = Color(0.807843, 0.807843, 0.807843, 1)
-position = Vector2(-2.00001, 204)
-scale = Vector2(0.8, 0.8)
-texture = ExtResource("6_v02fb")
-
-[node name="Title" type="Label" parent="TitleContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.976471, 0.760784, 0.392157, 1)
-theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
-theme_override_constants/outline_size = 35
-theme_override_font_sizes/font_size = 128
-text = "Fry Quest"
-horizontal_alignment = 1
-
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -207.0
-offset_top = -68.0
+offset_top = -105.5
 offset_right = 207.0
-offset_bottom = 68.0
+offset_bottom = 105.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/margin_top = 200
 
-[node name="FullScreenButton" type="Button" parent="VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="TitleContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 16
-text = "Go to fullscreen
-(important in HTML version)"
 
-[node name="NewGameChallenge" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "NewGame"
-
-[node name="CallengeLabel" type="Label" parent="VBoxContainer"]
+[node name="CallengeLabel" type="Label" parent="TitleContainer/VBoxContainer"]
 visible = false
 layout_mode = 2
 theme_override_colors/font_color = Color(0.976471, 0.760784, 0.392157, 1)
@@ -130,17 +95,97 @@ theme_override_colors/font_outline_color = Color(1, 0.996078, 0.992157, 1)
 theme_override_constants/shadow_offset_x = 5
 theme_override_constants/shadow_offset_y = 5
 theme_override_constants/outline_size = 10
-theme_override_font_sizes/font_size = 64
-text = "Are you worthy to enter this quest?"
+theme_override_font_sizes/font_size = 48
+text = "Are you worthy of entering this quest?"
 horizontal_alignment = 1
 
+[node name="ThanksLabel" type="Label" parent="TitleContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0.976471, 0.760784, 0.392157, 1)
+theme_override_colors/font_outline_color = Color(1, 0.996078, 0.992157, 1)
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 48
+text = "Thanks for Playing"
+horizontal_alignment = 1
+
+[node name="FullScreenButton" type="Button" parent="TitleContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_disabled_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/hover = SubResource("StyleBoxFlat_o7fjl")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_t8hsd")
+theme_override_styles/normal = SubResource("StyleBoxFlat_yg2tg")
+text = "Go to fullscreen
+(important in HTML version)"
+
+[node name="NewGameChallenge" type="Button" parent="TitleContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_disabled_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 32
+theme_override_styles/hover = SubResource("StyleBoxFlat_o7fjl")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_t8hsd")
+theme_override_styles/normal = SubResource("StyleBoxFlat_yg2tg")
+text = "NewGame"
+
+[node name="PurrtatoSit" type="Sprite2D" parent="TitleContainer/VBoxContainer"]
+position = Vector2(962, 547.5)
+texture = ExtResource("5_tt31n")
+flip_h = true
+
 [node name="CrowtatoNormal" type="Sprite2D" parent="."]
-position = Vector2(1748, 176)
+position = Vector2(1701, 216)
 rotation = 0.499164
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("8_1ss8q")
 flip_h = true
 
+[node name="FlySceneCloud1" type="Sprite2D" parent="."]
+modulate = Color(0.93408, 0.93408, 0.93408, 1)
+position = Vector2(1483, 297)
+texture = ExtResource("6_v02fb")
+
+[node name="FlySceneCloud2" type="Sprite2D" parent="."]
+modulate = Color(0.93408, 0.93408, 0.93408, 1)
+position = Vector2(251, 375)
+texture = ExtResource("7_7squv")
+
+[node name="FlySceneCloud3" type="Sprite2D" parent="."]
+modulate = Color(0.93408, 0.93408, 0.93408, 1)
+position = Vector2(954, 196)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("6_v02fb")
+
+[node name="LogoNobackground" type="Sprite2D" parent="."]
+position = Vector2(388, 207)
+texture = ExtResource("9_hm753")
+
 [connection signal="win" from="MiniGameChain" to="." method="_on_mini_game_chain_win"]
-[connection signal="pressed" from="VBoxContainer/FullScreenButton" to="." method="_on_full_screen_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/NewGameChallenge" to="." method="_on_star_mini_game_4_pressed"]
+[connection signal="pressed" from="TitleContainer/VBoxContainer/FullScreenButton" to="." method="_on_full_screen_button_pressed"]
+[connection signal="pressed" from="TitleContainer/VBoxContainer/NewGameChallenge" to="." method="_on_star_mini_game_4_pressed"]

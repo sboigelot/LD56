@@ -29,8 +29,10 @@ func start():
 	ddr_song.play_music()
 	song_time = 0.0
 	spawn_index = 0
-	for live_notes in live_notes:
-		live_notes.queue_free()
+	for note_view in live_notes:
+		if note_view == null or not is_instance_valid(note_view) or note_view.is_queued_for_deletion():
+			continue
+		note_view.queue_free()
 	live_notes.clear()
 	for i in lifes.get_child_count():
 		var child = lifes.get_child(i)
@@ -70,7 +72,7 @@ func _input(event: InputEvent) -> void:
 		return
 		
 	if (event is InputEventKey and 
-		event.is_released()):
+		event.is_pressed()):
 			for accepted_key in accepted_keys:
 				if event.keycode == accepted_key:
 					_on_key_release(event.keycode)
@@ -112,8 +114,16 @@ func _on_key_release(keycode:Key):
 		#loose_a_life()
 
 func miss_a_note(note_view:DdrNoteView):
+	
+	if note_view == null or not is_instance_valid(note_view) or note_view.is_queued_for_deletion():
+		return
+	
+	live_notes.erase(note_view)
+	note_view.queue_free()
+	
 	if not started or not accept_inputs:
 		return
+		
 	if not note_view.hit_on_time:
 		loose_a_life()
 
@@ -136,7 +146,7 @@ func trigger_loose():
 	start()
 
 func _blink(node:Node2D, color:Color, duration:float = 0.15):
-	var tween = create_tween()
+	var tween = node.create_tween()
 	tween.set_parallel(false)
 	tween.tween_property(node,"self_modulate", color, duration).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
 	tween.tween_property(node,"self_modulate", Color.WHITE, duration).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
@@ -151,7 +161,7 @@ func _spawn_note(note:DdrNote):
 	node_view.update_sprite()
 	live_notes.append(node_view)
 	
-	var node_tween = create_tween()
+	var node_tween = node_view.create_tween()
 	node_tween.set_parallel(true)
 	#node_tween.tween_property(node_view, "self_modulate", Color.WHITE, 0.5)
 	node_tween.tween_property(node_view, "position", Vector2.ZERO, note_preview_time)
@@ -160,6 +170,4 @@ func _spawn_note(note:DdrNote):
 	node_tween.tween_property(node_view, "scale", Vector2.ONE * 1.1, 0.35)
 	node_tween.tween_property(node_view, "self_modulate", Color.WHITE, 0.35)
 	node_tween.set_parallel(false)
-	node_tween.tween_callback(live_notes.erase.bind(node_view))
 	node_tween.tween_callback(miss_a_note.bind(node_view))
-	node_tween.tween_callback(node_view.queue_free)

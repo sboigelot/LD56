@@ -328,7 +328,7 @@ tracks/7/keys = {
 
 [sub_resource type="Animation" id="Animation_xdtrf"]
 resource_name = "CatPushGranpa"
-length = 0.75
+length = 1.4
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -348,10 +348,10 @@ tracks/1/path = NodePath("GranpaWorldPortrait2D:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.166667, 0.266667, 0.5, 0.733333),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.233333, 1.4),
+"transitions": PackedFloat32Array(1, 0.5, 1),
 "update": 0,
-"values": [Vector2(-344, 130), Vector2(-344, 130), Vector2(-532, -319), Vector2(-664, -382), Vector2(-796, -445)]
+"values": [Vector2(-344, 130), Vector2(-344, 130), Vector2(-628, -372)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -384,8 +384,8 @@ tracks/4/path = NodePath("GranpaWorldPortrait2D:scale")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.166667, 0.733333),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.766667, 1.4),
+"transitions": PackedFloat32Array(1, 2, 1),
 "update": 0,
 "values": [Vector2(0.175, 0.175), Vector2(0.175, 0.175), Vector2(1e-05, 1e-05)]
 }
@@ -408,13 +408,16 @@ tracks/6/path = NodePath(".")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.733333),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.166667, 0.466667, 0.733333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "values": [{
-"args": ["res://dialogic_data/characters/purrtato/purrtato_sit.png"],
+"args": ["res://dialogic_data/characters/purrtato/purrtato_angry.png"],
 "method": &"freaking_change_cat_pic"
 }, {
 "args": ["res://dialogic_data/characters/purrtato/purrtato_push.png"],
+"method": &"freaking_change_cat_pic"
+}, {
+"args": ["res://dialogic_data/characters/purrtato/purrtato_angry.png"],
 "method": &"freaking_change_cat_pic"
 }, {
 "args": ["res://dialogic_data/characters/purrtato/purrtato_sit.png"],
@@ -428,10 +431,10 @@ tracks/7/path = NodePath("PurrtatoWorldPortrait2D:flip_h")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.233333, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [true]
+"values": [true, true, true]
 }
 
 [sub_resource type="Animation" id="Animation_wtdqw"]
@@ -788,51 +791,6 @@ dialogic_character_name = "crowtato"
 dialogic_character_path = "res://dialogic_data/characters/crowtato/crowtato.dch"
 texture = ExtResource("8_1854e")
 
-[node name="PurrtatoWorldPortrait2D" parent="." instance=ExtResource("5_03hmb")]
-position = Vector2(831, 563)
-scale = Vector2(0.5, 0.5)
-dialogic_character_name = "purrtato"
-dialogic_character_path = "res://dialogic_data/characters/purrtato/purrtato.dch"
-texture = ExtResource("8_l0rek")
-flip_h = true
-
-[node name="PipWorldPortrait2D" parent="." instance=ExtResource("5_03hmb")]
-position = Vector2(-1353, 232)
-scale = Vector2(0.25, 0.25)
-dialogic_character_name = "pip"
-dialogic_character_path = "res://dialogic_data/characters/pip/pip.dch"
-texture = ExtResource("9_yvkxs")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_th41s")
-}
-
-[node name="DdrMiniGame" parent="." instance=ExtResource("9_jfose")]
-visible = false
-position = Vector2(24, -30)
-scale = Vector2(0.3, 0.3)
-
-[node name="DDR_Left" type="Marker2D" parent="."]
-position = Vector2(-95, 90)
-scale = Vector2(0.25, 0.25)
-
-[node name="DDR_Down" type="Marker2D" parent="."]
-position = Vector2(-50, 110)
-scale = Vector2(0.25, 0.25)
-
-[node name="DDR_Center" type="Marker2D" parent="."]
-position = Vector2(-50, 90)
-scale = Vector2(0.25, 0.25)
-
-[node name="DDR_Up" type="Marker2D" parent="."]
-position = Vector2(-50, 70)
-scale = Vector2(0.25, 0.25)
-
-[node name="DDR_Right" type="Marker2D" parent="."]
-position = Vector2(-5, 90)
-scale = Vector2(0.25, 0.25)
-
 [node name="CatLaserPuzle" type="Node2D" parent="."]
 position = Vector2(1211, -197)
 
@@ -946,11 +904,56 @@ position = Vector2(-68, 300)
 
 [node name="LaserFinalGoal" type="Sprite2D" parent="CatLaserPuzle"]
 self_modulate = Color(100, 1, 1, 1)
-position = Vector2(-1260, 278)
+position = Vector2(-1360, 345)
 scale = Vector2(3, 3)
 texture = ExtResource("14_g7k0k")
 script = ExtResource("9_s13kt")
 
+[node name="PurrtatoWorldPortrait2D" parent="." instance=ExtResource("5_03hmb")]
+position = Vector2(831, 563)
+scale = Vector2(0.5, 0.5)
+dialogic_character_name = "purrtato"
+dialogic_character_path = "res://dialogic_data/characters/purrtato/purrtato.dch"
+texture = ExtResource("8_l0rek")
+flip_h = true
+
+[node name="PipWorldPortrait2D" parent="." instance=ExtResource("5_03hmb")]
+position = Vector2(-1353, 232)
+scale = Vector2(0.25, 0.25)
+dialogic_character_name = "pip"
+dialogic_character_path = "res://dialogic_data/characters/pip/pip.dch"
+texture = ExtResource("9_yvkxs")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_th41s")
+}
+
+[node name="DdrMiniGame" parent="." instance=ExtResource("9_jfose")]
+visible = false
+position = Vector2(24, -30)
+scale = Vector2(0.3, 0.3)
+
+[node name="DDR_Left" type="Marker2D" parent="."]
+position = Vector2(-95, 90)
+scale = Vector2(0.25, 0.25)
+
+[node name="DDR_Down" type="Marker2D" parent="."]
+position = Vector2(-50, 110)
+scale = Vector2(0.25, 0.25)
+
+[node name="DDR_Center" type="Marker2D" parent="."]
+position = Vector2(-50, 90)
+scale = Vector2(0.25, 0.25)
+
+[node name="DDR_Up" type="Marker2D" parent="."]
+position = Vector2(-50, 70)
+scale = Vector2(0.25, 0.25)
+
+[node name="DDR_Right" type="Marker2D" parent="."]
+position = Vector2(-5, 90)
+scale = Vector2(0.25, 0.25)
+
+[connection signal="lit" from="CatLaserPuzle/LaserFinalGoal" to="." method="_on_laser_final_goal_lit"]
 [connection signal="note_hit_in_time" from="DdrMiniGame" to="." method="_on_ddr_mini_game_note_hit_in_time"]
 [connection signal="win" from="DdrMiniGame" to="." method="_on_ddr_mini_game_win"]
-[connection signal="lit" from="CatLaserPuzle/LaserFinalGoal" to="." method="_on_laser_final_goal_lit"]

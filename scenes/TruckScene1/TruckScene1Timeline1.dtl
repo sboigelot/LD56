@@ -30,7 +30,7 @@ fry_potato: So what now?
 gran_potato: Quiet, there's a mouse staring at us.
 [start_anim anim_name="PipEnter" hide_text="null"]
 [style name="full_screen_style"]
-The potatoes caught the eye of a mouse looking for food. The mouse has a knife stuck on his back. But you have to know... this is an exception and never happens in Belgian food trucks.
+The potatoes caught the eye of a mouse looking for food. The mouse has a knife on her back. But you have to know... this is an exception and never happens in Belgian food trucks.
 People from Belgium are very hygienic. Under no circumstance are the potatoes being confronted with germs from mice. We can really guarantee that the food truck is cleaned and...
 join pip (normal) center [animation="Slide In Up"]
 [sound path="res://audio/sfx/mouse-squeak.mp3" volume="0.0" bus=""]
@@ -64,7 +64,7 @@ pip (normal): Did you get all that?
 fry_potato (smile): I understand it all. But how can I be cut in the right form?
 pip (normal): You're in luck because that is what I'm good at. With this knife on my back I can make miracles. Who goes first?
 [sound path="res://audio/sfx/fry-oohyeah.mp3" volume="0.0" bus=""]
-fry_potato (smile): [wave][b]MEEEEE[b][wave]
+fry_potato (smile): [wave][b]MEEEEE![b][wave]
 pip (cut_down): Okay, the mini potato first, than the older potato.
 [sound path="res://audio/sfx/gran-forcing.mp3" volume="0.0" bus=""]
 gran_potato: *gulp*
@@ -81,13 +81,13 @@ Move around using the [b]arrow keys[/b] to help me cut at the correct places!
 [sound path="res://audio/sfx/knife-cut.mp3" volume="0.0" bus=""]
 [start_mini_game minigame_name="DdrMiniGame" difficulty="easy"]
 [style name="full_screen_style"]
-join fry_potato (sliced) center [animation="Slide In Up"]
+join fry_potato (sliced_big) center [animation="Slide In Up"]
 [sound path="res://audio/sfx/holy.mp3" volume="0.0" bus=""]
-fry_potato (sliced): Tadaaaa
+fry_potato: Tadaaaa!
 join gran_potato leftmost
 [sound path="res://audio/sfx/gran-oohyeah.mp3" volume="0.0" bus=""]
 gran_potato: Wow, Fry, you look fry-nomenal!
-update fry_potato rightmost [mirrored="true"]
+update fry_potato (sliced) rightmost [mirrored="true"]
 fry_potato (sliced): I feel spectacular. It is your turn now, Gran Patat.
 update gran_potato left
 join pip (normal) leftmost
@@ -106,7 +106,6 @@ pip: Adios, amigos.
 fry_potato (sliced): But wait, what about Gran Patat?
 [style name="full_screen_style"]
 [start_anim anim_name="CatMouseAnim2" hide_text="null"]
-[start_anim anim_name="CatMouseAnim2" hide_text="null"]
 [sound path="res://audio/sfx/cat-hungry.mp3" volume="0.0" bus=""]
 The cat notices the mouse moving and is sneaking up to its prey.
 [style name="text_bubble_style"]
@@ -120,8 +119,9 @@ fry_potato (sliced): Quick, let's use that laser pointer. to distract the cat. P
 label Laser Pointer
 [style name="full_screen_style"]
 [sound path="res://audio/sfx/gran-confused.mp3" volume="0.0" bus=""]
+[start_mini_game minigame_name="CatLaserPuzle" difficulty="easy" wait_game_signal="false"]
 If only there was someone out there to help move the reflecting objects around?
-[start_mini_game minigame_name="CatLaserPuzle" difficulty="easy"]
+[wait_signal]
 That will do!
 [start_anim anim_name="CatMoveToDot" hide_text="null"]
 [sound path="res://audio/sfx/cat-hungry.mp3" volume="0.0" bus=""]
@@ -134,7 +134,7 @@ gran_potato: This is not looking good.
 [style name="full_screen_style"]
 [sound path="res://audio/sfx/cat-hungry.mp3" volume="0.0" bus=""]
 The cat focus on Gran Patat and starts to push the potato violently.
-[zoom hide_text="false" wait_game_signal="false"]
+[zoom hide_text="false"]
 [start_anim anim_name="CatPushGranpa" hide_text="null"]
 [style name="text_bubble_style"]
 [sound path="res://audio/sfx/fry-forcing.mp3" volume="0.0" bus=""]
@@ -150,7 +150,7 @@ The more Fry wiggles, the more the cat wants to hunt it. A few seconds go by.
 gran_potato: STAY CRISPY, FRY. BECOME A MASH-TERPIECE.
 [style name="full_screen_style"]
 [sound path="res://audio/sfx/cat-hungry.mp3" volume="0.0" bus=""]
-Fry gets tossed left, and right, and left again on the counter. While playing, the cat accidentally pushes Fry into the frying pan
+Fry gets tossed left, and right, and left again on the counter. While playing, the cat accidentally pushes Fry into the frying pan.
 [start_anim anim_name="CatPushFry" hide_text="null"]
 [sound path="res://audio/music/sizzling2low.mp3" volume="6.0" bus=""]
 [wait time="1.5"]
@@ -159,7 +159,7 @@ Fry notices the heat and instinctively knows what to do.\
 This is all what he has been dreaming of\: become the better version of itself.
 [style name="text_bubble_style"]
 [sound path="res://audio/music/sizzling2low.mp3" volume="6.0" bus=""]
-fry_potato (sliced): This is my time to shine. Gran Patat, Crowtato and Pip, thank you for all your help
+fry_potato (sliced): This is my time to shine. Gran Patat, Crowtato and Pip, thank you for all your help.
 [style name="full_screen_style"]
 [sound path="res://audio/music/sizzling2low.mp3" volume="6.0" bus=""]
 The bubbles from the heated oil caress Fry and it slowly falls asleep.

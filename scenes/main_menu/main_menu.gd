@@ -1,8 +1,12 @@
 extends Control
 
+@onready var full_screen_button: Button = $TitleContainer/VBoxContainer/FullScreenButton
+@onready var new_game_challenge: Button = $TitleContainer/VBoxContainer/NewGameChallenge
+@onready var callenge_label: Label = $TitleContainer/VBoxContainer/CallengeLabel
+
 func _ready() -> void:
-	$VBoxContainer/NewGameChallenge.visible = true
-	$VBoxContainer/CallengeLabel.visible = false
+	new_game_challenge.visible = true
+	callenge_label.visible = false
 	SceneTransitionManager.transition_scene_in(self)
 
 func _on_new_game_button_pressed() -> void:
@@ -16,9 +20,9 @@ func new_game():
 
 func _on_star_mini_game_4_pressed() -> void:
 	$MiniGameChain.start()
-	$VBoxContainer/FullScreenButton.visible = false
-	$VBoxContainer/NewGameChallenge.visible = false
-	$VBoxContainer/CallengeLabel.visible = true
+	full_screen_button.visible = false
+	new_game_challenge.visible = false
+	callenge_label.visible = true
 
 func _on_mini_game_chain_win() -> void:
 	new_game()

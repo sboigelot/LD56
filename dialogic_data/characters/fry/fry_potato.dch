@@ -54,6 +54,16 @@
 "scale": 0.5,
 "scene": ""
 },
+"sliced_big": {
+"export_overrides": {
+"image": "\"res://dialogic_data/characters/fry/fry_sliced.png\""
+},
+"ignore_char_scale": false,
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 0.75,
+"scene": ""
+},
 "smile": {
 "export_overrides": {
 "image": "\"res://dialogic_data/characters/fry/fry_potato_smile.png\""

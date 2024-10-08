@@ -15,14 +15,23 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("quit"):
 		var current_scene = get_tree().current_scene.name
 		if "MainMenu" in current_scene:
-			get_tree().quit()
+			#printerr("os name is %s"%OS.get_name())
+			if OS.get_name() in ["Web", "HTML5"]:
+				exit_fullscreen_mode()
+			else: 
+				get_tree().quit()
 			return
 		Dialogic.end_timeline()
 		SceneTransitionManager.transition_scene_to_file(
 			"res://scenes/main_menu/main_menu.tscn", 
 			SceneTransitionManager.TRANSITIONS.FADE_TO_BLACK,
 			SceneTransitionManager.TRANSITIONS.FADE_TO_BLACK)
-		
+
+func exit_fullscreen_mode():
+	var current_mode = DisplayServer.window_get_mode()
+	if current_mode != DisplayServer.WINDOW_MODE_WINDOWED:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+	
 func swap_fullscreen_mode():
 	var current_mode = DisplayServer.window_get_mode()
 	match(current_mode):
