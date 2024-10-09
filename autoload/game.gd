@@ -2,6 +2,8 @@ extends Node
 
 signal signal_to_dialogic
 
+var current_song:MusicTrack
+
 func _init():
 	EventAudio.log_lookups = true
 	EventAudio.log_registrations = true
@@ -39,3 +41,8 @@ func swap_fullscreen_mode():
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 		_:
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+
+func play_song(music:MusicTrack, force:bool=false):
+	if current_song != music or force:
+		current_song = music
+		MusicManager.play_song.emit(music, true, true, 0.0)

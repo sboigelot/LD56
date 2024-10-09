@@ -4,8 +4,8 @@ class_name  StoryScene
 @export var bubble_chararcters: Array[NodePath]
 @export var music: MusicTrack
 
-func play_bg_music():	
-	MusicManager.play_song.emit(music, true, false, 0.0)
+func play_bg_music():
+	Game.play_song(music)
 	
 func _ready() -> void:
 	SceneTransitionManager.transition_scene_in(self)

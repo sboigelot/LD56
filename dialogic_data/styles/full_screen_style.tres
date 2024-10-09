@@ -48,7 +48,14 @@ overrides = {}
 [sub_resource type="Resource" id="Resource_w74va"]
 script = ExtResource("1_i84ov")
 scene = ExtResource("7_x6253")
-overrides = {}
+overrides = {
+"text_color_custom": "Color(0, 0, 0, 1)",
+"text_color_disabled": "Color(0, 0, 0, 1)",
+"text_color_focused": "Color(0, 0, 0, 1)",
+"text_color_hovered": "Color(0.191406, 0.191406, 0.191406, 1)",
+"text_color_pressed": "Color(0.132813, 0.132813, 0.132813, 1)",
+"text_color_use_global": "false"
+}
 
 [sub_resource type="Resource" id="Resource_orw0a"]
 script = ExtResource("1_i84ov")
@@ -65,4 +72,4 @@ script = ExtResource("10_an77v")
 name = "full_screen_style"
 base_overrides = {}
 layers = Array[ExtResource("1_i84ov")]([SubResource("Resource_ni102"), SubResource("Resource_he62t"), SubResource("Resource_svidx"), SubResource("Resource_hidhs"), SubResource("Resource_ysk1b"), SubResource("Resource_w74va"), SubResource("Resource_orw0a"), SubResource("Resource_a3oyx")])
-metadata/_latest_layer = 0
+metadata/_latest_layer = 5

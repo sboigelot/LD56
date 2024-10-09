@@ -5,4 +5,4 @@ class_name DdrSong
 @export var notes:Array[DdrNote]
 
 func play_music():
-	MusicManager.play_song.emit(music_track, false, true, 0.1)
+	Game.play_song(music_track, true)
