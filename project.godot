@@ -43,6 +43,7 @@ directories/dtl_directory={
 "TruckScene1Timeline1": "res://scenes/TruckScene1/TruckScene1Timeline1.dtl",
 "bubble_test_timeline": "res://dialogic_data/timelines/bubble_test_timeline.dtl",
 "mini_win_timeline": "res://dialogic_data/timelines/mini_win_timeline.dtl",
+"promo_scene_1_timeline": "res://scenes/PromoScene1/promo_scene_1_timeline.dtl",
 "test_timeline": "res://dialogic_data/timelines/test_timeline.dtl",
 "timelines/act1a_farm_timeline": "res://dialogic_data/timelines/act1a_farm_timeline.dtl",
 "two_dialog_full_timeline": "res://dialogic_data/timelines/two_dialog_full_timeline.dtl"

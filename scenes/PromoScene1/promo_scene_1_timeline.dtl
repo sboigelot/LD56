@@ -1,0 +1,22 @@
+[zoom character="crowtato" zoom_level="3.0" hide_text="false" wait_game_signal="false"]
+[wait_signal]
+[wait time="1.0"]
+[style name="text_bubble_style"]
+[start_anim character="pip" anim_name="BOUNCE" hide_text="null"]
+pip (normal): Hey Crowtato! I didn't get to speak to you at all in Fry Quest!
+[start_anim character="crowtato" anim_name="BOUNCE" hide_text="null"]
+crowtato (mouse_open): Our destiny were not meant to cross, but at last, here we are!
+crowtato (normal): Did you enjoy partaking in your role?
+[start_anim character="pip" anim_name="Wiggle" hide_text="null"]
+pip (normal): It was [wave]amazing[/wave]!
+[start_anim character="crowtato" anim_name="BOUNCE" hide_text="null"]
+crowtato (mouse_open): Wait![pause=0.5]...[pause=0.3]I see someone peeping at us!
+crowtato (normal): It's a LD56 game developer!
+[style name="full_screen_style"]
+join pip (normal_big) center [animation="Slide In Up" mirrored="true"]
+[start_anim anim_name="FadeBackground" hide_text="null"]
+pip: Hey you! Stop peeping and play [b]Fry Quest[/b] now!
+pip (cut_up_big): Or else...
+[wait time="0.5"]
+[start_anim anim_name="FadeBackground" backwards="true" hide_text="null"]
+leave pip

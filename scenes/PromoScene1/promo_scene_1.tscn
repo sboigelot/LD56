@@ -1,0 +1,126 @@
+[gd_scene load_steps=10 format=3 uid="uid://b1af2sif3lcuh"]
+
+[ext_resource type="Script" path="res://scenes/PromoScene1/promo_scene_1.gd" id="1_eyt5m"]
+[ext_resource type="Texture2D" uid="uid://dt3ub0jr320r4" path="res://scenes/FarmScene1/field_scene.png" id="2_f3jcs"]
+[ext_resource type="PackedScene" uid="uid://cb40qf1q6r5oe" path="res://components/StoryCamera2D.tscn" id="3_uuekt"]
+[ext_resource type="PackedScene" uid="uid://bi7328nybm04r" path="res://components/world_portrait_2d.tscn" id="4_k4c62"]
+[ext_resource type="Texture2D" uid="uid://1o221ybhna1d" path="res://dialogic_data/characters/crowtato/crowtato_normal.png" id="5_0w8j1"]
+[ext_resource type="Texture2D" uid="uid://cflnr3nqrpxgo" path="res://dialogic_data/characters/pip/pip_normal.png" id="6_href2"]
+
+[sub_resource type="Animation" id="Animation_2ro2d"]
+resource_name = "FadeBackground"
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Background:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.347817, 0.347817, 0.347817, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CrowtatoWorldPortrait2D:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.34902, 0.34902, 0.34902, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PipWorldPortrait2D:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.34902, 0.34902, 0.34902, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_lrt68"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Background:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CrowtatoWorldPortrait2D:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PipWorldPortrait2D:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wrvgr"]
+_data = {
+"FadeBackground": SubResource("Animation_2ro2d"),
+"RESET": SubResource("Animation_lrt68")
+}
+
+[node name="PromoScene1" type="Node"]
+script = ExtResource("1_eyt5m")
+bubble_chararcters = Array[NodePath]([NodePath("CrowtatoWorldPortrait2D"), NodePath("PipWorldPortrait2D")])
+
+[node name="Background" type="Sprite2D" parent="."]
+texture = ExtResource("2_f3jcs")
+metadata/_edit_lock_ = true
+
+[node name="StoryCamera2D" parent="." instance=ExtResource("3_uuekt")]
+
+[node name="CrowtatoWorldPortrait2D" parent="." instance=ExtResource("4_k4c62")]
+position = Vector2(-153, -223)
+scale = Vector2(0.25, 0.25)
+dialogic_character_name = "crowtato"
+dialogic_character_path = "res://dialogic_data/characters/crowtato/crowtato.dch"
+texture = ExtResource("5_0w8j1")
+
+[node name="PipWorldPortrait2D" parent="." instance=ExtResource("4_k4c62")]
+position = Vector2(74, -201)
+scale = Vector2(0.25, 0.25)
+dialogic_character_name = "pip"
+dialogic_character_path = "res://dialogic_data/characters/pip/pip.dch"
+texture = ExtResource("6_href2")
+flip_h = true
+
+[node name="ZoomMarker2D" type="Marker2D" parent="."]
+position = Vector2(-24, -235)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_wrvgr")
+}
